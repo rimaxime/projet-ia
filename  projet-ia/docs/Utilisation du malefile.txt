@@ -1,0 +1,46 @@
+Tutoriel : Utilisation du makefile
+
+Ajout d'un test :
+- Compilation du .o associé 
+nom_test.o: $(PATH_TESTS)/nom_test.c 
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+	
+	
+Ajout d'un fichier standard : 
+nom_fichier.o: $(PATH_SRC)/nom_fichier.c $(PATH_INC)/nomfichier.h
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+	
+
+Création de l'executable du test : 
+nom_test: nom_test.o AUTREFICHIERSREQUIS.o
+	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
+	
+	
+Pour obtenir l'execution de cette commande du test, il faut rajouter le nom_test dans la ligne Tests :
+
+Par exemple : 
+
+Tests : clean init NomTest
+ 
+
+NomTest: NomTest.o toto.o testBidouille.o
+	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
+ 
+NomTest.o: $(PATH_TESTS)/NomTest.c 
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$< 
+	
+toto.o: $(PATH_SRC)/toto.c $(PATH_INC)/toto.h
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+	
+testBidouille.o: $(PATH_SRC)/testBidouille.c $(PATH_INC)/testBidouille.h
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+	
+	
+Lors de l'execution du make il faudrat se placer dans le dossier : build, executer la commande make Tests
+Après l'on pourra executer les tests en allant dans le dossier out.
+
+Lors de la mise en prod, l'on aura également la commande make Production permettant d'éxecuter le programme complet.
+
+En cas de problème, merci de me contacter au plus vite.
+
+Maxime RIVIERE
