@@ -1,0 +1,11 @@
+Idées : 
+->gestion des flux d'alcool dans un bar
+->gestion des stocks de drogues chez un dealeur
+->gestion des filles dans une maison close
+->Simulation des flux migratoires des oiseaux
+->Simulateur boursier
+->Simulation des fluxs de personnes chez keep-cool 
+->Simulation d'un robot aspirateur
+->Simulateur de combat
+->Simulateur photovoltaique
+->Simulateur des catastrophe naturelles
