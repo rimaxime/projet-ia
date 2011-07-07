@@ -1,0 +1,14 @@
+Tabulation : 2 espaces
+
+Nom de fonction : CamelCase, séparateur : _ (Eviter le separateur)
+Fonction rattachée à une structure : TYPEDEF_STRUCTURE_CamelCase
+
+Type personnalisé : Majuscule, séparateur : _
+Variable locale : minuscule, separateur : _
+Constante preprocesseur : Majuscule, separateur : _
+Structure : minuscule, separateur : _
+
+Saut de ligne : \r\n
+Largeur de ligne recommandé : 100
+
+Fonction sur plusieurs lignes : Arguments alignés verticalement
