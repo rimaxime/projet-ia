@@ -1,7 +1,0 @@
-format 76
-
-classcanvas 128130 class_ref 128130 // Utilisateur
-  class_drawing_mode default show_context_mode default show_stereotype_properties default
-  xyz 54 107 2000
-end
-end
