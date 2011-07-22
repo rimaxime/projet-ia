@@ -6,13 +6,14 @@
   * \date 11/07/2011
   */
 
-#include "../inc/constantes.h"
-#include "../inc/structures.h"
+
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
+#include "../inc/constantes.h"
+#include "../inc/structures.h"
 
 /**
 	* \fn int RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements)
@@ -22,4 +23,4 @@
 	* \return 0 si pas d'erreur -1 sinon
   */
 
-int RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements);
+void RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int *size_tab);
