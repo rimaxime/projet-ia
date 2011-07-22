@@ -10,6 +10,9 @@
   * \brief Macro-programmation de gestion des erreurs
   */
 
+#ifndef CONSTANTES_H
+#define CONSTANTES_H
+
 #define ERREUR_FICHIER_NON_EXISTANT \
   fprintf(stderr, " Le fichier demandé n'existe pas - %s (%d)\r\n", __FILE__, __LINE__);
 
@@ -19,8 +22,7 @@
 #define ERREUR_MEMOIRE \
   fprintf(stderr, " Erreur d'allocation mémoire - %s (%d)\r\n", __FILE__, __LINE__);
 
-
-
+#define CMAX 200
 
 
 
@@ -35,3 +37,4 @@
   */
 
 
+#endif
