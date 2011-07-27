@@ -23,4 +23,4 @@
 	* \return 0 si pas d'erreur -1 sinon
   */
 
-void RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int *size_tab);
+STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int *size_tab);

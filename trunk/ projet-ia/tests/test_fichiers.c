@@ -20,7 +20,7 @@ void test_fichiers();
 int main()
 {
   test_fichiers();
-  
+  return 0;
 }
 
 
@@ -28,6 +28,6 @@ void test_fichiers()
 {
   STR_DEPARTEMENT* tableau_departements = NULL;
   int size_tab=0;
-  RecupererInfosDepartement(tableau_departements,&size_tab);
-  
+  tableau_departements = RecupererInfosDepartement(tableau_departements,&size_tab);
+  printf("%s : %s \n",tableau_departements[1].nom_departement,tableau_departements[1].Tableau_Mois[11].nom_mois);
 }

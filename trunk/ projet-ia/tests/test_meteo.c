@@ -28,9 +28,9 @@ void simulation_temperature()
 	FILE *Simu;
 	Simu= fopen("Simu_temperature.csv","w+");
 	printf("Entrer temp_prec,temp_min,temp_max\n");
-	scanf("%f,%f,%f",&(Prec.temp),&(Normales.temp_min),&(Normales.temp_max));
+	n=scanf("%f,%f,%f",&(Prec.temp),&(Normales.temp_min),&(Normales.temp_max));
 	printf("Entrer le nombre de test a faire : ");
-	scanf("%d",&t);
+	n=scanf("%d",&t);
 	for(n=0;n<t;n++)
 	{
 	  prec=SimulationTemp2(Prec,Normales);
