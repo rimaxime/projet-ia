@@ -57,11 +57,11 @@ typedef struct Departements
 typedef struct Habitations
 {
 	int nombre_pieces;
-	ST_PIECES *LC_Pieces;
-	ST_PANNEAUX *LC_PANNEAUX
+	//ST_PIECES *LC_Pieces;
+	//ST_PANNEAUX *LC_PANNEAUX;
 	float inclinaison_toit;
 	//Isolation
 	//Exposition
-}ST_HABITATIONS
+}ST_HABITATIONS;
 
 #endif
