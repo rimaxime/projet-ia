@@ -8,25 +8,27 @@
 
 #include "../inc/gestion_fichiers.h"
 
-STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departements, int *size_tab)
+void RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int *size_tab)
 {
   	
   
 	char *st_token=NULL;
 	char chaine[CMAX];
 	int i=0,j=0,k=0;
-	int compte_mois = 12;
+	int compte_mois = 0;
 	int size_chaine=0;
 	memset(chaine,0,sizeof(chaine));
+	chaine[0] = '\0';
 	FILE* fp;
-	fp = fopen("../ressource/Projet_Meteo_CSV.csv","r");
+	fp = fopen("../ressource/Projet_Meteo_CSV.csv","r+");
 	if(fp==NULL)
 	{
 	  fprintf(stderr,"Erreur d'ouverture fichier\n");
-	  exit(1);
+	  exit(-1);
 	}
 	while(fgets(chaine,CMAX,fp)!=NULL)
 	{
+		printf("%s\n",chaine);
 		size_chaine=strlen(chaine)-1; 
 		st_token=strtok(chaine,";"); 
 		size_chaine-=(strlen(st_token)+1); 
@@ -37,23 +39,25 @@ STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departement
 		{
 		  if(compte_mois>=12)
 		  {
-			tableau_departements=(STR_DEPARTEMENT *)realloc(tableau_departements,(i+1)*sizeof(STR_DEPARTEMENT));	//Il faut que st_recover=NULL -->realloc=malloc a la difference que l'on peut deplace dans une zone mémoire de taille suffisante si la premiere ne l'est pas et fait un free de la première zone.
+			tableau_departements=(STR_DEPARTEMENT*)realloc(tableau_departements,(i+1)*sizeof(STR_DEPARTEMENT));	//Il faut que st_recover=NULL -->realloc=malloc a la difference que l'on peut deplace dans une zone mémoire de taille suffisante si la premiere ne l'est pas et fait un free de la première zone.
 //	Exemple si le malloc M prend 2 case mémoire et qu'il nous en faut 3 et que l'espace contigu le première malloc est occupé xx on réallou R plus loin ou la place est suffisante MMxx0O0-->00xxRRR
-				if(tableau_departements==NULL)						
-				{
-					fprintf(stdout,"RecupérerInfoFichier : Erreur d'alloc mémoire \n");
-					exit(-1);
-				}
-				
-				memset(tableau_departements+i,0,sizeof(STR_DEPARTEMENT));
-				compte_mois=0;
+			if(tableau_departements==NULL)						
+			{
+				fprintf(stdout,"RecupérerInfoFichier : Erreur d'alloc mémoire \n");
+				exit(-1);
+			}
+			memset(tableau_departements+i,0,sizeof(STR_DEPARTEMENT));
+			compte_mois=0;
+			
+			i++;
 		  }
 		}
 		else
 			i--;
-		
-		while(st_token!=NULL && size_chaine>=0)
+		printf("%s & %d\n",st_token,size_chaine);
+		while(st_token!=NULL && size_chaine>=0);
 		{
+			printf("okokok\n");
 			switch(j)
 			{			
 				case 0:
@@ -99,13 +103,10 @@ STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departement
 			st_token=strtok(NULL,";");
 			size_chaine-=(strlen(st_token)+1);
 			j++;
-			
+			compte_mois++;
 		}
+		printf("test\n");
 		memset(chaine,0,sizeof(chaine));
-		compte_mois++;
-		if(compte_mois == 12)
-			i++;
 	}
 	*size_tab=i;
-	return tableau_departements;
 }
