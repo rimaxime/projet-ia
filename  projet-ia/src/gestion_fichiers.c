@@ -8,7 +8,20 @@
 
 #include "../inc/gestion_fichiers.h"
 
+<<<<<<< .mine
+
+/**
+	* \fn int RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements)
+  * \brief Cette fonction va balayer le fichier de départements afin de récupérer les normales météo mensuelles de 
+  * ses départements.
+  * \param tableau_departements Tableau des départements
+	* \return 0 si pas d'erreur -1 sinon
+  */
+
+STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departements, int *size_tab)
+=======
 void RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int *size_tab)
+>>>>>>> .r32
 {
   	
   
