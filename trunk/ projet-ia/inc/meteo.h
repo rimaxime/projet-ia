@@ -14,8 +14,8 @@
 
 
 //Prototypes
-float SimulationTemp(float temp_prec,float temp_min, float temp_max);
-float SimulationTemp2(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensuelles);
+float SimulationTemp(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensuelles);
 void SimulationConditionsMeteo(ST_DonneeMeteo Normales_Mensuelles, PTR_ST_SimuMeteo Meteo_Jour);
+void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_SimuMeteo Meteo_Jour);
 
 #endif

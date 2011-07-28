@@ -12,38 +12,21 @@
 
 //Fonctions
 
-float SimulationTemp(float temp_prec,float temp_min, float temp_max)
+/**
+ * \name   Simulation Temp
+ * \brief  Calcule la météo du jour en fonction de la témpérature précedente et des normales
+ * \param  Structure Simulation météo jour précédent, structures des normales mensuelles
+ * \return Météo du jour 
+ */
+float SimulationTemp(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensuelles)
 {
-	float i,n,r,temp;
-	r=100;
- 	srand(rand());
-	i=((rand()%100)/r);
-	printf("i : %f\n",i);
-	n=((rand()%100)/r);
-	if(temp_prec<temp_min)
-	{
-		temp = temp_prec + 0.2*i*temp_prec;
-	}
-	else if(temp_prec>temp_max)
-	{
-		temp= temp_prec - 0.2*n*temp_prec;
-	}
-	else
-	{
-		temp= temp_prec + 0.2*i*temp_prec - 0.2*n*temp_prec;
-	}
-
-  return temp;   
-}
-
-
-
-float SimulationTemp2(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensuelles)
-{
-  float nb_aleatoire,n,r,temp;
+  //Créations des variables locales
+  float nb_aleatoire,r,temp;
   r=100;
+  //Création d'un nombre aléatoire
   srand(rand());
   nb_aleatoire=((rand()%100)/r);
+  //Calcul de la temérature journalière
   temp = (Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nb_aleatoire)) * 0.6 
 	  + Meteo_Precedente.temp * 0.4;
   if(temp>(Normales_Mensuelles.temp_max))
@@ -53,10 +36,19 @@ float SimulationTemp2(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mens
   return temp;   
 }
 
+/**
+ * \name   SimulationConditionsMeteo
+ * \brief  Calcule les conditions météo du jour (soleil,pluie,neige,grele)
+ * \param  Structure Simulation météo jour précédent, structures des normales mensuelles
+ * \return none
+ */
 void SimulationConditionsMeteo(ST_DonneeMeteo Normales_Mensuelles, PTR_ST_SimuMeteo Meteo_Jour)
 {
+  //Création des variables locales
   float probabilite_precipitation,nombre_aleatoire,r;
   r=100;
+  
+  //Calcul de la probabilité de pluie de la journée
   if(Meteo_Jour->date.Mois%2==0)
   {
     if(Meteo_Jour->date.Mois==2)
@@ -66,9 +58,10 @@ void SimulationConditionsMeteo(ST_DonneeMeteo Normales_Mensuelles, PTR_ST_SimuMe
   }
   else
     probabilite_precipitation=(float)Normales_Mensuelles.jr_pluie/31;
-  
+  //Génération de nombres aléatoires
   srand(rand());
   nombre_aleatoire=((rand()%100)/r);
+  //Calcul de la condition météo
   if(nombre_aleatoire<probabilite_precipitation)
   {
     if(Meteo_Jour->temp>=-1 && Meteo_Jour->temp <= 1)
@@ -82,6 +75,51 @@ void SimulationConditionsMeteo(ST_DonneeMeteo Normales_Mensuelles, PTR_ST_SimuMe
     Meteo_Jour->condition=1;
   else
     Meteo_Jour->condition=0;
+}
+
+/**
+ * \name   SimulationHeureEnsoleillement
+ * \brief  Calcule le nombre d'heures d'ensoleillement de la journée
+ * \param  Structure Simulation météo du jour, structures des normales mensuelles
+ * \return none
+ */
+void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_SimuMeteo Meteo_Jour)
+{
+  //Création des variables locales
+  float nombre_aleatoire;
+  float nb_hnormales;
+  float r;
+  r=100;
+  
+  //Calcul du nombre d'heure d'ensoleillement par jour de non pluie
+    if(Meteo_Jour->date.Mois%2==0)
+  {
+    if(Meteo_Jour->date.Mois==2)
+      nb_hnormales=(float)NormalesMensuelles.nb_soleil/28;
+    else
+      nb_hnormales=(float)NormalesMensuelles.nb_soleil/30;
+  }
+  else
+    nb_hnormales=(float)NormalesMensuelles.nb_soleil/31;
+  //Génération de nombres aléatoires
+  srand(rand());
+  nombre_aleatoire=((rand()%100)/r);
+  //Nombre_aleatoire compris entre -1 et 1
+  nombre_aleatoire=(nombre_aleatoire - 0.5)*2;
+  
+  //Calcul du nombre d'heure d'ensoleillement
+  if(Meteo_Jour->condition==0)
+    Meteo_Jour->h_soleil = nb_hnormales + nombre_aleatoire*nb_hnormales;
+  if(Meteo_Jour->condition==1)
+  {
+    Meteo_Jour->h_soleil = nombre_aleatoire*nb_hnormales;
+  }
+  else
+    Meteo_Jour->h_soleil = 0.1*nombre_aleatoire*nb_hnormales;
+  
+  if(Meteo_Jour->h_soleil < 0)
+    Meteo_Jour->h_soleil=0;
+    
 }
 
 

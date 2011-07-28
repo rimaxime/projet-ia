@@ -9,12 +9,14 @@
 
 void simulation_temperature();
 void simulation_condition();
+void simulation_hsoleil();
 
 //Main
 int main(void)
 {	
 	//simulation_temperature();
-	simulation_condition();
+	//simulation_condition();
+	simulation_hsoleil();
 	return 0;
 }
 
@@ -33,14 +35,14 @@ void simulation_temperature()
 	n=scanf("%d",&t);
 	for(n=0;n<t;n++)
 	{
-	  prec=SimulationTemp2(Prec,Normales);
+	  prec=SimulationTemp(Prec,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
 	}
 }
 
 void simulation_condition()
 {
-  int n,i;
+  int i;
   ST_DonneeMeteo Normales;
   ST_SimuMeteo Jour;
   FILE *Simu;
@@ -53,4 +55,24 @@ void simulation_condition()
     SimulationConditionsMeteo(Normales, &Jour);
     fprintf(Simu,"%d ; %d\nt",i,Jour.condition);
   }
+}
+
+void simulation_hsoleil()
+{
+  int i;
+  ST_DonneeMeteo Normales;
+  ST_SimuMeteo Jour;
+  FILE *Simu;
+  Simu = fopen("Simu_hsoleil.csv","w+");
+  Jour.date.Mois=2;
+  Normales.nb_soleil=155;
+  fprintf(Simu,"Test;Condition;Nb d'heure de soleil\n");
+  for(i=0;i<100;i++)
+  {
+    for(Jour.condition=0;Jour.condition<4;Jour.condition++)
+    {
+      SimulationHeuresEnsoleillement(Normales,&Jour);
+      fprintf("%d;%d;%2.2f\n",i,Jour.condition,Jour.h_soleil);
+    } 
+  }  
 }
