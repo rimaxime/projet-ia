@@ -53,4 +53,15 @@ typedef struct Departements
   ST_DonneeMeteo Tableau_Mois[12];  
 }STR_DEPARTEMENT;
 
+
+typedef struct Habitations
+{
+	int nombre_pieces;
+	ST_PIECES *LC_Pieces;
+	ST_PANNEAUX *LC_PANNEAUX
+	float inclinaison_toit;
+	//Isolation
+	//Exposition
+}ST_HABITATIONS
+
 #endif
