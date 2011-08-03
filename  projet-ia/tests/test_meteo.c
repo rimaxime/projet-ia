@@ -1,5 +1,4 @@
 //Includes
-//
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -73,7 +72,7 @@ void simulation_hsoleil()
     for(Jour.condition=0;Jour.condition<4;Jour.condition++)
     {
       SimulationHeuresEnsoleillement(Normales,&Jour);
-      fprintf(stdout,"%d;%d;%2.2f\n",i,Jour.condition,Jour.h_soleil);
+      fprintf(Simu,"%d;%d;%2.2f\n",i,Jour.condition,Jour.h_soleil);
     } 
   }  
 }
