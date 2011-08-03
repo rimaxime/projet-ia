@@ -104,23 +104,43 @@ void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_Si
   //Génération de nombres aléatoires
   srand(rand());
   nombre_aleatoire=((rand()%100)/r);
-  //Nombre_aleatoire compris entre -1 et 1
-  nombre_aleatoire=(nombre_aleatoire - 0.5)*2;
   
   //Calcul du nombre d'heure d'ensoleillement
   if(Meteo_Jour->condition==0)
-    Meteo_Jour->h_soleil = nb_hnormales + nombre_aleatoire*nb_hnormales;
+  {
+    Meteo_Jour->h_soleil = nombre_aleatoire*1.8*nb_hnormales;
+    //printf("0-%2.2f-%2.2f\n",nombre_aleatoire,Meteo_Jour->h_soleil);
+  }
   if(Meteo_Jour->condition==1)
   {
-    Meteo_Jour->h_soleil = nombre_aleatoire*nb_hnormales;
+    Meteo_Jour->h_soleil = nombre_aleatoire*1.2*nb_hnormales;
+    //printf("1-%2.2f-%2.2f\n",nombre_aleatoire,Meteo_Jour->h_soleil);
   }
   else
-    Meteo_Jour->h_soleil = 0.1*nombre_aleatoire*nb_hnormales;
-  
-  if(Meteo_Jour->h_soleil < 0)
-    Meteo_Jour->h_soleil=0;
+    Meteo_Jour->h_soleil = 0.8*nombre_aleatoire*nb_hnormales;
     
 }
 
+
+int my_rand(void)
+{
+  static int tab[TMAX];
+  static int premier = 0;
+  int index;
+  int rn;
+  
+  if(premier == 0)
+  {
+    int i;
+    srand(time(NULL));
+    for(i=0;i<TMAX;i++)
+      tab[i] = rand();
+    premier = 1;    
+  }
+  index = (int)(rand() / RAND_MAX * (TMAX-1));
+  rn = tab[index];
+  tab[index]= rand();
+  return(rn);
+}
 
 

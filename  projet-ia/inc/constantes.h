@@ -23,6 +23,9 @@
   fprintf(stderr, " Erreur d'allocation mémoire - %s (%d)\r\n", __FILE__, __LINE__);
 
 #define CMAX 200
+#define TMAX 100
+
+
 
 
 

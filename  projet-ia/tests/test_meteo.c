@@ -10,13 +10,15 @@
 void simulation_temperature();
 void simulation_condition();
 void simulation_hsoleil();
+void simulation_myrand();
 
 //Main
 int main(void)
 {	
 	//simulation_temperature();
 	//simulation_condition();
-	simulation_hsoleil();
+	//simulation_hsoleil();
+	simulation_myrand();
 	return 0;
 }
 
@@ -67,12 +69,23 @@ void simulation_hsoleil()
   Jour.date.Mois=2;
   Normales.nb_soleil=155;
   fprintf(Simu,"Test;Condition;Nb d'heure de soleil\n");
-  for(i=0;i<100;i++)
+  for(i=0;i<30;i++)
   {
     for(Jour.condition=0;Jour.condition<4;Jour.condition++)
     {
       SimulationHeuresEnsoleillement(Normales,&Jour);
       fprintf(Simu,"%d;%d;%2.2f\n",i,Jour.condition,Jour.h_soleil);
-    } 
+    }
   }  
+}
+
+void simulation_myrand()
+{
+  float i;
+  int n;
+  for(n=0;n<20;n++)
+  {
+    i=my_rand();
+    printf("%f \n",i/RAND_MAX);
+  }
 }
