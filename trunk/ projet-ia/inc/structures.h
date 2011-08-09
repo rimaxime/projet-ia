@@ -54,23 +54,35 @@ typedef struct Departements
 }STR_DEPARTEMENT;
 
 
-typedef struct Habitations
+
+typedef struct Panneaux
 {
-	int nombre_pieces;
-	ST_PIECES *LC_Pieces;
-	ST_PANNEAUX *LC_Panneaux;
-	float inclinaison_toit;
-	int Isolation; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
-	int Exposition; //l'exposition correspond à un entier :
-	//1 Sud
-	//2 Sud Ouest
-	//3 Ouest
-	//4 Nord Ouest
-	//5 Nord
-	//6 Nord Est
-	//7 Est
-	//8 Sud Est
-}ST_HABITATIONS;
+  int indice;
+  int type;
+  float Largeur;
+  float Longueur;
+  float inclinaison_panneau;
+  int Exposition;
+  struct Panneaux *suiv;
+}ST_PANNEAUX;
+
+
+typedef struct Equipements
+{
+  int indice;
+  char nom_equipement[CMAX];
+  float consommation_equipement;
+  float nombre_heures_utilisation_journalier;
+  float Largeur;
+  float Longueur;
+  float coordX1;
+  float coordY1;
+  float coordX2;
+  float coordY2; 
+  struct Equipements  * suiv;
+  //TBC
+}ST_EQUIPEMENTS;
+
 
 
 typedef struct Pieces
@@ -86,35 +98,32 @@ typedef struct Pieces
  //TBC
  float Largeur;
  float Longueur;
- float coordX;
- float coordY;
+ float coordX1;
+ float coordY1;
+ float coordX2;
+ float coordY2;
  ST_EQUIPEMENTS *LC_Equipements;
- ST_PIECES *suiv;
+ struct Pieces *suiv;
 }ST_PIECES;
-
-typedef struct Panneaux
-{
-  int indice;
-  int type;
-  float Largeur;
-  float Longueur;
-  float inclinaison_panneau;
-  int Exposition;
-  ST_PANNEAUX * suiv;
-}ST_PANNEAUX;
-
-
-typedef struct Equipements
-{
-  int indice;
-  char nom_equipement[CMAX];
-  float consommation_equipement;
-  float nombre_heures_utilisation_journalier;
-  ST_EQUIPEMENTS * suiv;
-  //TBC
-}ST_EQUIPEMENTS;
-
   
-  
+
+
+typedef struct Habitations
+{
+	int nombre_pieces;
+	ST_PIECES* LC_Pieces;
+	ST_PANNEAUX* LC_Panneaux;
+	float inclinaison_toit;
+	int Isolation; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
+	int Exposition; //l'exposition correspond à un entier :
+	//1 Sud
+	//2 Sud Ouest
+	//3 Ouest
+	//4 Nord Ouest
+	//5 Nord
+	//6 Nord Est
+	//7 Est
+	//8 Sud Est
+}ST_HABITATIONS;  
   
 #endif
