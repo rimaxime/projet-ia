@@ -2,8 +2,8 @@
 
 
 CC= cc
-CFLAG=-Wall -lm -DNDEBUG=1 -O3 
-LDFLAG=-Wall -lm 
+CFLAG=-Wall -lm -DNDEBUG=1 -O3 `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
+LDFLAG=-Wall -lm `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
 
 PATH_OUT=../out
 PATH_OBJ=../obj

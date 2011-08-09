@@ -7,14 +7,21 @@
 
 #include "../inc/gestion_habitations.h"
 
-ST_HABITATIONS CreationHabitation(ST_HABITATIONS Nouveau,int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition)
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition)
 {
-  Nouveau.nombre_pieces = nombre_pieces;
-  Nouveau.inclinaison_toit = inclinaison_toit;
-  Nouveau.Isolation = Isolation;
-  Nouveau.Exposition = Exposition;
-  Nouveau.LC_Pieces = NULL;
-  Nouveau.LC_Panneaux = NULL;  
+  ST_HABITATIONS *Nouveau = NULL;
+  Nouveau = (ST_HABITATIONS *) malloc (sizeof(ST_HABITATIONS));
+  if(Nouveau==NULL)						
+  {
+    fprintf(stdout,"CreationHabitation : Erreur d'alloc mémoire \n");
+    exit(-1);
+  }
+  Nouveau->nombre_pieces = nombre_pieces;
+  Nouveau->inclinaison_toit = inclinaison_toit;
+  Nouveau->Isolation = Isolation;
+  Nouveau->Exposition = Exposition;
+  Nouveau->LC_Pieces = NULL;
+  Nouveau->LC_Panneaux = NULL;  
   return Nouveau;
 }
 
@@ -133,5 +140,43 @@ ST_PANNEAUX* InsererTrierPanneaux(ST_PANNEAUX *Nouveau, ST_PANNEAUX *Tete)
     Tete->suiv = InsererTrierPanneaux(Nouveau,Tete->suiv);
    
     return Tete;
+  }
+}
+
+
+void Detruire_Habitation(ST_HABITATIONS* Tete)
+{
+  if (Tete != NULL)
+  {
+    Detruire_Panneaux(Tete->LC_Panneaux);
+    free(Tete);
+  }
+}
+
+void Detruire_Pieces(ST_PIECES *Tete)
+{
+  if (Tete != NULL)
+  {
+     Detruire_Equipements(Tete->LC_Equipements);
+     Detruire_Pieces(Tete->suiv);
+     free(Tete);
+  }
+}
+
+void Detruire_Equipements(ST_EQUIPEMENTS *Tete)
+{
+  if(Tete != NULL)
+  {
+    Detruire_Equipements(Tete->suiv);
+    free(Tete);
+  }
+}
+
+void Detruire_Panneaux(ST_PANNEAUX *Tete)
+{
+  if(Tete != NULL)
+  {
+    Detruire_Panneaux(Tete->suiv);
+    free(Tete);
   }
 }
