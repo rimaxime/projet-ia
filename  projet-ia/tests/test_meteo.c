@@ -15,9 +15,9 @@ void simulation_myrand();
 //Main
 int main(void)
 {	
-	//simulation_temperature();
-	//simulation_condition();
-	//simulation_hsoleil();
+	simulation_temperature();
+	simulation_condition();
+	simulation_hsoleil();
 	simulation_myrand();
 	return 0;
 }
@@ -81,11 +81,12 @@ void simulation_hsoleil()
 
 void simulation_myrand()
 {
-  float i;
+  float i,r;
+  r=100;
   int n;
   for(n=0;n<20;n++)
   {
     i=my_rand();
-    printf("%f \n",i/RAND_MAX);
+    printf("%f \n",i);
   }
 }
