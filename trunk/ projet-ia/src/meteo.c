@@ -21,13 +21,12 @@
 float SimulationTemp(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensuelles)
 {
   //Créations des variables locales
-  float nb_aleatoire,r,temp;
+  float nombre_aleatoire,r,temp;
   r=100;
   //Création d'un nombre aléatoire
-  srand(rand());
-  nb_aleatoire=((rand()%100)/r);
+  nombre_aleatoire=my_rand();
   //Calcul de la temérature journalière
-  temp = (Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nb_aleatoire)) * 0.6 
+  temp = (Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nombre_aleatoire)) * 0.6 
 	  + Meteo_Precedente.temp * 0.4;
   if(temp>(Normales_Mensuelles.temp_max))
     temp=Normales_Mensuelles.temp_max;
@@ -59,8 +58,8 @@ void SimulationConditionsMeteo(ST_DonneeMeteo Normales_Mensuelles, PTR_ST_SimuMe
   else
     probabilite_precipitation=(float)Normales_Mensuelles.jr_pluie/31;
   //Génération de nombres aléatoires
-  srand(rand());
-  nombre_aleatoire=((rand()%100)/r);
+  nombre_aleatoire=my_rand();
+
   //Calcul de la condition météo
   if(nombre_aleatoire<probabilite_precipitation)
   {
@@ -101,9 +100,9 @@ void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_Si
   }
   else
     nb_hnormales=(float)NormalesMensuelles.nb_soleil/31;
+  
   //Génération de nombres aléatoires
-  srand(rand());
-  nombre_aleatoire=((rand()%100)/r);
+  nombre_aleatoire=my_rand();
   
   //Calcul du nombre d'heure d'ensoleillement
   if(Meteo_Jour->condition==0)
@@ -122,12 +121,14 @@ void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_Si
 }
 
 
-int my_rand(void)
+float my_rand(void)
 {
   static int tab[TMAX];
   static int premier = 0;
   int index;
   int rn;
+  float r;
+  r=100;
   
   if(premier == 0)
   {
@@ -140,7 +141,6 @@ int my_rand(void)
   index = (int)(rand() / RAND_MAX * (TMAX-1));
   rn = tab[index];
   tab[index]= rand();
-  return(rn);
+  r=((rn%100)/r);
+  return(r);
 }
-
-
