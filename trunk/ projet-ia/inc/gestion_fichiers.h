@@ -16,11 +16,12 @@
 #include "../inc/structures.h"
 
 /**
-	* \fn int RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements)
-  * \brief Cette fonction va balayer le fichier de départements afin de récupérer les normales météo mensuelles de 
-  * ses départements.
-  * \param tableau_departements Tableau des départements
-	* \return 0 si pas d'erreur -1 sinon
-  */
+ * \fn     STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int* size_tab)
+ * \name   Récupérer les Infos sur les Départements
+ * \brief  Permet de récupérer toutes les infos sur les département depuis le fichier associé
+ * \param  Structure STR_DEPARTEMENT* tableau_departements qui est le tableau dans lequel sera archivé les données du fichier
+ * \param  int *size_tab représentant la taille du tableau (nombre de départements)
+ * \return STR_DEPARTEMENT* Retour du tableau completé
+ */
 
 STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int* size_tab);
