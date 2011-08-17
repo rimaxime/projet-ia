@@ -28,10 +28,10 @@ float SimulationTemp(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensu
   //Calcul de la temérature journalière
   temp = (Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nombre_aleatoire)) * 0.6 
 	  + Meteo_Precedente.temp * 0.4;
-  if(temp>(Normales_Mensuelles.temp_max))
-    temp=Normales_Mensuelles.temp_max;
-  else if(temp<Normales_Mensuelles.temp_min)
-    temp=Normales_Mensuelles.temp_min;
+  if(temp>(Normales_Mensuelles.temp_max))	// A corriger
+    temp=Normales_Mensuelles.temp_max;		// A corriger
+  else if(temp<Normales_Mensuelles.temp_min)	// A corriger
+    temp=Normales_Mensuelles.temp_min;		// A corriger
   return temp;   
 }
 
