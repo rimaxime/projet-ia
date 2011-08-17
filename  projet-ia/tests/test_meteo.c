@@ -16,9 +16,9 @@ void simulation_myrand();
 int main(void)
 {	
 	simulation_temperature();
-	simulation_condition();
-	simulation_hsoleil();
-	simulation_myrand();
+	//simulation_condition();
+	//simulation_hsoleil();
+	//simulation_myrand();
 	return 0;
 }
 
@@ -30,16 +30,43 @@ void simulation_temperature()
   ST_SimuMeteo Prec;
 	float prec;	
 	FILE *Simu;
-	Simu= fopen("Simu_temperature.csv","w+");
-	printf("Entrer temp_prec,temp_min,temp_max\n");
-	n=scanf("%f,%f,%f",&(Prec.temp),&(Normales.temp_min),&(Normales.temp_max));
-	printf("Entrer le nombre de test a faire : ");
-	n=scanf("%d",&t);
+	Simu = fopen("Simu_temperature_complete.csv","w+");
+	//printf("Entrer temp_prec,temp_min,temp_max\n");
+	//n=scanf("%f,%f,%f",&(Prec.temp),&(Normales.temp_min),&(Normales.temp_max));
+	//printf("Entrer le nombre de test a faire : ");
+	//n=scanf("%d",&t);
+	t=10000;
+	Prec.temp=-5;
+	Normales.temp_min=13;
+	Normales.temp_max=24;
+	fprintf(Simu,"INFERIEUR\nTemp_min; Temp_max;\n%2.2f;%2.2f",Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
 	  prec=SimulationTemp(Prec,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
 	}
+	t=10000;
+	Prec.temp=17;
+	Normales.temp_min=10;
+	Normales.temp_max=28;
+	fprintf(Simu,"NORMAL\nTemp_min; Temp_max;\n%2.2f;%2.2f",Normales.temp_min,Normales.temp_max);
+	for(n=0;n<t;n++)
+	{
+	  prec=SimulationTemp(Prec,Normales);
+	  fprintf(Simu,"%d;%2.2f\n",n,prec);
+	}
+	t=10000;
+	Prec.temp=45;
+	Normales.temp_min=5;
+	Normales.temp_max=14;
+	fprintf(Simu,"SUPERIEUR\nTemp_min; Temp_max;\n%2.2f;%2.2f",Normales.temp_min,Normales.temp_max);
+	for(n=0;n<t;n++)
+	{
+	  prec=SimulationTemp(Prec,Normales);
+	  fprintf(Simu,"%d;%2.2f\n",n,prec);
+	}
+	fclose(Simu);
+	printf("** SUCCES **\n");  
 }
 
 void simulation_condition()
@@ -50,13 +77,14 @@ void simulation_condition()
   FILE *Simu;
 	Simu= fopen("Simu_condition.csv","w+");
   Jour.date.Mois=1;
-  Jour.temp=0;
+  Jour.temp=15;
   Normales.jr_pluie=12;
   for(i=0;i<100;i++)
   {
     SimulationConditionsMeteo(Normales, &Jour);
-    fprintf(Simu,"%d ; %d\nt",i,Jour.condition);
+    fprintf(Simu,"%d ; %d\n",i,Jour.condition);
   }
+  fclose(Simu);
 }
 
 void simulation_hsoleil()
@@ -76,7 +104,8 @@ void simulation_hsoleil()
       SimulationHeuresEnsoleillement(Normales,&Jour);
       fprintf(Simu,"%d;%d;%2.2f\n",i,Jour.condition,Jour.h_soleil);
     }
-  }  
+  }
+  fclose(Simu);
 }
 
 void simulation_myrand()
