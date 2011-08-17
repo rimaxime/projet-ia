@@ -63,6 +63,7 @@ typedef struct Panneaux
   float Longueur;
   float inclinaison_panneau;
   int Exposition;
+  int surface;
   struct Panneaux *suiv;
 }ST_PANNEAUX;
 
