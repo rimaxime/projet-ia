@@ -107,7 +107,7 @@ void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_Si
   //Calcul du nombre d'heure d'ensoleillement
   if(Meteo_Jour->condition==0)
   {
-    Meteo_Jour->h_soleil = nombre_aleatoire*1.8*nb_hnormales;
+    Meteo_Jour->h_soleil = nombre_aleatoire*2*nb_hnormales;
     //printf("0-%2.2f-%2.2f\n",nombre_aleatoire,Meteo_Jour->h_soleil);
   }
   if(Meteo_Jour->condition==1)
@@ -115,9 +115,10 @@ void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_Si
     Meteo_Jour->h_soleil = nombre_aleatoire*1.2*nb_hnormales;
     //printf("1-%2.2f-%2.2f\n",nombre_aleatoire,Meteo_Jour->h_soleil);
   }
+  if(Meteo_Jour->condition==4)
+    Meteo_Jour->h_soleil = 1*nombre_aleatoire*nb_hnormales;
   else
-    Meteo_Jour->h_soleil = 0.8*nombre_aleatoire*nb_hnormales;
-    
+     Meteo_Jour->h_soleil = 0.8*nombre_aleatoire*nb_hnormales;    
 }
 
 
