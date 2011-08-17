@@ -71,7 +71,7 @@ void simulation_hsoleil()
   fprintf(Simu,"Test;Condition;Nb d'heure de soleil\n");
   for(i=0;i<30;i++)
   {
-    for(Jour.condition=0;Jour.condition<4;Jour.condition++)
+    for(Jour.condition=0;Jour.condition<5;Jour.condition++)
     {
       SimulationHeuresEnsoleillement(Normales,&Jour);
       fprintf(Simu,"%d;%d;%2.2f\n",i,Jour.condition,Jour.h_soleil);
