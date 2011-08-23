@@ -39,7 +39,7 @@ void simulation_temperature()
 	Prec.temp=-5;
 	Normales.temp_min=13;
 	Normales.temp_max=24;
-	fprintf(Simu,"INFERIEUR\nTemp_min; Temp_max;\n%2.2f;%2.2f",Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"INFERIEUR\nTemp_min; Temp_max;\n%2.2f;%2.2f\n",Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
 	  prec=SimulationTemp(Prec,Normales);
@@ -49,7 +49,7 @@ void simulation_temperature()
 	Prec.temp=17;
 	Normales.temp_min=10;
 	Normales.temp_max=28;
-	fprintf(Simu,"NORMAL\nTemp_min; Temp_max;\n%2.2f;%2.2f",Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"NORMAL\nTemp_min; Temp_max;\n%2.2f;%2.2f\n",Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
 	  prec=SimulationTemp(Prec,Normales);
@@ -59,7 +59,7 @@ void simulation_temperature()
 	Prec.temp=45;
 	Normales.temp_min=5;
 	Normales.temp_max=14;
-	fprintf(Simu,"SUPERIEUR\nTemp_min; Temp_max;\n%2.2f;%2.2f",Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"SUPERIEUR\nTemp_min; Temp_max;\n%2.2f;%2.2f\n",Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
 	  prec=SimulationTemp(Prec,Normales);
