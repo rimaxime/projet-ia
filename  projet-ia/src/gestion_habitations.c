@@ -15,7 +15,7 @@
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, La nouvelle habitation 
  */
-ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition)
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char* Departement)
 {
   ST_HABITATIONS *Nouveau = NULL;
   Nouveau = (ST_HABITATIONS *) malloc (sizeof(ST_HABITATIONS));
@@ -166,18 +166,18 @@ ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueu
   Nouveau->Longueur = Longueur;
   Nouveau->inclinaison_panneau = inclinaison_panneau;
   Nouveau->Exposition = Exposition;
-  Nouveau->suiv = NULL;
+  //Nouveau->suiv = NULL;
   return Nouveau; 
 }
 
-
+//Obsolete
 /**
  * \name   Insertion Triée des Panneaux
  * \brief  Insère le panneau au bon endroit dans une liste triée  par l'indice de celui ci. Fonction récursive
  * \param  Structure ST_PANNEAUX* qui sont la Tete de cette liste ainsi que le panneau à insérer
  * \return ST_PANNEAUX* Retour de la nouvelle tete de la liste
  */
-ST_PANNEAUX* InsererTrierPanneaux(ST_PANNEAUX *Nouveau, ST_PANNEAUX *Tete)
+/*ST_PANNEAUX* InsererTrierPanneaux(ST_PANNEAUX *Nouveau, ST_PANNEAUX *Tete)
 {
   if(Tete == NULL || Nouveau->indice <= Tete->indice)
   {
@@ -190,8 +190,7 @@ ST_PANNEAUX* InsererTrierPanneaux(ST_PANNEAUX *Nouveau, ST_PANNEAUX *Tete)
    
     return Tete;
   }
-}
-
+}*/
 
 void Detruire_Habitation(ST_HABITATIONS* Tete)
 {
@@ -225,7 +224,7 @@ void Detruire_Panneaux(ST_PANNEAUX *Tete)
 {
   if(Tete != NULL)
   {
-    Detruire_Panneaux(Tete->suiv);
+    //Detruire_Panneaux(Tete->suiv);
     free(Tete);
   }
 }

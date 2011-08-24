@@ -2,8 +2,8 @@
 
 
 CC= cc
-CFLAG=-Wall -lm -DNDEBUG=1 -O3 `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
-LDFLAG=-Wall -lm `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
+CFLAG=-Wall -lm -DNDEBUG=1 -O3 `pkg-config --cflags gtk+-2.0 gmodule-2.0`
+LDFLAG=-Wall -lm `pkg-config --libs   gtk+-2.0 gmodule-2.0`
 
 PATH_OUT=../out
 PATH_OBJ=../obj
@@ -13,12 +13,15 @@ PATH_TESTS=../tests
 
 Production: clean init 
 
-Tests: clean init test_meteo test_fichiers test_gestion_habitations
+Tests: clean init test_meteo test_fichiers test_gestion_habitations test_ihm
 
 test_meteo.o: $(PATH_TESTS)/test_meteo.c 
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
 test_fichiers.o: $(PATH_TESTS)/test_fichiers.c 
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
+test_ihm.o: $(PATH_TESTS)/test_ihm.c 
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
 test_gestion_habitations.o: $(PATH_TESTS)/test_gestion_habitations.c 
@@ -33,6 +36,9 @@ gestion_fichiers.o:$(PATH_SRC)/gestion_fichiers.c $(PATH_INC)/gestion_fichiers.h
 gestion_habitations.o:$(PATH_SRC)/gestion_habitations.c $(PATH_INC)/gestion_habitations.h
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
+ihm_general.o:$(PATH_SRC)/ihm_general.c $(PATH_INC)/ihm_general.h
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
 test_meteo: test_meteo.o meteo.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
@@ -40,6 +46,9 @@ test_fichiers: test_fichiers.o gestion_fichiers.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_gestion_habitations: test_gestion_habitations.o gestion_habitations.o
+	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
+
+test_ihm: test_ihm.o ihm_general.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 clean:
