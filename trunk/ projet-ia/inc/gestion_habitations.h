@@ -28,7 +28,7 @@
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, La nouvelle habitation 
  */
-ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition);
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char* Departement);
 
 
 /**
@@ -91,7 +91,7 @@ ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueu
  * \param  Structure ST_PANNEAUX* qui sont la Tete de cette liste ainsi que le panneau à insérer
  * \return ST_PANNEAUX* Retour de la nouvelle tete de la liste
  */
-ST_PANNEAUX* InsererTrierPanneaux(ST_PANNEAUX *Nouveau, ST_PANNEAUX *Tete);
+//ST_PANNEAUX* InsererTrierPanneaux(ST_PANNEAUX *Nouveau, ST_PANNEAUX *Tete);
 
 
 

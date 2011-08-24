@@ -8,7 +8,7 @@
 
 #ifndef STRUCTURES_H
 #define STRUCTURES_H
-
+#include "constantes.h"
 //Structures
 typedef struct Date
 {
@@ -64,7 +64,6 @@ typedef struct Panneaux
   float inclinaison_panneau;
   int Exposition;
   int surface;
-  struct Panneaux *suiv;
 }ST_PANNEAUX;
 
 
@@ -88,7 +87,7 @@ typedef struct Equipements
 
 typedef struct Pieces
 {
- char nom_piece[CMAX];
+ char *nom_piece;
  int type_piece; //Le type correspond a un entier représentant une pièce d'un certain type
  //1 Chambre/Bureau
  //2 Salon-Salle à manger
@@ -116,15 +115,8 @@ typedef struct Habitations
 	ST_PANNEAUX* LC_Panneaux;
 	float inclinaison_toit;
 	int Isolation; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
-	int Exposition; //l'exposition correspond à un entier :
-	//1 Sud
-	//2 Sud Ouest
-	//3 Ouest
-	//4 Nord Ouest
-	//5 Nord
-	//6 Nord Est
-	//7 Est
-	//8 Sud Est
+	float Exposition; //l'exposition correspond à un pourcentage sud par rapport au soleil
+	int Departement;
 }ST_HABITATIONS;  
   
 #endif
