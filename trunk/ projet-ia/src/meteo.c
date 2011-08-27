@@ -2,11 +2,8 @@
   * \file meteo.c
   * \brief Fichier générant les simulations climatique du logiciel
   * \author Benoit Eche
-  * \version 0.1
-  * \date 10/07/11
+  * \date 28/08/11
   */
-
-
 
 #include "../inc/meteo.h"
 
@@ -121,7 +118,12 @@ void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_Si
      Meteo_Jour->h_soleil = 0.8*nombre_aleatoire*nb_hnormales;    
 }
 
-
+/**
+ * \name   myrand
+ * \brief  Genere un nombre aleatoire floatant entre 0 et 1.
+ * \param  none
+ * \return Nombre aleatoire
+ */
 float my_rand(void)
 {
   static int tab[TMAX];
