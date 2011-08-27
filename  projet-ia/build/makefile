@@ -27,6 +27,9 @@ test_ihm.o: $(PATH_TESTS)/test_ihm.c
 test_gestion_habitations.o: $(PATH_TESTS)/test_gestion_habitations.c 
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
+test_production.o: $(PATH_TESTS)/test_production.c 
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
 meteo.o: $(PATH_SRC)/meteo.c $(PATH_INC)/meteo.h
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
@@ -39,6 +42,9 @@ gestion_habitations.o:$(PATH_SRC)/gestion_habitations.c $(PATH_INC)/gestion_habi
 ihm_general.o:$(PATH_SRC)/ihm_general.c $(PATH_INC)/ihm_general.h
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
+production.o: $(PATH_SRC)/production.c $(PATH_INC)/production.h
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
 test_meteo: test_meteo.o meteo.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
@@ -49,6 +55,9 @@ test_gestion_habitations: test_gestion_habitations.o gestion_habitations.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_ihm: test_ihm.o ihm_general.o
+	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
+
+test_production: test_production.o production.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 clean:

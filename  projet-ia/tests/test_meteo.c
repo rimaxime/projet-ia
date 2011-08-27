@@ -7,6 +7,7 @@
 #include "../inc/structures.h"
 #include "../inc/meteo.h"
 
+//Prototypes
 void simulation_temperature();
 void simulation_condition();
 void simulation_hsoleil();

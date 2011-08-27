@@ -22,8 +22,7 @@
 #define ERREUR_MEMOIRE \
   fprintf(stderr, " Erreur d'allocation mémoire - %s (%d)\r\n", __FILE__, __LINE__);
 
-#define CMAX 200
-#define TMAX 100
+
 
 
 
@@ -32,12 +31,20 @@
 /**
   * \brief Constantes sur les tailles maximales des chaines de caractéres & tableaux
   */
-
+#define CMAX 200
+#define TMAX 100
 
 
 /**
   * \brief Constantes contenant les chemins/noms des différents fichiers
   */
+
+
+/**
+  * \brief Constantes meteo
+  */
+
+#define PUISSANCE_SOLEIL 1000 //La puissance solaire moyenne est de 1000W/m²
 
 
 #endif
