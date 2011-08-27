@@ -29,9 +29,9 @@ float SimulationTemp(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensu
   temp = (Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nombre_aleatoire)) * 0.6 
 	  + Meteo_Precedente.temp * 0.4;
   if(temp>Normales_Mensuelles.temp_max)
-    temp= (Meteo_Precedente.temp - ((Meteo_Precedente.temp-Normales_Mensuelles.temp_max)*nombre_aleatoire)) * 1.5 ;
+    temp= 0.7*Meteo_Precedente.temp - 0.3*((Meteo_Precedente.temp-Normales_Mensuelles.temp_max)*nombre_aleatoire);
   else if(temp<Normales_Mensuelles.temp_min)
-    temp= (Meteo_Precedente.temp + ((Normales_Mensuelles.temp_min - Meteo_Precedente.temp)*nombre_aleatoire)) * 1.5 ;
+    temp= 0.7*Meteo_Precedente.temp + 0.3*((Normales_Mensuelles.temp_min - Meteo_Precedente.temp)*nombre_aleatoire);
   return temp;   
 }
 

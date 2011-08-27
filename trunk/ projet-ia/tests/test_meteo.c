@@ -35,35 +35,38 @@ void simulation_temperature()
 	//n=scanf("%f,%f,%f",&(Prec.temp),&(Normales.temp_min),&(Normales.temp_max));
 	//printf("Entrer le nombre de test a faire : ");
 	//n=scanf("%d",&t);
-	t=10000;
-	Prec.temp=-5;
+	t=40;
+	Prec.temp=-15;
 	Normales.temp_min=13;
 	Normales.temp_max=24;
-	fprintf(Simu,"INFERIEUR\nTemp_min; Temp_max;\n%2.2f;%2.2f\n",Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"INFERIEUR\nTemp_prec;Temp_min; Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temp,Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
 	  prec=SimulationTemp(Prec,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
+	  Prec.temp=prec;
 	}
-	t=10000;
+	t=40;
 	Prec.temp=17;
 	Normales.temp_min=10;
 	Normales.temp_max=28;
-	fprintf(Simu,"NORMAL\nTemp_min; Temp_max;\n%2.2f;%2.2f\n",Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"NORMAL\nTemp_prec;Temp_min;Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temp,Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
 	  prec=SimulationTemp(Prec,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
+	  Prec.temp=prec;
 	}
-	t=10000;
+	t=40;
 	Prec.temp=45;
 	Normales.temp_min=5;
 	Normales.temp_max=14;
-	fprintf(Simu,"SUPERIEUR\nTemp_min; Temp_max;\n%2.2f;%2.2f\n",Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"SUPERIEUR\nTemp_prec;Temp_min; Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temp,Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
 	  prec=SimulationTemp(Prec,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
+	  Prec.temp=prec;
 	}
 	fclose(Simu);
 	printf("** SUCCES **\n");  
