@@ -60,12 +60,15 @@ typedef struct Departements
 typedef struct Panneaux
 {
   int indice;
-  int type;
+  int type; //1 : Monocristallins 2 : Polycristallins 3: Amorphes
   float Largeur;
   float Longueur;
   float inclinaison_panneau;
   int Exposition;
   int surface;
+  float rendement;
+  int MPPT; //Ajout du module Maximum Power Power Tracking : Rendement 15% -> 30%
+  int auto_rotation; // 1 : Oui 2: Non
   struct Panneaux *suiv;
 }ST_PANNEAUX;
 
@@ -142,5 +145,12 @@ typedef struct jour
 }ST_JOUR;
  
 typedef ST_JOUR* PTR_ST_JOUR;
+
+typedef struct donne_geo
+{
+  int inclinaison; //Inclinaison du toit en degré
+  int orientation; //Orientation de la maison °/sud
+  int rendement; //Redement géographique
+}ST_DonneGeo;
 
 #endif

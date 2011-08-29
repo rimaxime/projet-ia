@@ -46,5 +46,14 @@
 
 #define PUISSANCE_SOLEIL 1000 //La puissance solaire moyenne est de 1000W/m²
 
+/**
+  * \brief Constantes panneaux
+  */
+
+#define MONOCRISTALLIN_REND 0.16
+#define POLYCRISTALLIN_REND 0.13
+#define AMORPHE_REND 0.1
+#define TEMP_REF 25
+#define REND_TH 0.3
 
 #endif
