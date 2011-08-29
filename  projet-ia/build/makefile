@@ -13,7 +13,7 @@ PATH_TESTS=../tests
 
 Production: clean init 
 
-Tests: clean init test_meteo test_fichiers test_gestion_habitations test_ihm
+Tests: clean init test_meteo test_fichiers test_gestion_habitations test_ihm test_production
 
 test_meteo.o: $(PATH_TESTS)/test_meteo.c 
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
