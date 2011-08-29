@@ -6,16 +6,18 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include "meteo.h"
+#include <time.h>
+//#include "meteo.h"
 #include "constantes.h"
 #include "structures.h"
 
 
 //Prototypes
-void Calc_puiss_soleil(PRT_ST_SimuMeteo Meteo_Jour, STR_DEPARTEMENT Dept);
+void Calc_puiss_soleil(PTR_ST_SimuMeteo Meteo_Jour);
 float Rendement_geo(ST_DonneGeo Donnees);
 void Rendement_panneaux(ST_PANNEAUX Panneaux);
 float Rendement_thermique(ST_SimuMeteo Jour);
-float Prod_jour(PTR_SimuMeteo Jour,ST_DonneGeo Donnees,ST_PANNEAUX Panneaux);
+float Prod_jour(PTR_ST_SimuMeteo Jour,ST_DonneGeo Donnees,ST_PANNEAUX Panneaux);
+float my_rand(void);
 
 #endif

@@ -26,8 +26,6 @@
 
 
 
-
-
 /**
   * \brief Constantes sur les tailles maximales des chaines de caractéres & tableaux
   */
