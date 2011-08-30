@@ -17,7 +17,7 @@ struct _Data
     GtkWidget *sauvegarde;
     GtkWidget *habitation;
     GtkWidget *piece;
-    
+    GtkWidget *popup_habitation;
     //habitation
     GtkWidget *Departement_habitation;
     GtkWidget *Inclinaison_habitation;
