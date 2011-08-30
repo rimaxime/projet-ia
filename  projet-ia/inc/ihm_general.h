@@ -19,9 +19,9 @@ struct _Data
     GtkWidget *habitation;
     GtkWidget *piece;
     GtkWidget *popup_habitation;
-	GtkWidget *modificationpiece;
-	GtkWidget *supprimerpiece;
-	
+    GtkWidget *modificationpiece;
+    GtkWidget *supprimerpiece;
+    GtkWidget *panneausolaires;
 	
     //champs habitation
     GtkWidget *Departement_habitation;
@@ -36,14 +36,26 @@ struct _Data
     GtkWidget *LongueurPiece;
     
 	//champs Modification Piece
-	GtkWidget *ModificationNomPiece;
+    GtkWidget *ModificationNomPiece;
     GtkWidget *ModificationTypePiece;
-	GtkWidget *ModificationLargeurPiece;
-	GtkWidget *ModificationLongueurPiece;
+    GtkWidget *ModificationLargeurPiece;
+    GtkWidget *ModificationLongueurPiece;
 	
-	//champs Suppression Piece
-	GtkWidget *SuppressionNomPiece;
-	
+    //champs Suppression Piece
+    GtkWidget *SuppressionNomPiece;
+
+    
+    //Champs Panneaux solaires
+
+    GtkWidget *type_panneau;
+    GtkWidget *mppt;
+    GtkWidget *autorotation;
+    GtkWidget *largeur_panneau;
+    GtkWidget *longueur_panneau;
+    GtkWidget *inclinaison_panneau;
+    
+    
+    
 };
 
 
@@ -86,6 +98,13 @@ void on_modifier_piece_clicked(GtkWidget *widget, Data *data);
 
 void on_valider_modification_piece_clicked(GtkWidget *widget, Data *data);
 
-void on_supprimer_piece_clicked(GtkWidget *widget, Data *data)
+void on_supprimer_piece_clicked(GtkWidget *widget, Data *data);
 
+void on_modification_nom_piece_changed(GtkWidget *widget, Data *data);
+
+Data champ_panneaux(GtkBuilder *builder, Data data);
+
+void on_creer_panneau_clicked(GtkWidget *widget, Data *data);
+
+void on_valider_panneau_clicked(GtkWidget *widget, Data *data);
 #endif

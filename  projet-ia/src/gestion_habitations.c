@@ -52,7 +52,7 @@ ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces,
   strcpy(Habitation->Isolation,Isolation);
   Habitation->Exposition = Exposition;
   strcpy(Habitation->Departement,Departement);
-
+  return Habitation;
 }
 
 
@@ -92,7 +92,7 @@ ST_PIECES* Trouver_Piece(ST_PIECES * Tete, char nom_piece[CMAX])
   if(Tete == NULL || strcasecmp(Tete->nom_piece, nom_piece) == 0)
 	return Tete;
   else
-    return(Trouver_Piece(Tete->suiv, nom_piece);
+    return(Trouver_Piece(Tete->suiv, nom_piece));
 }
 
 
