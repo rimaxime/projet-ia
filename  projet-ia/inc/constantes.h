@@ -52,10 +52,6 @@
 #define POLYCRISTALLIN_REND 0.13
 #define AMORPHE_REND 0.1
 #define TEMP_REF 25
-#define REND_TH 0.3
-
-
-
-
+#define REND_TH 0.03
 
 #endif

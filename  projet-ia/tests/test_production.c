@@ -22,29 +22,31 @@ int main(void)
   printf("\nDebut test_production");
   test_rendement_geo();
   printf("\nTest_rendement_geo : OK");
-  test_calc_puiss_soleil();
-  printf("\nTest_calc_puiss_soleil : OK");
-  test_rendement_panneaux();
-  printf("\nTest_rendement_panneaux : OK");
-  test_rendement_thermique();
-  printf("\nTest_rendement_thermique : OK");
-  test_prod_jour();
-  printf("\nTest_prod_jour : OK");
-  printf("\nSUCCESS\n\n");
+  //test_calc_puiss_soleil();
+  //printf("\nTest_calc_puiss_soleil : OK");
+  //test_rendement_panneaux();
+  //printf("\nTest_rendement_panneaux : OK");
+  //test_rendement_thermique();
+  //printf("\nTest_rendement_thermique : OK");
+  //test_prod_jour();
+  //printf("\nTest_prod_jour : OK");
+  //printf("\nSUCCESS\n\n");
   return 0;
 }
 void test_rendement_geo()
 {
+  printf("\nTEST_RENDEMENT GEO ENTREE");
   ST_DonneGeo Geo;
   Geo.orientation = 0;
   Geo.inclinaison = 0;
+  Geo.rendement = 0;
   FILE *rend_geo;
 	rend_geo= fopen("Test_rendement_geo.csv","w+");
   fprintf(rend_geo,"Inclinaison ; Orientation ; Rendement");
   
-  while(Geo.inclinaison <100)
+  while(Geo.inclinaison < 100)
   {
-    while(Geo.orientation<100)
+    while(Geo.orientation< 100)
     {     
       fprintf(rend_geo,"%d ; %d\n ; %2.2f",Geo.inclinaison,Geo.orientation,Rendement_geo(Geo));
       Geo.orientation=Geo.orientation+10;
