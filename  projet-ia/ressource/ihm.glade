@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
   <!-- interface-naming-policy project-wide -->
@@ -15,7 +15,6 @@
         <child>
           <object class="GtkMenuBar" id="barre_de_menu">
             <property name="visible">True</property>
-            <property name="ubuntu_local">True</property>
             <child>
               <object class="GtkMenuItem" id="fichier">
                 <property name="visible">True</property>
@@ -24,7 +23,6 @@
                 <child type="submenu">
                   <object class="GtkMenu" id="menu1">
                     <property name="visible">True</property>
-                    <property name="ubuntu_local">True</property>
                     <child>
                       <object class="GtkImageMenuItem" id="Nouveau">
                         <property name="label" translatable="yes">Nouveau</property>
@@ -88,7 +86,6 @@
                 <child type="submenu">
                   <object class="GtkMenu" id="menu3">
                     <property name="visible">True</property>
-                    <property name="ubuntu_local">True</property>
                     <child>
                       <object class="GtkImageMenuItem" id="imagemenuitem10">
                         <property name="label">gtk-about</property>
@@ -193,7 +190,7 @@
                     <property name="homogeneous">True</property>
                     <child>
                       <object class="GtkButton" id="parametres_maison">
-                        <property name="label" translatable="yes">Définir les paramètres
+                        <property name="label" translatable="yes">D&#xE9;finir les param&#xE8;tres
          de la maison</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -218,7 +215,7 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="creer_piece">
-                        <property name="label" translatable="yes">Créer une pièce</property>
+                        <property name="label" translatable="yes">Cr&#xE9;er une pi&#xE8;ce</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
@@ -230,10 +227,11 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="modifier_piece">
-                        <property name="label" translatable="yes">Modifier une pièce</property>
+                        <property name="label" translatable="yes">Modifier une pi&#xE8;ce</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_modifier_piece_clicked"/>
                       </object>
                       <packing>
                         <property name="position">3</property>
@@ -241,10 +239,11 @@
                     </child>
                     <child>
                       <object class="GtkButton" id="supprimer_piece">
-                        <property name="label" translatable="yes">Supprimer une pièce</property>
+                        <property name="label" translatable="yes">Supprimer une pi&#xE8;ce</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_supprimer_piece_clicked"/>
                       </object>
                       <packing>
                         <property name="position">4</property>
@@ -292,7 +291,7 @@
             <child type="tab">
               <object class="GtkLabel" id="parametres">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Paramètres de simulation</property>
+                <property name="label" translatable="yes">Param&#xE8;tres de simulation</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -310,8 +309,8 @@
                       <object class="GtkLabel" id="jour">
                         <property name="height_request">1</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Définit le jour 
-où nous sommes</property>
+                        <property name="label" translatable="yes">D&#xE9;finit le jour 
+o&#xF9; nous sommes</property>
                         <property name="justify">center</property>
                       </object>
                       <packing>
@@ -441,6 +440,7 @@ où nous sommes</property>
   <object class="GtkFileChooserDialog" id="ouvrir_sauvegarde">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Charger une sauvegarde</property>
+    <property name="window_position">center-on-parent</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox1">
@@ -464,7 +464,7 @@ où nous sommes</property>
                 <property name="width_request">200</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="invisible_char">•</property>
+                <property name="invisible_char">&#x2022;</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -528,8 +528,9 @@ où nous sommes</property>
   </object>
   <object class="GtkDialog" id="parametres_habitation">
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Paramètres habitation</property>
+    <property name="title" translatable="yes">Param&#xE8;tres habitation</property>
     <property name="resizable">False</property>
+    <property name="window_position">center-on-parent</property>
     <property name="type_hint">normal</property>
     <property name="deletable">False</property>
     <child internal-child="vbox">
@@ -543,7 +544,7 @@ où nous sommes</property>
               <object class="GtkLabel" id="label2">
                 <property name="visible">True</property>
                 <property name="xalign">0.059999998658895493</property>
-                <property name="label" translatable="yes">Paramètres de l'habitation :</property>
+                <property name="label" translatable="yes">Param&#xE8;tres de l'habitation :</property>
                 <attributes>
                   <attribute name="weight" value="ultrabold"/>
                 </attributes>
@@ -559,7 +560,7 @@ où nous sommes</property>
                 <child>
                   <object class="GtkLabel" id="label7">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Département</property>
+                    <property name="label" translatable="yes">D&#xE9;partement</property>
                   </object>
                   <packing>
                     <property name="position">0</property>
@@ -591,7 +592,7 @@ où nous sommes</property>
                 <child>
                   <object class="GtkLabel" id="label4">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Inclinaison toit : (degrés)</property>
+                    <property name="label" translatable="yes">Inclinaison toit : (degr&#xE9;s)</property>
                   </object>
                   <packing>
                     <property name="position">0</property>
@@ -604,7 +605,7 @@ où nous sommes</property>
                     <property name="can_focus">True</property>
                     <property name="editable">False</property>
                     <property name="max_length">5</property>
-                    <property name="invisible_char">•</property>
+                    <property name="invisible_char">&#x2022;</property>
                     <property name="adjustment">adjustment1</property>
                     <property name="digits">1</property>
                     <property name="numeric">True</property>
@@ -627,7 +628,7 @@ où nous sommes</property>
                   <object class="GtkLabel" id="label5">
                     <property name="visible">True</property>
                     <property name="label" translatable="yes">Exposition principale (
-°/sud</property>
+&#xB0;/sud</property>
                   </object>
                   <packing>
                     <property name="position">0</property>
@@ -639,7 +640,7 @@ où nous sommes</property>
                     <property name="can_focus">True</property>
                     <property name="editable">False</property>
                     <property name="max_length">2</property>
-                    <property name="invisible_char">•</property>
+                    <property name="invisible_char">&#x2022;</property>
                     <property name="adjustment">adjustment2</property>
                     <property name="numeric">True</property>
                   </object>
@@ -794,8 +795,9 @@ où nous sommes</property>
     </data>
   </object>
   <object class="GtkWindow" id="creation_piece">
-    <property name="title" translatable="yes">Creer/Modifier une pièce</property>
+    <property name="title" translatable="yes">Creer/Modifier une pi&#xE8;ce</property>
     <property name="resizable">False</property>
+    <property name="window_position">center-on-parent</property>
     <property name="deletable">False</property>
     <child>
       <object class="GtkVBox" id="vbox6">
@@ -804,7 +806,7 @@ où nous sommes</property>
           <object class="GtkLabel" id="label8">
             <property name="visible">True</property>
             <property name="xalign">0.10000000149011612</property>
-            <property name="label" translatable="yes">Paramètres de la pièce :</property>
+            <property name="label" translatable="yes">Param&#xE8;tres de la pi&#xE8;ce :</property>
             <attributes>
               <attribute name="style" value="normal"/>
               <attribute name="weight" value="bold"/>
@@ -821,7 +823,7 @@ où nous sommes</property>
             <child>
               <object class="GtkLabel" id="label9">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Nom pièce :</property>
+                <property name="label" translatable="yes">Nom pi&#xE8;ce :</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -831,7 +833,7 @@ où nous sommes</property>
               <object class="GtkEntry" id="nom_piece">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="invisible_char">•</property>
+                <property name="invisible_char">&#x2022;</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -849,7 +851,7 @@ où nous sommes</property>
             <child>
               <object class="GtkLabel" id="label10">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Type pièce :</property>
+                <property name="label" translatable="yes">Type pi&#xE8;ce :</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -882,7 +884,7 @@ où nous sommes</property>
             <child>
               <object class="GtkLabel" id="label11">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Largeur pièce :</property>
+                <property name="label" translatable="yes">Largeur pi&#xE8;ce :</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -893,7 +895,7 @@ où nous sommes</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="editable">False</property>
-                <property name="invisible_char">•</property>
+                <property name="invisible_char">&#x2022;</property>
                 <property name="adjustment">adjustment3</property>
               </object>
               <packing>
@@ -912,7 +914,7 @@ où nous sommes</property>
             <child>
               <object class="GtkLabel" id="label12">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Longueur Pièce : </property>
+                <property name="label" translatable="yes">Longueur Pi&#xE8;ce : </property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -923,7 +925,7 @@ où nous sommes</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="editable">False</property>
-                <property name="invisible_char">•</property>
+                <property name="invisible_char">&#x2022;</property>
                 <property name="adjustment">adjustment4</property>
               </object>
               <packing>
@@ -1006,7 +1008,7 @@ où nous sommes</property>
         <col id="0" translatable="yes">1 Chambre</col>
       </row>
       <row>
-        <col id="0" translatable="yes">2 Salon/Salle à manger</col>
+        <col id="0" translatable="yes">2 Salon/Salle &#xE0; manger</col>
       </row>
       <row>
         <col id="0" translatable="yes">3 Cuisine</col>
@@ -1025,6 +1027,7 @@ où nous sommes</property>
   <object class="GtkDialog" id="popup_habitation">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Attention</property>
+    <property name="window_position">center-on-parent</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox5">
@@ -1050,7 +1053,7 @@ où nous sommes</property>
                 <property name="visible">True</property>
                 <property name="yalign">0.029999999329447746</property>
                 <property name="label" translatable="yes">Creer une habitation avant de
-créer une pièce</property>
+d'int&#xE9;ragir sur les pi&#xE8;ce</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -1095,5 +1098,288 @@ créer une pièce</property>
     <action-widgets>
       <action-widget response="0">button1</action-widget>
     </action-widgets>
+  </object>
+  <object class="GtkWindow" id="modification_piece">
+    <property name="title" translatable="yes">Modifier une pi&#xE8;ce</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="deletable">False</property>
+    <child>
+      <object class="GtkVBox" id="vbox8">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="label14">
+            <property name="visible">True</property>
+            <property name="xalign">0.059999998658895493</property>
+            <property name="xpad">3</property>
+            <property name="label" translatable="yes">Modifier une pi&#xE8;ce :</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox13">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label15">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Selectionner une pi&#xE8;ce</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="modification_nom_piece">
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox14">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label16">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Type Pi&#xE8;ce</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="modification_type_piece">
+                <property name="visible">True</property>
+                <property name="sensitive">False</property>
+                <property name="model">liststore3</property>
+                <child>
+                  <object class="GtkCellRendererText" id="cellrenderertext4"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox15">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label17">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Largeur</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="modification_largeur_piece">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="invisible_char">&#x25CF;</property>
+                <property name="adjustment">adjustment3</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox16">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label18">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Longueur</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="modification_longueur_piece">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x25CF;</property>
+                <property name="adjustment">adjustment4</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHButtonBox" id="hbuttonbox2">
+            <property name="visible">True</property>
+            <property name="spacing">35</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="annuler_modification_piece">
+                <property name="label" translatable="yes">Annuler</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="gtk_widget_hide" object="modification_piece"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="modifier_Equipements">
+                <property name="label" translatable="yes">Modifier Equipements</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="valider_modification_piece">
+                <property name="label" translatable="yes">Valider</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_valider_modification_piece_clicked"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="suppression_piece">
+    <property name="title" translatable="yes">Supprimer une pi&#xE8;ce</property>
+    <child>
+      <object class="GtkVBox" id="vbox7">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="label19">
+            <property name="visible">True</property>
+            <property name="xalign">0.05000000074505806</property>
+            <property name="label" translatable="yes">Supprimer une pi&#xE8;ce :</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox17">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label20">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Nom de la pi&#xE8;ce :</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="suppression_nom_piece">
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHButtonBox" id="hbuttonbox3">
+            <property name="visible">True</property>
+            <property name="spacing">30</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="annuler_suppression_piece">
+                <property name="label" translatable="yes">Annuler</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="gtk_widget_hide" object="suppression_piece"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="valider_suppression_piece">
+                <property name="label" translatable="yes">Valider</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_valider_suppression_piece_clicked"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
   </object>
 </interface>

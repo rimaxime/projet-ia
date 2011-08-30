@@ -28,9 +28,7 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, ch
   Nouveau->nombre_pieces = nombre_pieces;
   
   Nouveau->inclinaison_toit = inclinaison_toit;
-  g_print("test\n");
   strcpy(Nouveau->Isolation,Isolation);
-  g_print("test2\n");
   Nouveau->Exposition = Exposition;
   Nouveau->LC_Pieces = NULL;
   Nouveau->LC_Panneaux = NULL;  
@@ -38,6 +36,25 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, ch
   
   return Nouveau;
 }
+
+
+/**
+ * \name   Modifier Habitation
+ * \brief  Modifie une habitation à l'aide des paramètres de la fonction
+ * \param  int nombre_pieces, Isolation, Exposition
+ * \param  float inclinaison_toit
+ * \return ST_HABITATIONS*, L'habitation 
+ */
+ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, char Isolation[CMAX],int Exposition, char Departement[CMAX])
+{
+  Habitation->nombre_pieces = nombre_pieces;
+  Habitation->inclinaison_toit = inclinaison_toit;
+  strcpy(Habitation->Isolation,Isolation);
+  Habitation->Exposition = Exposition;
+  strcpy(Habitation->Departement,Departement);
+
+}
+
 
 /**
  * \name   Creation des Pieces
@@ -68,6 +85,31 @@ ST_PIECES* CreationPiece(char* nom_piece, int type_piece, float Largeur, float L
   Nouvelle->LC_Equipements = NULL;
   Nouvelle->suiv = NULL;
   return Nouvelle;
+}
+
+ST_PIECES* Trouver_Piece(ST_PIECES * Tete, char nom_piece[CMAX])
+{
+  if(Tete == NULL || strcasecmp(Tete->nom_piece, nom_piece) == 0)
+	return Tete;
+  else
+    return(Trouver_Piece(Tete->suiv, nom_piece);
+}
+
+
+/**
+ * \name   Modification des Pieces
+ * \brief  Modifier une piéce
+ * \param  int type_piece
+ * \param  float Largeur, Longueur, qui sont la taille de la pièce; coordX1, coordX2, coordY1, coordY2, qui sont les coordonnées des coins hauts 
+ * et bas de la pièce dans l'IHM
+ * \return ST_PIECES*, La pièce completée 
+ */
+ST_PIECES* ModifierPiece(ST_PIECES* Piece, int type_piece, float Largeur, float Longueur)
+{
+  Piece->type_piece = type_piece;
+  Piece->Largeur = Largeur;
+  Piece->Longueur = Longueur;
+  return Piece;
 }
 
 /**
@@ -127,6 +169,21 @@ ST_EQUIPEMENTS* CreationEquipement(int indice, char *nom_equipement, float conso
   return Nouveau;
 }
 
+ST_EQUIPEMENTS* ModifierEquipement(ST_EQUIPEMENTS* Equipement, float consommation_equipement, float nombre_heures_utilisation_journalier,
+				  float Largeur, float Longueur, float coordX1,float coordX2, float coordY1, float coordY2)
+{
+  Equipement->consommation_equipement = consommation_equipement;
+  Equipement->nombre_heures_utilisation_journalier = nombre_heures_utilisation_journalier;
+  Equipement-> Largeur = Largeur;
+  Equipement-> Longueur = Longueur;
+  Equipement->coordX1 = coordX1;
+  Equipement->coordY1 = coordY1;
+  Equipement->coordX2 = coordX2;
+  Equipement->coordY2 = coordY2; 
+  
+  return Equipement;
+}
+
 /**
  * \name   Insertion Triée des Equipements
  * \brief  Insère la Pièce au bon emplacement dans la liste des équipements, triée par ordre alphabétique en fonction du nom de l'équipement. Fonction Récursive
@@ -176,6 +233,17 @@ ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueu
   return Nouveau; 
 }
 
+
+ST_PANNEAUX* ModifierPanneaux(ST_PANNEAUX *Panneau, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition)
+{
+  Panneau->type = type;
+  Panneau->Largeur = Largeur;
+  Panneau->Longueur = Longueur;
+  Panneau->inclinaison_panneau = inclinaison_panneau;
+  Panneau->Exposition = Exposition;
+  return Panneau;
+}
+
 //Obsolete
 /**
  * \name   Insertion Triée des Panneaux
@@ -197,6 +265,39 @@ ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueu
     return Tete;
   }
 }*/
+
+
+ST_PIECES* Supprimer_Piece(ST_PIECES *Tete, char nom_piece[CMAX])
+{
+	if(Tete == NULL)
+		return(Tete);
+	else if(strcasecmp(Tete->nom_piece,nom_piece) == 0)
+	{
+		ST_PIECES *test = NULL;
+		test = Tete->suiv;
+		free(Tete);
+		return(test);
+	}
+	else
+		Tete->suiv = Supprimer_Piece(Tete->suiv, nom_piece);
+}
+
+ST_EQUIPEMENTS* Supprimer_Equipement(ST_EQUIPEMENTS *Tete, char nom_equipement[CMAX])
+{
+	if(Tete == NULL)
+		return(Tete);
+	else if(strcasecmp(Tete->nom_equipement,nom_equipement) == 0)
+	{
+		ST_EQUIPEMENTS *test = NULL;
+		test = Tete->suiv;
+		free(Tete);
+		return(test);
+	}
+	else
+		Tete->suiv = Supprimer_Equipement(Tete->suiv, nom_equipement);
+}
+
+
 
 void Detruire_Habitation(ST_HABITATIONS* Tete)
 {
@@ -234,3 +335,4 @@ void Detruire_Panneaux(ST_PANNEAUX *Tete)
     free(Tete);
   }
 }
+
