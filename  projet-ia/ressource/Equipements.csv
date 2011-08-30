@@ -1,0 +1,58 @@
+Nom de l'appareil;Consomation horaire;Nombre d'heure d'utilisation;Piece 1;Piece 2;Piece 3
+Tele Plasma;290;3;Salon;Chambre;Cuisine
+Machine à glacon;160;0,03;Cuisine;;
+Sèche cheveux;2000;0,1;Salle de bain;;
+Four vapeur;3500;0,75;Cuisine;;
+Hotte;220;1;Cuisine;;
+Micro onde;900;0,2;Cuisine;;
+Yaourtiere;40;0,01;Cuisine;;
+Grille pain;980;0,1;Cuisine;;
+Appareil a fondue;25;0,02;Cuisine;;
+Perceuse;700;0,02;Garage;;
+Appareil a raclette;950;0,02;Cuisine;;
+Friteuse;1450;0,04;Cuisine;;
+Mijoteuse;220;0,04;Cuisine;;
+Cafetiere Senseo;1450;0,3;Cuisine;;
+Epilateur;7,5;0,1;Salle de bain;Chambre;
+Lecteur BlueRay;25;0,5;Salon;Chambre;
+Aspirateur;1800;0,15;Buanderie;Salle de bain;
+Lave linge;2000;1;Buanderie;Cuisine;Salle de bain
+Gaufrier;780;0,02;Cuisine;;
+Four pyrolyse;3200;0,75;Cuisine;;
+Centrale vapeur;2100;0,5;Salle de bain;Buanderie;
+Cafetiere Nespresso;1710;0,3;Cuisine;;
+Robot menager;550;0,2;Cuisine;;
+Tele LED;100;3;Salon;Chambre;Cuisine
+Chauffage d'appoint;2000;0,2;Salle de bain;;
+Tronconneuse;2200;0,02;Garage;;
+IPAD;10;2;Chambre;Bureau;
+Ordinateur portable;60;2;Chambre;Bureau;
+Tele LCD;200;3;Salon;Chambre;Cuisine
+Chauffe eau;1800;4;Salle de bain;Buanderie;
+Deshumidificateur;320;6;Salon;Chambre;
+Crepiere;3000;0,04;Cuisine;;
+Mini chaine;60;1;Salon;Chambre;
+Lecteur DVD;50;0,5;Salon;Chambre;
+Cadre photo numerique;7;3;Salon;Chambre;
+Le cube (Canal +);60;3;Salon;Chambre;
+Congelateur;40;24;Cuisine;;
+Barbecue electrique;2000;0,02;Cuisine;Terasse;
+Ventilateur;50;0,3;Cuisine;Salon;Chambre
+Refrigerateur;50;24;Cuisine;;
+Sorbetiere;135;0,03;Cuisine;;
+Fontaine Chocolat;350;0,02;Cuisine;;
+Ordinateur de bureau;80;2;Bureau;Chambre;
+Seche serviette;600;0,5;Salle de bain;;
+Home cinema;55;0,5;Salon;;
+Imprimante;12;0,05;Bureau;Chambre;
+Videoprojecteur;230;0,5;Bureau;Chambre;Salon
+Lave vaisselle;1050;0,7;Cuisine;;
+Mini four;2200;0,75;Cuisine;;
+Frigo Americain;80;24;;;
+Cuisiniere electrique;1000;1,5;Cuisine;;
+Pizza grill;920;0,02;Cuisine;;
+Machine a pain;480;0,4;Cuisine;;
+Chemine decorative;130;0,07;Salon;;
+Theiere;600;0,3;Cuisine;;
+Fer a repasser;2000;0,5;Buanderie;Salle de bain;
+Fontaine decorative;10;0,07;Salon;;
