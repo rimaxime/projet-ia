@@ -5,6 +5,8 @@
 
 #include <gtk/gtk.h>
 #include "../inc/structures.h"
+#include "../inc/gestion_habitations.h"
+
 
 #define PATH_IHM "../ressources/ihm.glade"
 
@@ -14,6 +16,21 @@ struct _Data
     GtkWidget *window;
     GtkWidget *sauvegarde;
     GtkWidget *habitation;
+    GtkWidget *piece;
+    
+    //habitation
+    GtkWidget *Departement_habitation;
+    GtkWidget *Inclinaison_habitation;
+    GtkWidget *Exposition_habitation;
+    GtkWidget *Isolation;
+    
+    //piece
+    GtkWidget *NomPiece;
+    GtkWidget *TypePiece;
+    GtkWidget *LargeurPiece;
+    GtkWidget *LongueurPiece;
+    
+    
 };
 
 
@@ -34,11 +51,22 @@ void on_annuler_fichier_clicked(GtkWidget *widget);
 
 void on_annuler_parametres_maison_clicked(GtkWidget *widget);
 
-void on_valider_parametres_maison_clicked(GtkWidget *widget);
+void on_valider_parametres_maison_clicked(GtkWidget *widget, Data *data);
 
-void on_parametres_maison_clicked(GtkWidget *widget);
+void on_parametres_maison_clicked(GtkWidget *widget, Data *data);
 
+Data champs_habitation(GtkBuilder *builder, Data data, int size_tab, STR_DEPARTEMENT Tableau[]);
 
+void connexion_signaux(GtkBuilder *builder, Data data);
 
+void on_Isolation_changed(GtkWidget *combo, Data *data);
+
+Data champs_pieces(GtkBuilder *builder, Data data);
+
+void on_creer_piece_clicked(GtkWidget *Widget, Data *data);
+
+void on_annuler_piece_clicked(GtkWidget *widget,Data *data);
+
+void on_valider_piece_clicked(GtkWidget *widget,Data *data);
 
 #endif

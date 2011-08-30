@@ -54,7 +54,7 @@ test_fichiers: test_fichiers.o gestion_fichiers.o
 test_gestion_habitations: test_gestion_habitations.o gestion_habitations.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
-test_ihm: test_ihm.o ihm_general.o
+test_ihm: test_ihm.o gestion_habitations.o gestion_fichiers.o ihm_general.o 
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_production: test_production.o production.o

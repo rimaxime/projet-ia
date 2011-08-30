@@ -39,7 +39,7 @@ void test_creation_habitation()
 {
   TEST_TITLE("test_creation_habitation");
   ST_HABITATIONS *Nouveau;
-  Nouveau = CreationHabitation(4,20,6,5,"3");
+  Nouveau = CreationHabitation(4,20,"6",5,"3");
   TEST(Nouveau->Exposition == 5);
   TEST(Nouveau->inclinaison_toit == 20);
 }

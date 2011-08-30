@@ -28,7 +28,7 @@
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, La nouvelle habitation 
  */
-ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char* Departement);
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, char* Isolation,int Exposition, char* Departement);
 
 
 /**

@@ -15,9 +15,10 @@
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, La nouvelle habitation 
  */
-ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char* Departement)
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, char Isolation[CMAX],int Exposition, char Departement[CMAX])
 {
   ST_HABITATIONS *Nouveau = NULL;
+  
   Nouveau = (ST_HABITATIONS *) malloc (sizeof(ST_HABITATIONS));
   if(Nouveau==NULL)						
   {
@@ -25,11 +26,16 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, in
     exit(-1);
   }
   Nouveau->nombre_pieces = nombre_pieces;
+  
   Nouveau->inclinaison_toit = inclinaison_toit;
-  Nouveau->Isolation = Isolation;
+  g_print("test\n");
+  strcpy(Nouveau->Isolation,Isolation);
+  g_print("test2\n");
   Nouveau->Exposition = Exposition;
   Nouveau->LC_Pieces = NULL;
   Nouveau->LC_Panneaux = NULL;  
+  strcpy(Nouveau->Departement,Departement);
+  
   return Nouveau;
 }
 
