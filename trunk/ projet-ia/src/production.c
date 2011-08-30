@@ -36,7 +36,7 @@ void Calc_puiss_soleil(PTR_ST_SimuMeteo Meteo_Jour) //voir si on prend en compte
  */
 float Rendement_geo(ST_DonneGeo Donnees)
 {
-  float incl_rad, orient_rad;
+  float incl_rad, orient_rad,rend;
   
   if(Donnees.rendement != 0)
     return Donnees.rendement;
@@ -44,7 +44,8 @@ float Rendement_geo(ST_DonneGeo Donnees)
   {
     incl_rad = ((Donnees.inclinaison*2*M_PI)/360);
     orient_rad = ((Donnees.orientation*2*M_PI)/360);
-    return sin(incl_rad)*cos(orient_rad);   
+    rend=sin(incl_rad)*cos(orient_rad);
+    return rend;   
   }
 }
 

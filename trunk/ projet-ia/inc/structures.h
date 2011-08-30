@@ -152,7 +152,7 @@ typedef struct donne_geo
 {
   int inclinaison; //Inclinaison du toit en degré
   int orientation; //Orientation de la maison °/sud
-  int rendement; //Redement géographique
+  float rendement; //Redement géographique
 }ST_DonneGeo;
 
 #endif
