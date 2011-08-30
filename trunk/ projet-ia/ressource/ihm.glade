@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
   <!-- interface-naming-policy project-wide -->
@@ -190,7 +190,7 @@
                     <property name="homogeneous">True</property>
                     <child>
                       <object class="GtkButton" id="parametres_maison">
-                        <property name="label" translatable="yes">D&#xE9;finir les param&#xE8;tres
+                        <property name="label" translatable="yes">Définir les paramètres
          de la maison</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -208,45 +208,57 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_creer_panneau_clicked"/>
                       </object>
                       <packing>
                         <property name="position">1</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="creer_piece">
-                        <property name="label" translatable="yes">Cr&#xE9;er une pi&#xE8;ce</property>
+                      <object class="GtkButton" id="parametres_chauffage">
+                        <property name="label" translatable="yes">Gestion du chauffage</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
-                        <signal name="clicked" handler="on_creer_piece_clicked"/>
                       </object>
                       <packing>
                         <property name="position">2</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="modifier_piece">
-                        <property name="label" translatable="yes">Modifier une pi&#xE8;ce</property>
+                      <object class="GtkButton" id="creer_piece">
+                        <property name="label" translatable="yes">Créer une pièce</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
-                        <signal name="clicked" handler="on_modifier_piece_clicked"/>
+                        <signal name="clicked" handler="on_creer_piece_clicked"/>
                       </object>
                       <packing>
                         <property name="position">3</property>
                       </packing>
                     </child>
                     <child>
+                      <object class="GtkButton" id="modifier_piece">
+                        <property name="label" translatable="yes">Modifier une pièce</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_modifier_piece_clicked"/>
+                      </object>
+                      <packing>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                    <child>
                       <object class="GtkButton" id="supprimer_piece">
-                        <property name="label" translatable="yes">Supprimer une pi&#xE8;ce</property>
+                        <property name="label" translatable="yes">Supprimer une pièce</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <signal name="clicked" handler="on_supprimer_piece_clicked"/>
                       </object>
                       <packing>
-                        <property name="position">4</property>
+                        <property name="position">5</property>
                       </packing>
                     </child>
                   </object>
@@ -291,7 +303,7 @@
             <child type="tab">
               <object class="GtkLabel" id="parametres">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Param&#xE8;tres de simulation</property>
+                <property name="label" translatable="yes">Paramètres de simulation</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -309,8 +321,8 @@
                       <object class="GtkLabel" id="jour">
                         <property name="height_request">1</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">D&#xE9;finit le jour 
-o&#xF9; nous sommes</property>
+                        <property name="label" translatable="yes">Définit le jour 
+où nous sommes</property>
                         <property name="justify">center</property>
                       </object>
                       <packing>
@@ -464,7 +476,7 @@ o&#xF9; nous sommes</property>
                 <property name="width_request">200</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="invisible_char">&#x2022;</property>
+                <property name="invisible_char">•</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -528,7 +540,7 @@ o&#xF9; nous sommes</property>
   </object>
   <object class="GtkDialog" id="parametres_habitation">
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Param&#xE8;tres habitation</property>
+    <property name="title" translatable="yes">Paramètres habitation</property>
     <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="type_hint">normal</property>
@@ -544,7 +556,7 @@ o&#xF9; nous sommes</property>
               <object class="GtkLabel" id="label2">
                 <property name="visible">True</property>
                 <property name="xalign">0.059999998658895493</property>
-                <property name="label" translatable="yes">Param&#xE8;tres de l'habitation :</property>
+                <property name="label" translatable="yes">Paramètres de l'habitation :</property>
                 <attributes>
                   <attribute name="weight" value="ultrabold"/>
                 </attributes>
@@ -560,7 +572,7 @@ o&#xF9; nous sommes</property>
                 <child>
                   <object class="GtkLabel" id="label7">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">D&#xE9;partement</property>
+                    <property name="label" translatable="yes">Département</property>
                   </object>
                   <packing>
                     <property name="position">0</property>
@@ -592,7 +604,7 @@ o&#xF9; nous sommes</property>
                 <child>
                   <object class="GtkLabel" id="label4">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Inclinaison toit : (degr&#xE9;s)</property>
+                    <property name="label" translatable="yes">Inclinaison toit : (degrés)</property>
                   </object>
                   <packing>
                     <property name="position">0</property>
@@ -605,7 +617,7 @@ o&#xF9; nous sommes</property>
                     <property name="can_focus">True</property>
                     <property name="editable">False</property>
                     <property name="max_length">5</property>
-                    <property name="invisible_char">&#x2022;</property>
+                    <property name="invisible_char">•</property>
                     <property name="adjustment">adjustment1</property>
                     <property name="digits">1</property>
                     <property name="numeric">True</property>
@@ -628,7 +640,7 @@ o&#xF9; nous sommes</property>
                   <object class="GtkLabel" id="label5">
                     <property name="visible">True</property>
                     <property name="label" translatable="yes">Exposition principale (
-&#xB0;/sud</property>
+°/sud</property>
                   </object>
                   <packing>
                     <property name="position">0</property>
@@ -640,7 +652,7 @@ o&#xF9; nous sommes</property>
                     <property name="can_focus">True</property>
                     <property name="editable">False</property>
                     <property name="max_length">2</property>
-                    <property name="invisible_char">&#x2022;</property>
+                    <property name="invisible_char">•</property>
                     <property name="adjustment">adjustment2</property>
                     <property name="numeric">True</property>
                   </object>
@@ -775,7 +787,7 @@ o&#xF9; nous sommes</property>
   </object>
   <object class="GtkAdjustment" id="adjustment2">
     <property name="upper">90</property>
-    <property name="step_increment">1</property>
+    <property name="step_increment">10</property>
   </object>
   <object class="GtkListStore" id="liststore2">
     <columns>
@@ -795,7 +807,7 @@ o&#xF9; nous sommes</property>
     </data>
   </object>
   <object class="GtkWindow" id="creation_piece">
-    <property name="title" translatable="yes">Creer/Modifier une pi&#xE8;ce</property>
+    <property name="title" translatable="yes">Creer/Modifier une pièce</property>
     <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="deletable">False</property>
@@ -806,7 +818,7 @@ o&#xF9; nous sommes</property>
           <object class="GtkLabel" id="label8">
             <property name="visible">True</property>
             <property name="xalign">0.10000000149011612</property>
-            <property name="label" translatable="yes">Param&#xE8;tres de la pi&#xE8;ce :</property>
+            <property name="label" translatable="yes">Paramètres de la pièce :</property>
             <attributes>
               <attribute name="style" value="normal"/>
               <attribute name="weight" value="bold"/>
@@ -823,7 +835,7 @@ o&#xF9; nous sommes</property>
             <child>
               <object class="GtkLabel" id="label9">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Nom pi&#xE8;ce :</property>
+                <property name="label" translatable="yes">Nom pièce :</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -833,7 +845,7 @@ o&#xF9; nous sommes</property>
               <object class="GtkEntry" id="nom_piece">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="invisible_char">&#x2022;</property>
+                <property name="invisible_char">•</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -851,7 +863,7 @@ o&#xF9; nous sommes</property>
             <child>
               <object class="GtkLabel" id="label10">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Type pi&#xE8;ce :</property>
+                <property name="label" translatable="yes">Type pièce :</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -884,7 +896,7 @@ o&#xF9; nous sommes</property>
             <child>
               <object class="GtkLabel" id="label11">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Largeur pi&#xE8;ce :</property>
+                <property name="label" translatable="yes">Largeur pièce :</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -895,7 +907,7 @@ o&#xF9; nous sommes</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="editable">False</property>
-                <property name="invisible_char">&#x2022;</property>
+                <property name="invisible_char">•</property>
                 <property name="adjustment">adjustment3</property>
               </object>
               <packing>
@@ -914,7 +926,7 @@ o&#xF9; nous sommes</property>
             <child>
               <object class="GtkLabel" id="label12">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Longueur Pi&#xE8;ce : </property>
+                <property name="label" translatable="yes">Longueur Pièce : </property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -925,7 +937,7 @@ o&#xF9; nous sommes</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="editable">False</property>
-                <property name="invisible_char">&#x2022;</property>
+                <property name="invisible_char">•</property>
                 <property name="adjustment">adjustment4</property>
               </object>
               <packing>
@@ -1008,7 +1020,7 @@ o&#xF9; nous sommes</property>
         <col id="0" translatable="yes">1 Chambre</col>
       </row>
       <row>
-        <col id="0" translatable="yes">2 Salon/Salle &#xE0; manger</col>
+        <col id="0" translatable="yes">2 Salon/Salle à manger</col>
       </row>
       <row>
         <col id="0" translatable="yes">3 Cuisine</col>
@@ -1052,8 +1064,8 @@ o&#xF9; nous sommes</property>
                 <property name="width_request">240</property>
                 <property name="visible">True</property>
                 <property name="yalign">0.029999999329447746</property>
-                <property name="label" translatable="yes">Creer une habitation avant de
-d'int&#xE9;ragir sur les pi&#xE8;ce</property>
+                <property name="label" translatable="yes">Créer une habitation avant de
+d'intéragir sur les pièces</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -1100,20 +1112,19 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
     </action-widgets>
   </object>
   <object class="GtkWindow" id="modification_piece">
-    <property name="title" translatable="yes">Modifier une pi&#xE8;ce</property>
+    <property name="title" translatable="yes">Modifier une pièce</property>
     <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="deletable">False</property>
     <child>
       <object class="GtkVBox" id="vbox8">
         <property name="visible">True</property>
-        <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="label14">
             <property name="visible">True</property>
             <property name="xalign">0.059999998658895493</property>
             <property name="xpad">3</property>
-            <property name="label" translatable="yes">Modifier une pi&#xE8;ce :</property>
+            <property name="label" translatable="yes">Modifier une pièce :</property>
             <attributes>
               <attribute name="weight" value="bold"/>
             </attributes>
@@ -1129,7 +1140,7 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
             <child>
               <object class="GtkLabel" id="label15">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Selectionner une pi&#xE8;ce</property>
+                <property name="label" translatable="yes">Selectionner une pièce</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -1138,6 +1149,13 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
             <child>
               <object class="GtkComboBox" id="modification_nom_piece">
                 <property name="visible">True</property>
+                <signal name="changed" handler="on_modification_nom_piece_changed"/>
+                <child>
+                  <object class="GtkCellRendererText" id="cellrenderertext5"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -1155,7 +1173,7 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
             <child>
               <object class="GtkLabel" id="label16">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Type Pi&#xE8;ce</property>
+                <property name="label" translatable="yes">Type Pièce</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -1200,7 +1218,7 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="editable">False</property>
-                <property name="invisible_char">&#x25CF;</property>
+                <property name="invisible_char">●</property>
                 <property name="adjustment">adjustment3</property>
               </object>
               <packing>
@@ -1229,7 +1247,7 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
               <object class="GtkSpinButton" id="modification_longueur_piece">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="invisible_char">&#x25CF;</property>
+                <property name="invisible_char">●</property>
                 <property name="adjustment">adjustment4</property>
               </object>
               <packing>
@@ -1297,16 +1315,15 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
     </child>
   </object>
   <object class="GtkWindow" id="suppression_piece">
-    <property name="title" translatable="yes">Supprimer une pi&#xE8;ce</property>
+    <property name="title" translatable="yes">Supprimer une pièce</property>
     <child>
       <object class="GtkVBox" id="vbox7">
         <property name="visible">True</property>
-        <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="label19">
             <property name="visible">True</property>
             <property name="xalign">0.05000000074505806</property>
-            <property name="label" translatable="yes">Supprimer une pi&#xE8;ce :</property>
+            <property name="label" translatable="yes">Supprimer une pièce :</property>
             <attributes>
               <attribute name="weight" value="bold"/>
             </attributes>
@@ -1322,7 +1339,7 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
             <child>
               <object class="GtkLabel" id="label20">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">Nom de la pi&#xE8;ce :</property>
+                <property name="label" translatable="yes">Nom de la pièce :</property>
               </object>
               <packing>
                 <property name="position">0</property>
@@ -1331,6 +1348,12 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
             <child>
               <object class="GtkComboBox" id="suppression_nom_piece">
                 <property name="visible">True</property>
+                <child>
+                  <object class="GtkCellRendererText" id="cellrenderertext6"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -1381,5 +1404,313 @@ d'int&#xE9;ragir sur les pi&#xE8;ce</property>
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkWindow" id="parametres_panneaux_solaires">
+    <property name="title" translatable="yes">Panneau Solaire</property>
+    <child>
+      <object class="GtkVBox" id="vbox9">
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkLabel" id="label21">
+            <property name="visible">True</property>
+            <property name="xalign">0.070000000298023224</property>
+            <property name="label" translatable="yes">Paramètres des panneaux solaires :</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox18">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label22">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Type de panneaux :</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="type_panneaux">
+                <property name="visible">True</property>
+                <property name="model">liststore4</property>
+                <child>
+                  <object class="GtkCellRendererText" id="cellrenderertext7"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox19">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label23">
+                <property name="visible">True</property>
+                <property name="tooltip_markup">Maximum Power Power Tracking : Rendement 15% -&gt; 30%</property>
+                <property name="tooltip_text" translatable="yes">Maximum Power Power Tracking : Rendement 15% -&gt; 30%</property>
+                <property name="label" translatable="yes">Présence de MPPT :</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="mppt">
+                <property name="visible">True</property>
+                <property name="model">liststore5</property>
+                <child>
+                  <object class="GtkCellRendererText" id="cellrenderertext8"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox20">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label24">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Présence de l'autorotation :</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="autorotation">
+                <property name="visible">True</property>
+                <property name="model">liststore6</property>
+                <child>
+                  <object class="GtkCellRendererText" id="cellrenderertext9"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox21">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label25">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Largeur :</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="largeur_panneau">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="invisible_char">•</property>
+                <property name="adjustment">adjustment5</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox22">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label26">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Longueur :</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="longueur_panneau">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="invisible_char">•</property>
+                <property name="adjustment">adjustment6</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox23">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="label27">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Inclinaison Panneau :</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="inclinaison_panneau">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="invisible_char">•</property>
+                <property name="adjustment">adjustment7</property>
+                <property name="digits">1</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHButtonBox" id="hbuttonbox4">
+            <property name="visible">True</property>
+            <property name="spacing">20</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="annuler_panneau">
+                <property name="label" translatable="yes">Annuler</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="gtk_widget_hide" object="parametres_panneaux_solaires"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="valider_panneau">
+                <property name="label" translatable="yes">Valider</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_valider_panneau_clicked"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">7</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkListStore" id="liststore4">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">1 Monocristallins</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">2 Polycristallins</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">3 Amorphes</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="liststore5">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Oui</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Non</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="liststore6">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Oui</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Non</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkAdjustment" id="adjustment5">
+    <property name="upper">30</property>
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment6">
+    <property name="upper">30</property>
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment7">
+    <property name="upper">90</property>
+    <property name="step_increment">0.10000000000000001</property>
   </object>
 </interface>

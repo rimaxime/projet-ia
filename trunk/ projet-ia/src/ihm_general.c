@@ -25,7 +25,8 @@ Data chargement_fenetres(GtkBuilder *builder)
   data.habitation = GTK_WIDGET(gtk_builder_get_object(builder,"parametres_habitation"));
   data.piece = GTK_WIDGET(gtk_builder_get_object(builder,"creation_piece"));
   data.modificationpiece = GTK_WIDGET(gtk_builder_get_object(builder,"modification_piece"));
-  data.supprimerpiece = GTK_WIDGET(gtk_builder_get_object(builder,"supprimer_piece"));
+  data.supprimerpiece = GTK_WIDGET(gtk_builder_get_object(builder,"suppression_piece"));
+  data.panneausolaires = GTK_WIDGET(gtk_builder_get_object(builder,"parametres_panneaux_solaires"));
   return data;
 }
 
@@ -70,6 +71,17 @@ Data champs_pieces(GtkBuilder *builder, Data data)
 }
 
 
+Data champ_panneaux(GtkBuilder *builder, Data data)
+{
+ data.type_panneau = GTK_WIDGET(gtk_builder_get_object(builder,"type_panneaux"));
+ data.mppt = GTK_WIDGET(gtk_builder_get_object(builder,"mppt"));
+ data.autorotation = GTK_WIDGET(gtk_builder_get_object(builder,"autorotation"));
+ data.largeur_panneau = GTK_WIDGET(gtk_builder_get_object(builder,"largeur_panneau"));
+ data.longueur_panneau = GTK_WIDGET(gtk_builder_get_object(builder,"longueur_panneau"));
+ data.inclinaison_panneau = GTK_WIDGET(gtk_builder_get_object(builder,"inclinaison_panneau"));
+ return data;
+ 
+}
 
 void connexion_signaux(GtkBuilder *builder, Data data)
 {
@@ -134,7 +146,7 @@ void on_valider_parametres_maison_clicked(GtkWidget *widget, Data *data)
 				     string_dept);
   }   
   else
-    Habitation = ModifierHabitation(Habitation
+    Habitation = ModifierHabitation(Habitation,
 					Habitation->nombre_pieces,
 				    inclinaison,
 				    string_isol,
@@ -204,23 +216,31 @@ void on_valider_piece_clicked(GtkWidget *widget,Data *data)
 
 void on_modifier_piece_clicked(GtkWidget *widget, Data *data)
 {
-  if(Habitation != NULL)
+  if(Habitation->LC_Pieces != NULL)
   {
     GtkTreeIter iter;
     GtkListStore *store;
-	ST_PIECES* test_piece = NULL;
-	test_piece = Habitation->LC_Pieces;
-	store = gtk_list_store_new(1,G_TYPE_STRING);
-	while(test_piece != NULL)
-	{
-	  gtk_list_store_prepend(store,&iter);
-	  gtk_list_store_set(store, &iter,0, test_piece->nom_piece, -1);
-	}
-	gtk_combo_box_set_model(GTK_COMBO_BOX(data->ModificationNomPiece),GTK_TREE_MODEL(store));
+    ST_PIECES* test_piece = NULL;
+    test_piece = Habitation->LC_Pieces;
+    store = gtk_list_store_new(1,G_TYPE_STRING);
+    while(test_piece != NULL)
+    {
+      gtk_list_store_prepend(store,&iter);
+      gtk_list_store_set(store, &iter,0, test_piece->nom_piece, -1);
+      test_piece = test_piece->suiv;
+    }
+    gtk_combo_box_set_model(GTK_COMBO_BOX(data->ModificationNomPiece),GTK_TREE_MODEL(store));
+    GtkAdjustment *adjust;
+    adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->ModificationLargeurPiece)); 
+    gtk_adjustment_set_value(adjust,0);
+    adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->ModificationLongueurPiece)); 
+    gtk_adjustment_set_value(adjust,0);
+    gtk_widget_set_sensitive(data->ModificationTypePiece,FALSE);
+    gtk_widget_set_sensitive(data->ModificationLargeurPiece,FALSE);
+    gtk_widget_set_sensitive(data->ModificationLongueurPiece,FALSE);
   
-	//définir les champs comme non sélectionnables tant que pas de pièce selectionnée
-  
-	gtk_widget_show(data->modificationpiece);
+    gtk_widget_show(data->modificationpiece);
+  }
   else
     gtk_widget_show(data->popup_habitation);
 }
@@ -250,7 +270,7 @@ void on_valider_modification_piece_clicked(GtkWidget *widget, Data *data)
   longueur = gtk_adjustment_get_value(adjust);
   
   ST_PIECES * Piece = NULL;
-  Piece = TrouverPiece(Habitation->LC_Pieces, string_nom_piece);
+  Piece = Trouver_Piece(Habitation->LC_Pieces, string_nom_piece);
   if(Piece == NULL)
   {
 	fprintf(stderr,"Erreur de travail sur la liste de pièces");
@@ -274,7 +294,7 @@ void on_valider_suppression_piece_clicked(GtkWidget *widget, Data *data)
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->SuppressionNomPiece));
     gtk_tree_model_get(model, &iter, 0, &string_nom_piece, -1);  }
   ST_PIECES * Piece = NULL;
-  Piece = TrouverPiece(Habitation->LC_Pieces, string_nom_piece);
+  Piece = Trouver_Piece(Habitation->LC_Pieces, string_nom_piece);
   if(Piece == NULL)
   {
 	fprintf(stderr,"Erreur de travail sur la liste de pièces");
@@ -283,13 +303,14 @@ void on_valider_suppression_piece_clicked(GtkWidget *widget, Data *data)
   else
   {
 	Detruire_Equipements(Piece->LC_Equipements);
-    SupprimerPiece(Habitation->LC_Pieces, string_nom_piece);
+        Supprimer_Piece(Habitation->LC_Pieces, string_nom_piece);
+	gtk_widget_hide(data->supprimerpiece);
   }
 }
 
 void on_supprimer_piece_clicked(GtkWidget *widget, Data *data)
 {
-  if(Habitation != NULL)
+  if(Habitation->LC_Pieces != NULL)
   {
    GtkTreeIter iter;
 	GtkListStore *store;
@@ -300,11 +321,117 @@ void on_supprimer_piece_clicked(GtkWidget *widget, Data *data)
 	{
       gtk_list_store_prepend(store,&iter);
       gtk_list_store_set(store, &iter,0, test_piece->nom_piece, -1);
+	test_piece = test_piece->suiv;
 	}
 	gtk_combo_box_set_model(GTK_COMBO_BOX(data->SuppressionNomPiece),GTK_TREE_MODEL(store));
 
 	gtk_widget_show(data->supprimerpiece);
-	
+  }	
   else
     gtk_widget_show(data->popup_habitation);
+}
+
+
+void on_modification_nom_piece_changed(GtkWidget *widget, Data *data)
+{
+  GtkTreeIter iter;
+  gchar *string_nom_piece = NULL;
+  gchar *string_type;
+  GtkTreeModel *model;
+  if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->ModificationNomPiece),&iter)){
+    model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->ModificationNomPiece));
+    gtk_tree_model_get(model, &iter, 0, &string_nom_piece, -1);  }
+  if(strcasecmp(string_nom_piece,"") != 0)
+  {
+    ST_PIECES * Piece = NULL;
+    Piece = Trouver_Piece(Habitation->LC_Pieces, string_nom_piece);
+    if(Piece == NULL)
+    {
+	  fprintf(stderr,"Erreur de travail sur la liste de pièces");
+	  exit(-1);
+    }
+    else
+    {
+	  GtkAdjustment *adjust;
+	  adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->ModificationLargeurPiece)); 
+	  gtk_adjustment_set_value(adjust,Piece->Largeur);
+	  adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->ModificationLongueurPiece)); 
+	  gtk_adjustment_set_value(adjust,Piece->Longueur);
+	  
+	  
+	  gtk_widget_set_sensitive(data->ModificationTypePiece,TRUE);
+	  gtk_widget_set_sensitive(data->ModificationLargeurPiece,TRUE);
+	  gtk_widget_set_sensitive(data->ModificationLongueurPiece,TRUE);
+    }
+    
+    
+  } 
+}
+
+
+void on_creer_panneau_clicked(GtkWidget *widget, Data *data)
+{
+  if(Habitation != NULL)
+  {
+   gtk_widget_show(data->panneausolaires); 
+  }  
+
+}
+
+
+
+void on_valider_panneau_clicked(GtkWidget *widget, Data *data)
+{
+  GtkTreeIter iter;
+  gchar *string_type = NULL;
+  gchar *string_mppt = NULL;
+  gchar *string_autorotation = NULL;
+  GtkTreeModel *model;
+  int mppt =1,autorotation = 1;
+  if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->mppt),&iter)){
+    model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->mppt));
+    gtk_tree_model_get(model, &iter, 0, &string_mppt, -1);  }
+  if(strcasecmp(string_mppt,"Oui") == 0)
+    mppt = 1;
+  else
+    mppt = 2;
+    
+  if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->autorotation),&iter)){
+    model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->autorotation));
+    gtk_tree_model_get(model, &iter, 0, &string_autorotation, -1);  }
+  if(strcasecmp(string_autorotation,"Oui") == 0)
+    autorotation = 1;
+  else
+    autorotation = 2;  
+    
+  int extraction_type;
+  if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->type_panneau),&iter)){
+    model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->type_panneau));
+    gtk_tree_model_get(model, &iter, 0, &string_type, -1);  }
+  extraction_type = atoi(strtok(string_type," "));
+
+  GtkAdjustment *adjust;
+  gdouble largeur = 0;
+  gdouble longueur = 0;
+  gdouble inclinaison = 0;
+  adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->largeur_panneau)); 
+  largeur = gtk_adjustment_get_value(adjust);
+  adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->longueur_panneau)); 
+  longueur = gtk_adjustment_get_value(adjust);
+  adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->inclinaison_panneau)); 
+  inclinaison = gtk_adjustment_get_value(adjust);
+  
+  if(Habitation->LC_Panneaux == NULL)
+  {
+    Habitation->LC_Panneaux = CreationPanneaux(1, extraction_type, largeur,longueur, inclinaison,Habitation->Exposition);
+  }
+  else
+    Habitation->LC_Panneaux = ModifierPanneaux( Habitation->LC_Panneaux, extraction_type, largeur,longueur, inclinaison,Habitation->Exposition);
+   
+  
+  gtk_widget_hide(data->panneausolaires);
+  
+  
+  
+  
 }

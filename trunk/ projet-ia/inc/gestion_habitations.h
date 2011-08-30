@@ -119,7 +119,7 @@ ST_PANNEAUX* ModifierPanneaux(ST_PANNEAUX *Panneau, int type, float Largeur, flo
 
 ST_PIECES* Supprimer_Piece(ST_PIECES *Tete, char nom_piece[CMAX]);
 
-ST_EQUIPEMENTS* Supprimer_Equipement(ST_EQUIPEMENTS *Tete, char nom_equipement[CMAX])
+ST_EQUIPEMENTS* Supprimer_Equipement(ST_EQUIPEMENTS *Tete, char nom_equipement[CMAX]);
 
 void Detruire_Habitation(ST_HABITATIONS *Habitation);
 
