@@ -43,7 +43,7 @@ Data champs_habitation(GtkBuilder *builder, Data data, int size_tab, STR_DEPARTE
   data.Inclinaison_habitation = GTK_WIDGET( gtk_builder_get_object( builder,"inclinaison_toit"));
   data.Exposition_habitation = GTK_WIDGET( gtk_builder_get_object( builder, "exposition_sud" ) );
   data.Isolation = GTK_WIDGET( gtk_builder_get_object( builder, "Isolation" ) );
-  
+  data.popup_habitation = GTK_WIDGET( gtk_builder_get_object( builder, "popup_habitation" ) );
   return data;
 }
 
@@ -137,14 +137,19 @@ void on_parametres_maison_clicked(GtkWidget *widget, Data *data)
 
 void on_creer_piece_clicked(GtkWidget *Widget, Data *data)
 {
-  gtk_entry_set_text(GTK_ENTRY(data->NomPiece),"");
-  GtkAdjustment *adjust;
-  adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->LargeurPiece)); 
-  gtk_adjustment_set_value(adjust,0);
-  adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->LongueurPiece)); 
-  gtk_adjustment_set_value(adjust,0);
-  gtk_widget_show(data->piece);
- 
+  
+  if(Habitation != NULL)
+  {
+    gtk_entry_set_text(GTK_ENTRY(data->NomPiece),"");
+    GtkAdjustment *adjust;
+    adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->LargeurPiece)); 
+    gtk_adjustment_set_value(adjust,0);
+    adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->LongueurPiece)); 
+    gtk_adjustment_set_value(adjust,0);
+    gtk_widget_show(data->piece);
+  }
+    else
+      gtk_widget_show(data->popup_habitation);
   
 }
 
