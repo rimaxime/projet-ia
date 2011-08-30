@@ -58,61 +58,61 @@ float Rendement_geo(ST_DonneGeo Donnees)
 
 void Rendement_panneaux(PTR_ST_PANNEAUX Panneaux)
 {
-  switch(Panneaux.type)
+  switch(Panneaux->type)
   {  
     case 0 :
-      if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
+      if(Panneaux->MPPT == 0 || Panneaux->auto_rotation == 0)
     {
-      if(Panneaux.MPPT == 0)
+      if(Panneaux->MPPT == 0)
       {
-	if(Panneaux.auto_rotation ==0)
-	  Panneaux.rendement = (MONOCRISTALLIN_REND*2) + 0.15;
+	if(Panneaux->auto_rotation ==0)
+	  Panneaux->rendement = (MONOCRISTALLIN_REND*2) + 0.15;
 	else
-	  Panneaux.rendement = MONOCRISTALLIN_REND + 0.15;
+	  Panneaux->rendement = MONOCRISTALLIN_REND + 0.15;
       }
-      else if(Panneaux.auto_rotation == 0)
-	Panneaux.rendement = MONOCRISTALLIN_REND*2;
+      else if(Panneaux->auto_rotation == 0)
+	Panneaux->rendement = MONOCRISTALLIN_REND*2;
     }
     else
-      Panneaux.rendement = MONOCRISTALLIN_REND;
+      Panneaux->rendement = MONOCRISTALLIN_REND;
   break;
   
     case 1 :
-      if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
+      if(Panneaux->MPPT == 0 || Panneaux->auto_rotation == 0)
       {
-	if(Panneaux.MPPT == 0)
+	if(Panneaux->MPPT == 0)
 	{
-	  if(Panneaux.auto_rotation ==0)
-	    Panneaux.rendement = (POLYCRISTALLIN_REND*2) + 0.15;
+	  if(Panneaux->auto_rotation ==0)
+	    Panneaux->rendement = (POLYCRISTALLIN_REND*2) + 0.15;
 	  else
-	    Panneaux.rendement = POLYCRISTALLIN_REND + 0.15;
+	    Panneaux->rendement = POLYCRISTALLIN_REND + 0.15;
 	}
-	else if(Panneaux.auto_rotation == 0)
-	  Panneaux.rendement = POLYCRISTALLIN_REND*2;
+	else if(Panneaux->auto_rotation == 0)
+	  Panneaux->rendement = POLYCRISTALLIN_REND*2;
       }
       else
-	Panneaux.rendement = POLYCRISTALLIN_REND;
+	Panneaux->rendement = POLYCRISTALLIN_REND;
       break;
       
     case 2 :
-      if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
+      if(Panneaux->MPPT == 0 || Panneaux->auto_rotation == 0)
       {
-	if(Panneaux.MPPT == 0)
+	if(Panneaux->MPPT == 0)
 	{
-	  if(Panneaux.auto_rotation ==0)
-	    Panneaux.rendement = (AMORPHE_REND*2) + 0.15;
+	  if(Panneaux->auto_rotation ==0)
+	    Panneaux->rendement = (AMORPHE_REND*2) + 0.15;
 	  else
-	    Panneaux.rendement = AMORPHE_REND + 0.15;
+	    Panneaux->rendement = AMORPHE_REND + 0.15;
 	}
-	else if(Panneaux.auto_rotation == 0)
-	  Panneaux.rendement = AMORPHE_REND*2;
+	else if(Panneaux->auto_rotation == 0)
+	  Panneaux->rendement = AMORPHE_REND*2;
       }
       else
-	Panneaux.rendement = AMORPHE_REND;
+	Panneaux->rendement = AMORPHE_REND;
     break;
     
     default:
-      Panneaux.rendement = 0;
+      Panneaux->rendement = 0;
       break; 
   }
 }
