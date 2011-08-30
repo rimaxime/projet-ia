@@ -65,7 +65,7 @@ STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departement
 			{			
 				case 0:
 					if(compte_mois==1)
-					 tableau_departements[i].num_departement=atoi(st_token);
+					 strcpy(tableau_departements[i].num_departement,(st_token));
 					break;
 				case 1:
 					if(compte_mois==1)

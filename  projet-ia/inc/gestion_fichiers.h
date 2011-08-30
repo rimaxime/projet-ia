@@ -7,7 +7,8 @@
   */
 
 
-
+#ifndef GESTION_FICHIERS_H
+#define GESTION_FICHIERS_H
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -25,3 +26,6 @@
  */
 
 STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int* size_tab);
+
+
+#endif
