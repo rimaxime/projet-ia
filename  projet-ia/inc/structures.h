@@ -48,7 +48,7 @@ typedef struct DonneeMeteo //Valeurs normales
 
 typedef struct Departements
 {
-  char num_departement[CMAX];
+  int num_departement;
   char nom_departement[CMAX];
   char nom_region[CMAX];
   int zone_climatique;
@@ -69,8 +69,9 @@ typedef struct Panneaux
   float rendement;
   int MPPT; //Ajout du module Maximum Power Power Tracking : Rendement 15% -> 30%
   int auto_rotation; // 1 : Oui 2: Non
-  //struct Panneaux *suiv;
+  struct Panneaux *suiv;
 }ST_PANNEAUX;
+typedef ST_PANNEAUX* PTR_ST_PANNEAUX;
 
 
 typedef struct Equipements
@@ -120,7 +121,7 @@ typedef struct Habitations
 	ST_PIECES* LC_Pieces;
 	ST_PANNEAUX* LC_Panneaux;
 	float inclinaison_toit;
-	char Isolation[CMAX]; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
+	int Isolation; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
 	int Exposition; //l'exposition correspond à un entier :
 	//1 Sud
 	//2 Sud Ouest
@@ -130,7 +131,6 @@ typedef struct Habitations
 	//6 Nord Est
 	//7 Est
 	//8 Sud Est
-	char Departement[CMAX];
 }ST_HABITATIONS;  
 
 typedef struct jour
@@ -153,7 +153,5 @@ typedef struct donne_geo
   int orientation; //Orientation de la maison °/sud
   int rendement; //Redement géographique
 }ST_DonneGeo;
-
-
 
 #endif

@@ -25,7 +25,7 @@ void Calc_puiss_soleil(PTR_ST_SimuMeteo Meteo_Jour) //voir si on prend en compte
   else if(Meteo_Jour->condition == 1)
     Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.2*2*(my_rand()-0.5)*PUISSANCE_SOLEIL;
   else
-    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.03*my_rand()*PUISSANCE_SOLEIL;
+    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.03*2*(my_rand()-0.5)*PUISSANCE_SOLEIL;
 }
 
 /**
@@ -56,63 +56,61 @@ float Rendement_geo(ST_DonneGeo Donnees)
  * \return  none
  */
 
-void Rendement_panneaux(ST_PANNEAUX Panneaux)
+void Rendement_panneaux(PTR_ST_PANNEAUX Panneaux)
 {
   switch(Panneaux.type)
-  {  case 0 :
+  {  
+    case 0 :
+      if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
+    {
+      if(Panneaux.MPPT == 0)
       {
-	  if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
-	{
-	  if(Panneaux.MPPT == 0)
-	  {
-	    if(Panneaux.auto_rotation ==0)
-	      Panneaux.rendement = (MONOCRISTALLIN_REND*2) + 0.15;
-	    else
-	      Panneaux.rendement = MONOCRISTALLIN_REND + 0.15;
-	  }
-	  else if(Panneaux.auto_rotation == 0)
-	    Panneaux.rendement = MONOCRISTALLIN_REND*2;
-	}
+	if(Panneaux.auto_rotation ==0)
+	  Panneaux.rendement = (MONOCRISTALLIN_REND*2) + 0.15;
 	else
-	  Panneaux.rendement = MONOCRISTALLIN_REND;
-      break;
+	  Panneaux.rendement = MONOCRISTALLIN_REND + 0.15;
       }
+      else if(Panneaux.auto_rotation == 0)
+	Panneaux.rendement = MONOCRISTALLIN_REND*2;
+    }
+    else
+      Panneaux.rendement = MONOCRISTALLIN_REND;
+  break;
+  
     case 1 :
+      if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
       {
-	if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
+	if(Panneaux.MPPT == 0)
 	{
-	  if(Panneaux.MPPT == 0)
-	  {
-	    if(Panneaux.auto_rotation ==0)
-	      Panneaux.rendement = (POLYCRISTALLIN_REND*2) + 0.15;
-	    else
-	      Panneaux.rendement = POLYCRISTALLIN_REND + 0.15;
-	  }
-	  else if(Panneaux.auto_rotation == 0)
-	    Panneaux.rendement = POLYCRISTALLIN_REND*2;
+	  if(Panneaux.auto_rotation ==0)
+	    Panneaux.rendement = (POLYCRISTALLIN_REND*2) + 0.15;
+	  else
+	    Panneaux.rendement = POLYCRISTALLIN_REND + 0.15;
 	}
-	else
-	  Panneaux.rendement = POLYCRISTALLIN_REND;
-	break;
-	}
-    case 2 :
-      {
-	if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
-	{
-	  if(Panneaux.MPPT == 0)
-	  {
-	    if(Panneaux.auto_rotation ==0)
-	      Panneaux.rendement = (AMORPHE_REND*2) + 0.15;
-	    else
-	      Panneaux.rendement = AMORPHE_REND + 0.15;
-	  }
-	  else if(Panneaux.auto_rotation == 0)
-	    Panneaux.rendement = AMORPHE_REND*2;
-	}
-	else
-	  Panneaux.rendement = AMORPHE_REND;
-      break;
+	else if(Panneaux.auto_rotation == 0)
+	  Panneaux.rendement = POLYCRISTALLIN_REND*2;
       }
+      else
+	Panneaux.rendement = POLYCRISTALLIN_REND;
+      break;
+      
+    case 2 :
+      if(Panneaux.MPPT == 0 || Panneaux.auto_rotation == 0)
+      {
+	if(Panneaux.MPPT == 0)
+	{
+	  if(Panneaux.auto_rotation ==0)
+	    Panneaux.rendement = (AMORPHE_REND*2) + 0.15;
+	  else
+	    Panneaux.rendement = AMORPHE_REND + 0.15;
+	}
+	else if(Panneaux.auto_rotation == 0)
+	  Panneaux.rendement = AMORPHE_REND*2;
+      }
+      else
+	Panneaux.rendement = AMORPHE_REND;
+    break;
+    
     default:
       Panneaux.rendement = 0;
       break; 
@@ -134,7 +132,11 @@ float Rendement_thermique(ST_SimuMeteo Jour)
     rend_th = 1 - REND_TH*(Jour.temp - TEMP_REF);
   else
     rend_th = 1 + REND_TH*(TEMP_REF - Jour.temp); 
-  
+
+  if(rend_th > 2)
+    rend_th = 1.5;
+  else if(rend_th < 0.5)
+    rend_th = 0.5;
   return rend_th;
 }
 
