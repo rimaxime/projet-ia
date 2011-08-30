@@ -38,20 +38,20 @@ void test_rendement_geo()
   ST_DonneGeo Geo;
   Geo.orientation = 0;
   Geo.inclinaison = 0;
-  FILE *test;
-	test= fopen("Test_rendement_geo.csv","w+");
-  fprintf(test,"Inclinaison ; Orientation ; Rendement");
+  FILE *rend_geo;
+	rend_geo= fopen("Test_rendement_geo.csv","w+");
+  fprintf(rend_geo,"Inclinaison ; Orientation ; Rendement");
   
   while(Geo.inclinaison <100)
   {
     while(Geo.orientation<100)
     {     
-      fprintf(test,"%d ; %d\n ; %2.2f",Geo.inclinaison,Geo.orientation,Rendement_geo(Geo));
+      fprintf(rend_geo,"%d ; %d\n ; %2.2f",Geo.inclinaison,Geo.orientation,Rendement_geo(Geo));
       Geo.orientation=Geo.orientation+10;
     }
     Geo.inclinaison=Geo.inclinaison+10;    
   }
-  fclose(test);
+  fclose(rend_geo);
 }
 
 void test_calc_puiss_soleil()
@@ -86,7 +86,7 @@ void test_rendement_panneaux()
     {
       for(Panneaux.auto_rotation=0; Panneaux.auto_rotation<3; Panneaux.auto_rotation++)
       {
-	Rendement_panneaux(Panneaux);
+	Rendement_panneaux(&Panneaux);
 	fprintf(rend_panneaux," %d ; %d ; % d ; %2.2f \n", Panneaux.type, Panneaux.MPPT, Panneaux.auto_rotation, Panneaux.rendement);
       }
     }
@@ -102,7 +102,7 @@ void test_rendement_thermique()
   fprintf(rend_th,"Temp ; Rendement\n");
   for(Jour.temp =-10; Jour.temp < 100; Jour.temp++)
   {
-    fprintf(rend_th," %2.2f ; %2.2f ",Jour.temp,Rendement_thermique(Jour));
+    fprintf(rend_th," %2.2f ; %2.2f \n",Jour.temp,Rendement_thermique(Jour));
   }
   fclose(rend_th);
   
