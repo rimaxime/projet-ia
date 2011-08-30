@@ -13,24 +13,37 @@
 typedef struct _Data Data;
 struct _Data
 {
+	//fenetres
     GtkWidget *window;
     GtkWidget *sauvegarde;
     GtkWidget *habitation;
     GtkWidget *piece;
     GtkWidget *popup_habitation;
-    //habitation
+	GtkWidget *modificationpiece;
+	GtkWidget *supprimerpiece;
+	
+	
+    //champs habitation
     GtkWidget *Departement_habitation;
     GtkWidget *Inclinaison_habitation;
     GtkWidget *Exposition_habitation;
     GtkWidget *Isolation;
     
-    //piece
+    //champs piece
     GtkWidget *NomPiece;
     GtkWidget *TypePiece;
     GtkWidget *LargeurPiece;
     GtkWidget *LongueurPiece;
     
-    
+	//champs Modification Piece
+	GtkWidget *ModificationNomPiece;
+    GtkWidget *ModificationTypePiece;
+	GtkWidget *ModificationLargeurPiece;
+	GtkWidget *ModificationLongueurPiece;
+	
+	//champs Suppression Piece
+	GtkWidget *SuppressionNomPiece;
+	
 };
 
 
@@ -68,5 +81,11 @@ void on_creer_piece_clicked(GtkWidget *Widget, Data *data);
 void on_annuler_piece_clicked(GtkWidget *widget,Data *data);
 
 void on_valider_piece_clicked(GtkWidget *widget,Data *data);
+
+void on_modifier_piece_clicked(GtkWidget *widget, Data *data);
+
+void on_valider_modification_piece_clicked(GtkWidget *widget, Data *data);
+
+void on_supprimer_piece_clicked(GtkWidget *widget, Data *data)
 
 #endif

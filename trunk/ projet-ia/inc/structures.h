@@ -69,7 +69,7 @@ typedef struct Panneaux
   float rendement;
   int MPPT; //Ajout du module Maximum Power Power Tracking : Rendement 15% -> 30%
   int auto_rotation; // 1 : Oui 2: Non
-  struct Panneaux *suiv;
+  //struct Panneaux *suiv;
 }ST_PANNEAUX;
 
 
