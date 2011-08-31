@@ -65,12 +65,12 @@ struct _Data
     GtkWidget *popup_chauffage;
 	
 	//Gestion des équipements
-	ST_EQUIPEMENTS Tableau_Equipements[];
+	ST_EQUIPEMENTS *Tableau_Equipements;
 	GtkWidget *liste_equipements_possible;
-    GtkWidget *liste_equipements_piece;
+	GtkWidget *liste_equipements_piece;
 	GtkWidget *equipements_piece;
-	GtkWidget *selection_equipement_possible;
-	GtkWidget *selection_equipement_piece;
+	GtkTreeSelection *selection_equipement_possible;
+	GtkTreeSelection *selection_equipement_piece;
 };
 
 
