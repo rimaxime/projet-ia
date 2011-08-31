@@ -11,9 +11,12 @@
 #include "../inc/ihm_general.h"
 
 
+
 int main()
 {
+  Data data;
   
+ 
   STR_DEPARTEMENT* tableau_departements = NULL;
   int size_tab=0;
   tableau_departements = RecupererInfosDepartement(tableau_departements,&size_tab);
@@ -22,16 +25,17 @@ int main()
   
   GtkBuilder *builder =NULL;
   builder = creationbuilder();
-  Data data;
   
-  
-  
-  
+ 
   data = chargement_fenetres(builder);
   data = champs_habitation(builder,data,size_tab,tableau_departements);
   data = champs_pieces(builder, data);
   data = champ_panneaux(builder,data);
   data = champ_chauffage(builder,data);
+  data = champ_equipements(builder,data);
+  data = champ_calendrier(builder,data);
+  data.Tableau_Equipements = NULL;
+  data.Tableau_Equipements = RecupererInfosEquipements(data.Tableau_Equipements);
   if(! GTK_COMBO_BOX(data.Isolation))
     printf("champ non fonctionnel\n");
   else
@@ -46,3 +50,4 @@ int main()
  return 0;
   
 }
+

@@ -2,7 +2,6 @@
 
 #ifndef IHM_GENERAL_H
 #define IHM_GENERAL_H
-
 #include <gtk/gtk.h>
 #include "../inc/structures.h"
 #include "../inc/gestion_habitations.h"
@@ -71,6 +70,17 @@ struct _Data
 	GtkWidget *equipements_piece;
 	GtkTreeSelection *selection_equipement_possible;
 	GtkTreeSelection *selection_equipement_piece;
+	
+	
+  //champ calendrier
+  GtkWidget *label_date_debut;
+  GtkWidget *label_date_fin;
+  GtkWidget *calendrier_debut;
+  GtkWidget *calendrier_fin;
+  
+
+  //tests image
+  GtkWidget *image_meteo;
 };
 
 
@@ -135,6 +145,9 @@ void on_valider_chauffage_clicked(GtkWidget *widget, Data *data);
 
 Data champ_chauffage(GtkBuilder *builder, Data data);
 
+
+Data champ_equipements(GtkBuilder *builder, Data data);
+
 void on_gestion_equipements_clicked(GtkWidget *widget, Data *data);
 
 void on_equipement_piece_changed(GtkWidget *widget, Data *data);
@@ -142,5 +155,9 @@ void on_equipement_piece_changed(GtkWidget *widget, Data *data);
 void on_ajouter_equipement_clicked(GtkWidget *widget, Data *data);
 
 void on_supprimer_equipement_clicked(GtkWidget *widget, Data *data);
+
+Data champ_calendrier(GtkBuilder *builder, Data data);
+
+void on_calendar1_day_selected_double_click(GtkWidget *widget, Data *data);
 
 #endif

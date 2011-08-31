@@ -1,10 +1,12 @@
 
 
-
 #include "../inc/ihm_general.h"
 
 ST_HABITATIONS* Habitation = NULL;
+ST_PARAMETRES_SIMULATION Parametres_simulation;
 
+//test pause
+int test_pause = 0;
 
 GtkBuilder * creationbuilder()
 {
@@ -49,6 +51,10 @@ Data champs_habitation(GtkBuilder *builder, Data data, int size_tab, STR_DEPARTE
   data.Exposition_habitation = GTK_WIDGET( gtk_builder_get_object( builder, "exposition_sud" ) );
   data.Isolation = GTK_WIDGET( gtk_builder_get_object( builder, "Isolation" ) );
   data.popup_habitation = GTK_WIDGET( gtk_builder_get_object( builder, "popup_habitation" ) );
+  
+  
+  //test a supprimer
+  data.image_meteo = GTK_WIDGET( gtk_builder_get_object( builder, "meteo" ) );
   return data;
 }
 
@@ -107,7 +113,15 @@ Data champ_equipements(GtkBuilder *builder, Data data)
   return data;
 }
 
-
+Data champ_calendrier(GtkBuilder *builder, Data data)
+{
+ data.label_date_debut = GTK_WIDGET(gtk_builder_get_object(builder,"date_debut"));
+ data.label_date_fin = GTK_WIDGET(gtk_builder_get_object(builder,"date_fin"));
+ data.calendrier_debut = GTK_WIDGET(gtk_builder_get_object(builder,"calendar1"));
+ data.calendrier_fin = GTK_WIDGET(gtk_builder_get_object(builder,"calendar2"));
+ return data;
+  
+}
 
 void connexion_signaux(GtkBuilder *builder, Data data)
 {
@@ -254,7 +268,6 @@ void on_valider_piece_clicked(GtkWidget *widget,Data *data)
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->TypePiece));
     gtk_tree_model_get(model, &iter, 0, &string_type, -1);  }
   extraction = atoi(strtok(string_type," "));
-  
   ST_PIECES * Nouvelle = NULL;
   Nouvelle = CreationPiece(Nom_piece,extraction,largeur,longueur,0,0,0,0);
   Habitation->LC_Pieces = InsererTrierPiece(Nouvelle, Habitation->LC_Pieces);
@@ -355,7 +368,7 @@ void on_valider_suppression_piece_clicked(GtkWidget *widget, Data *data)
   else
   {
 	Detruire_Equipements(Piece->LC_Equipements);
-        Supprimer_Piece(Habitation->LC_Pieces, string_nom_piece);
+        Habitation->LC_Pieces = Supprimer_Piece(Habitation->LC_Pieces, string_nom_piece);
 	gtk_widget_hide(data->supprimerpiece);
   }
 }
@@ -702,8 +715,8 @@ void on_gestion_equipements_clicked(GtkWidget *widget, Data *data)
       test_piece = test_piece->suiv;
     }
     gtk_combo_box_set_model(GTK_COMBO_BOX(data->equipements_piece),GTK_TREE_MODEL(store));
-	gtk_combo_box_set_model(GTK_COMBO_BOX(data->liste_equipements_possible),NULL);
-	gtk_combo_box_set_model(GTK_COMBO_BOX(data->liste_equipements_piece),NULL);
+	gtk_tree_view_set_model(GTK_TREE_VIEW(data->liste_equipements_possible),NULL);
+	gtk_tree_view_set_model(GTK_TREE_VIEW(data->liste_equipements_piece),NULL);
 	gtk_widget_show(data->equipements);
   }
   else
@@ -731,26 +744,28 @@ void on_equipement_piece_changed(GtkWidget *widget, Data *data)
     else
     {
 	  GtkTreeIter iter_equipements;
-      GtkListStore *store;
+	  GtkListStore *store;
 	  store = gtk_list_store_new(1,G_TYPE_STRING);
 	  while(Piece->LC_Equipements != NULL)
 	  {
 	    gtk_list_store_prepend(store,&iter_equipements);
-        gtk_list_store_set(store, &iter_equipements,0, Piece->LC_Equipements->nom_equipement, -1);
-        Piece->LC_Equipements = Piece->LC_Equipements->suiv;
+	    gtk_list_store_set(store, &iter_equipements,0, Piece->LC_Equipements->nom_equipement, -1);
+	    Piece->LC_Equipements = Piece->LC_Equipements->suiv;
 	  }
 	  gtk_tree_view_set_model(GTK_TREE_VIEW(data->liste_equipements_piece),GTK_TREE_MODEL(store));
 	  GtkTreeIter iter_equipements_possibles;
 	  store = gtk_list_store_new(1,G_TYPE_STRING);
 	  ST_EQUIPEMENTS *Test = NULL;
+	  
 	  Test = &(data->Tableau_Equipements[Piece->type_piece]);
+	  gtk_tree_view_set_model(GTK_TREE_VIEW(data->liste_equipements_possible),GTK_TREE_MODEL(store));
 	  while(Test != NULL)
 	  {
 	    gtk_list_store_prepend(store,&iter_equipements_possibles);
             gtk_list_store_set(store, &iter_equipements_possibles,0, Test->nom_equipement, -1);
             Test = Test->suiv;
 	  }
-	  gtk_tree_view_set_model(GTK_TREE_VIEW(data->liste_equipements_possible),GTK_TREE_MODEL(store));
+	  
 	}
   }
 }
@@ -869,4 +884,108 @@ void on_valider_equipement_clicked(GtkWidget *widget, Data *data)
 	}
   }
   gtk_widget_hide(data->equipements);
+}
+
+
+void on_calendar1_day_selected_double_click(GtkWidget *widget, Data *data)
+{
+  char str[CMAX];
+  guint day, month,year;
+  gtk_calendar_get_date(GTK_CALENDAR(data->calendrier_debut),&year,&month,&day);
+  sprintf(str,"Date debut : %d/%d/%d",day,month,year);
+  gtk_label_set_text(GTK_LABEL(data->label_date_debut),str);
+  Parametres_simulation.date_initiale.Jour = (int)day;
+  Parametres_simulation.date_initiale.Mois = (int)month;
+  Parametres_simulation.date_initiale.Annee = (int)year;
+}
+
+void on_calendar2_day_selected_double_click(GtkWidget *widget, Data *data)
+{
+  char str[CMAX];
+  guint day, month,year;
+  gtk_calendar_get_date(GTK_CALENDAR(data->calendrier_fin),&year,&month,&day);
+  sprintf(str,"Date fin : %d/%d/%d",day,month,year);
+  gtk_label_set_text(GTK_LABEL(data->label_date_fin),str);
+  Parametres_simulation.date_finale.Jour = (int)day;
+  Parametres_simulation.date_finale.Mois = (int)month;
+  Parametres_simulation.date_finale.Annee = (int)year;
+  
+}
+
+void on_play_clicked(GtkWidget *widget, Data *data)
+{
+ test_pause =0;
+//  while(test_pause == 0)
+//  {
+//   printf("play\n"); 
+//  } 
+  gtk_image_set_from_file(GTK_IMAGE(data->image_meteo),"../ressource/icones_meteo/partly-cloudy-day-icon.png");
+}
+
+void on_pause_clicked(GtkWidget *widget, Data *data)
+{
+ test_pause = 1;
+ printf("pause activée\n");
+  
+}
+
+void on_dessin_maison_expose_event(GtkWidget *da,GdkEventExpose *event)
+{
+  //a manager ! 
+ cairo_t *cr = NULL;
+ cr = gdk_cairo_create(da->window);
+ gdk_cairo_rectangle(cr, &event->area);
+ cairo_clip(cr);
+ cairo_set_source_rgb(cr,0.45777,0,0.45777);
+ cairo_rectangle(cr,20,50,10,10);
+ cairo_fill(cr);
+ cairo_destroy(cr);
+}
+
+void on_dessin_maison_button_press_event(GtkWidget *da,GdkEventButton *event)
+{
+  GdkRectangle update;
+  if(event->button == 1)
+  {
+    printf("entrée\n");
+  update.x = 0;
+  update.y = 0;
+  update.width = 600;
+  update.height = 600;
+  cairo_t *cr = NULL;
+ cr = gdk_cairo_create(da->window);
+ gdk_cairo_rectangle(cr, &update);
+ cairo_clip(cr);
+ cairo_set_source_rgb(cr,0.45777,0,0.45777);
+ cairo_rectangle(cr,event->x,event->y,10,10);
+ cairo_fill(cr);
+ cairo_destroy(cr);
+  }
+}
+
+void on_dessin_maison_motion_notify_event(GtkWidget *da,GdkEventMotion *event)
+{
+ int x,y;
+  GdkRectangle update;
+ GdkModifierType state = 0;
+ gdk_window_get_pointer(event->window,&x,&y,&state);
+  if(state && GDK_BUTTON1_MASK)
+  {
+   printf("entrée2\n");
+  cairo_t *cr = NULL;
+  cr = gdk_cairo_create(da->window);
+   update.x = 0;
+  update.y = 0;
+  update.width = 600;
+  update.height = 600;
+gdk_cairo_rectangle(cr, &update);
+ cairo_clip(cr);
+ cairo_set_source_rgb(cr,0.45777,0,0.45777);
+ cairo_rectangle(cr,event->x,event->y,10,10);
+ cairo_fill(cr);
+ cairo_destroy(cr);
+    
+    
+  }
+  
 }

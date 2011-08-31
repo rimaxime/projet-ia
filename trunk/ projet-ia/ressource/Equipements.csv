@@ -1,4 +1,3 @@
-Nom de l'appareil;Consomation horaire;Nombre d'heure d'utilisation;Piece 1;Piece 2;Piece 3
 Tele Plasma;290;3;Salon;Chambre;Cuisine
 Machine à glacon;160;0,03;Cuisine;;
 Sèche cheveux;2000;0,1;Salle de bain;;
@@ -25,8 +24,8 @@ Robot menager;550;0,2;Cuisine;;
 Tele LED;100;3;Salon;Chambre;Cuisine
 Chauffage d'appoint;2000;0,2;Salle de bain;;
 Tronconneuse;2200;0,02;Garage;;
-IPAD;10;2;Chambre;Bureau;
-Ordinateur portable;60;2;Chambre;Bureau;
+IPAD;10;2;Chambre;;
+Ordinateur portable;60;2;Chambre;;
 Tele LCD;200;3;Salon;Chambre;Cuisine
 Chauffe eau;1800;4;Salle de bain;Buanderie;
 Deshumidificateur;320;6;Salon;Chambre;
@@ -41,14 +40,14 @@ Ventilateur;50;0,3;Cuisine;Salon;Chambre
 Refrigerateur;50;24;Cuisine;;
 Sorbetiere;135;0,03;Cuisine;;
 Fontaine Chocolat;350;0,02;Cuisine;;
-Ordinateur de bureau;80;2;Bureau;Chambre;
+Ordinateur de bureau;80;2;Chambre;;
 Seche serviette;600;0,5;Salle de bain;;
 Home cinema;55;0,5;Salon;;
-Imprimante;12;0,05;Bureau;Chambre;
-Videoprojecteur;230;0,5;Bureau;Chambre;Salon
+Imprimante;12;0,05;Chambre;;
+Videoprojecteur;230;0,5;Chambre;Salon;
 Lave vaisselle;1050;0,7;Cuisine;;
 Mini four;2200;0,75;Cuisine;;
-Frigo Americain;80;24;;;
+Frigo Americain;80;24;Cuisine;;
 Cuisiniere electrique;1000;1,5;Cuisine;;
 Pizza grill;920;0,02;Cuisine;;
 Machine a pain;480;0,4;Cuisine;;

@@ -159,4 +159,12 @@ typedef struct donne_geo
   float rendement; //Redement géographique
 }ST_DonneGeo;
 
+typedef struct parametres_simulation
+{
+ ST_Date date_initiale;
+ ST_Date date_finale;
+ int vitesse;
+ //int allant de 1 à 5, vitesse initiale = 5 
+}ST_PARAMETRES_SIMULATION;
+
 #endif

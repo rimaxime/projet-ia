@@ -273,7 +273,7 @@ ST_PANNEAUX* ModifierPanneaux(ST_PANNEAUX *Panneau, int type, float Largeur, flo
 ST_PIECES* Supprimer_Piece(ST_PIECES *Tete, char nom_piece[CMAX])
 {
 	if(Tete == NULL)
-		return(Tete);
+		return(NULL);
 	else if(strcasecmp(Tete->nom_piece,nom_piece) == 0)
 	{
 		ST_PIECES *test = NULL;
@@ -283,6 +283,7 @@ ST_PIECES* Supprimer_Piece(ST_PIECES *Tete, char nom_piece[CMAX])
 	}
 	else
 		Tete->suiv = Supprimer_Piece(Tete->suiv, nom_piece);
+	return Tete;
 }
 
 ST_EQUIPEMENTS* Supprimer_Equipement(ST_EQUIPEMENTS *Tete, char nom_equipement[CMAX])
@@ -298,6 +299,7 @@ ST_EQUIPEMENTS* Supprimer_Equipement(ST_EQUIPEMENTS *Tete, char nom_equipement[C
 	}
 	else
 		Tete->suiv = Supprimer_Equipement(Tete->suiv, nom_equipement);
+	return Tete;
 }
 
 
