@@ -114,6 +114,9 @@ STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departement
 			i++;
 	}
 	*size_tab=i;
+	fclose(fp);
+	
+	
 	return tableau_departements;
 }
 
@@ -124,31 +127,34 @@ ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements)
 	int i=0,j=0,k=0;
 	int size_chaine=0;
 	memset(chaine,0,sizeof(chaine));
-	FILE* fp;
+	FILE* ft;
 	float consommation;
 	float temps;
+	int id;
 	char nom_equipement[CMAX];
 	ST_EQUIPEMENTS* nouveau = NULL;
-	ST_EQUIPEMENTS* suivant = NULL;
-	fp = fopen("../ressource/Equipements.csv","r");
-	if(fp==NULL)
+	ST_EQUIPEMENTS suivant;
+	ft = fopen("../ressource/Equipements.csv","r");
+	if(ft==NULL)
 	{
 	  fprintf(stderr,"Erreur d'ouverture fichier\n");
 	  exit(-1);
 	}
 	while(k<7)
 	{
-	  tableau_equipements=(ST_EQUIPEMENTS *)realloc(tableau_equipements,(i+1)*sizeof(ST_EQUIPEMENTS));	//Il faut que st_recover=NULL -->realloc=malloc a la difference que l'on peut deplace dans une zone mémoire de taille suffisante si la premiere ne l'est pas et fait un free de la première zone.
+	  tableau_equipements=(ST_EQUIPEMENTS *)realloc(tableau_equipements,(k+1)*sizeof(ST_EQUIPEMENTS));	//Il faut que st_recover=NULL -->realloc=malloc a la difference que l'on peut deplace dans une zone mémoire de taille suffisante si la premiere ne l'est pas et fait un free de la première zone.
 //	Exemple si le malloc M prend 2 case mémoire et qu'il nous en faut 3 et que l'espace contigu le première malloc est occupé xx on réallou R plus loin ou la place est suffisante MMxx0O0-->00xxRRR
 	  if(tableau_equipements==NULL)						
 	  {
 		fprintf(stdout,"RecupérerInfoFichier : Erreur d'alloc mémoire \n");
 		exit(-1);
 	  }
-				
-	  memset(tableau_equipements+i,0,sizeof(ST_EQUIPEMENTS));
+	  
+	  memset(tableau_equipements+k,0,sizeof(ST_EQUIPEMENTS));
+	  tableau_equipements[k].suiv = NULL;
+	  k++;
 	}
-	while(fgets(chaine,CMAX,fp)!=NULL)
+	while(fgets(chaine,CMAX,ft)!=NULL)
 	{
 		size_chaine=strlen(chaine)-1; 
 		st_token=strtok(chaine,";"); 
@@ -174,21 +180,40 @@ ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements)
 				case 3:
 				case 4:
 				case 5:
-				case 6:
-				case 7:
-				case 8:
+						if(strcasecmp(st_token,"Chambre") == 0)
+						  id = 1;
+						else if (strcasecmp(st_token,"Salon") == 0)
+						  id = 2;
+						else if (strcasecmp(st_token,"Cuisine") == 0)
+						  id = 3;
+						else if (strcasecmp(st_token,"Salle de bain") == 0)
+						  id = 4;
+						else if (strcasecmp(st_token,"Toilettes") == 0)
+						  id = 5;
+						else if (strcasecmp(st_token,"Buanderie") == 0)
+						  id = 6;
+						else 
+						  id = 1;
 						nouveau = (ST_EQUIPEMENTS*) malloc (sizeof(ST_EQUIPEMENTS));
-						suivant = &(tableau_equipements[atoi(st_token)]);
-						tableau_equipements[atoi(st_token)]= *nouveau;
-						tableau_equipements[atoi(st_token)].suiv = suivant;
-						tableau_equipements[atoi(st_token)].consommation_equipement = consommation;
-						tableau_equipements[atoi(st_token)].nombre_heures_utilisation_journalier = temps;
-						tableau_equipements[atoi(st_token)].Largeur = 0;
-						tableau_equipements[atoi(st_token)].Longueur = 0;
-						tableau_equipements[atoi(st_token)].coordX1 = 0;
-						tableau_equipements[atoi(st_token)].coordY1 = 0;
-						tableau_equipements[atoi(st_token)].coordX2 = 0;
-						tableau_equipements[atoi(st_token)].coordY2 = 0;
+						strcpy(nouveau->nom_equipement,nom_equipement);
+						nouveau->consommation_equipement = consommation;
+						nouveau->nombre_heures_utilisation_journalier = temps;
+						nouveau->Largeur = 0;
+						nouveau->Longueur = 0;
+						nouveau->coordX1 = 0;
+						nouveau->coordY1 = 0;
+						nouveau->coordX2 = 0;
+						nouveau->coordY2 = 0;
+						nouveau->suiv = NULL;
+						ST_EQUIPEMENTS *test = NULL;
+						test = &(tableau_equipements[id]);
+						ST_EQUIPEMENTS *precedent = test;
+						while(test != NULL)
+						{
+						  precedent = test;
+						  test = test->suiv;
+						}
+						precedent->suiv = nouveau;
 					break;	
 				default:
 					break;
@@ -201,5 +226,6 @@ ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements)
 		memset(chaine,0,sizeof(chaine));
 		i++;
 	}
+	free(ft);
 	return tableau_equipements;
 }

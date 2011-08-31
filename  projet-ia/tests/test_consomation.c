@@ -7,7 +7,7 @@
 #include "../inc/structures.h"
 #include "../inc/production.h"
 #include "../inc/meteo.h"
-#include "../inc.consomation.h"
+#include "../inc/consomation.h"
 
 //Prototypes
 
