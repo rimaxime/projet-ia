@@ -27,6 +27,7 @@ Data chargement_fenetres(GtkBuilder *builder)
   data.modificationpiece = GTK_WIDGET(gtk_builder_get_object(builder,"modification_piece"));
   data.supprimerpiece = GTK_WIDGET(gtk_builder_get_object(builder,"suppression_piece"));
   data.panneausolaires = GTK_WIDGET(gtk_builder_get_object(builder,"parametres_panneaux_solaires"));
+  data.chauffage = GTK_WIDGET(gtk_builder_get_object(builder,"parametres_chauffag"));
   return data;
 }
 
@@ -81,6 +82,14 @@ Data champ_panneaux(GtkBuilder *builder, Data data)
  data.inclinaison_panneau = GTK_WIDGET(gtk_builder_get_object(builder,"inclinaison_panneau"));
  return data;
  
+}
+
+Data champ_chauffage(GtkBuilder *builder, Data data)
+{
+    data.bois = GTK_WIDGET(gtk_builder_get_object(builder,"chauffage_bois"));
+    data.electricite = GTK_WIDGET(gtk_builder_get_object(builder,"chauffage_electricite"));
+    data.gaz = GTK_WIDGET(gtk_builder_get_object(builder,"chauffage_gaz"));
+    data.climatisation = GTK_WIDGET(gtk_builder_get_object(builder,"climatisation"));
 }
 
 void connexion_signaux(GtkBuilder *builder, Data data)
@@ -216,7 +225,7 @@ void on_valider_piece_clicked(GtkWidget *widget,Data *data)
 
 void on_modifier_piece_clicked(GtkWidget *widget, Data *data)
 {
-  if(Habitation->LC_Pieces != NULL)
+  if(Habitation != NULL && Habitation->LC_Pieces != NULL)
   {
     GtkTreeIter iter;
     GtkListStore *store;
@@ -310,7 +319,7 @@ void on_valider_suppression_piece_clicked(GtkWidget *widget, Data *data)
 
 void on_supprimer_piece_clicked(GtkWidget *widget, Data *data)
 {
-  if(Habitation->LC_Pieces != NULL)
+  if(Habitation != NULL && Habitation->LC_Pieces != NULL)
   {
    GtkTreeIter iter;
 	GtkListStore *store;
@@ -424,14 +433,29 @@ void on_valider_panneau_clicked(GtkWidget *widget, Data *data)
   if(Habitation->LC_Panneaux == NULL)
   {
     Habitation->LC_Panneaux = CreationPanneaux(1, extraction_type, largeur,longueur, inclinaison,Habitation->Exposition);
+    
   }
   else
     Habitation->LC_Panneaux = ModifierPanneaux( Habitation->LC_Panneaux, extraction_type, largeur,longueur, inclinaison,Habitation->Exposition);
    
   
-  gtk_widget_hide(data->panneausolaires);
+  gtk_widget_hide(data->panneausolaires);    
   
+}
+
+
+void on_parametres_chauffage_clicked(GtkWidget *widget, Data *data)
+{
+  if(Habitation != NULL)
+  {
+    gtk_widget_show(data->chauffage);
+    
+
+  }
   
-  
-  
+}
+
+void on_adjustment8_changed(GtkWidget *widget, Data *data)
+{
+ printf("ça a bougé \n"); 
 }

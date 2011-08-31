@@ -132,6 +132,10 @@ typedef struct Habitations
 	//7 Est
 	//8 Sud Est
 	char Departement[CMAX];
+	int chauffage_bois;
+	int chauffage_gaz;
+	int chauffage_electricite;
+	int climatisation;
 }ST_HABITATIONS;  
 
 typedef struct jour

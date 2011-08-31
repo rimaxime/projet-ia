@@ -22,6 +22,7 @@ struct _Data
     GtkWidget *modificationpiece;
     GtkWidget *supprimerpiece;
     GtkWidget *panneausolaires;
+    GtkWidget *chauffage;
 	
     //champs habitation
     GtkWidget *Departement_habitation;
@@ -54,6 +55,12 @@ struct _Data
     GtkWidget *longueur_panneau;
     GtkWidget *inclinaison_panneau;
     
+    
+    //champs chauffage
+    GtkWidget *bois;
+    GtkWidget *gaz;
+    GtkWidget *electricite;
+    GtkWidget *climatisation;
     
     
 };
@@ -107,4 +114,8 @@ Data champ_panneaux(GtkBuilder *builder, Data data);
 void on_creer_panneau_clicked(GtkWidget *widget, Data *data);
 
 void on_valider_panneau_clicked(GtkWidget *widget, Data *data);
+
+void on_parametres_chauffage_clicked(GtkWidget *widget, Data *data);
+
+Data champ_chauffage(GtkBuilder *builder, Data data);
 #endif

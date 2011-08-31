@@ -33,7 +33,10 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, ch
   Nouveau->LC_Pieces = NULL;
   Nouveau->LC_Panneaux = NULL;  
   strcpy(Nouveau->Departement,Departement);
-  
+  Nouveau->chauffage_gaz = 0;
+  Nouveau->chauffage_electricite = 0;
+  Nouveau->chauffage_bois = 0;
+  Nouveau->climatisation = 2;
   return Nouveau;
 }
 
