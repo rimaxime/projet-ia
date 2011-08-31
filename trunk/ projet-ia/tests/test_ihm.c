@@ -30,6 +30,8 @@ int main()
   data = chargement_fenetres(builder);
   data = champs_habitation(builder,data,size_tab,tableau_departements);
   data = champs_pieces(builder, data);
+  data = champ_panneaux(builder,data);
+  data = champ_chauffage(builder,data);
   if(! GTK_COMBO_BOX(data.Isolation))
     printf("champ non fonctionnel\n");
   else
