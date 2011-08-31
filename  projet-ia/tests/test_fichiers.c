@@ -38,7 +38,7 @@ void test_fichiers()
 
 void test_equipements()
 {
-  ST_EQUIPEMENTS tableau_equipements[7] = NULL;
+  ST_EQUIPEMENTS *tableau_equipements = NULL;
   tableau_equipements = RecupererInfosEquipements(tableau_equipements);
   printf("%s\n",tableau_equipements[1].nom_equipement);
 

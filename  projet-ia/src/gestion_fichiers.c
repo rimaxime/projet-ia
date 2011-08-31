@@ -30,7 +30,7 @@ STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departement
 	if(fp==NULL)
 	{
 	  fprintf(stderr,"Erreur d'ouverture fichier\n");
-	  exit(1);
+	  exit(-1);
 	}
 	while(fgets(chaine,CMAX,fp)!=NULL)
 	{
@@ -127,18 +127,32 @@ ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements)
 	FILE* fp;
 	float consommation;
 	float temps;
+	char nom_equipement[CMAX];
+	ST_EQUIPEMENTS* nouveau = NULL;
+	ST_EQUIPEMENTS* suivant = NULL;
 	fp = fopen("../ressource/Equipements.csv","r");
 	if(fp==NULL)
 	{
 	  fprintf(stderr,"Erreur d'ouverture fichier\n");
-	  exit(1);
+	  exit(-1);
+	}
+	while(k<7)
+	{
+	  tableau_equipements=(ST_EQUIPEMENTS *)realloc(tableau_equipements,(i+1)*sizeof(ST_EQUIPEMENTS));	//Il faut que st_recover=NULL -->realloc=malloc a la difference que l'on peut deplace dans une zone mémoire de taille suffisante si la premiere ne l'est pas et fait un free de la première zone.
+//	Exemple si le malloc M prend 2 case mémoire et qu'il nous en faut 3 et que l'espace contigu le première malloc est occupé xx on réallou R plus loin ou la place est suffisante MMxx0O0-->00xxRRR
+	  if(tableau_equipements==NULL)						
+	  {
+		fprintf(stdout,"RecupérerInfoFichier : Erreur d'alloc mémoire \n");
+		exit(-1);
+	  }
+				
+	  memset(tableau_equipements+i,0,sizeof(ST_EQUIPEMENTS));
 	}
 	while(fgets(chaine,CMAX,fp)!=NULL)
 	{
 		size_chaine=strlen(chaine)-1; 
 		st_token=strtok(chaine,";"); 
 		size_chaine-=(strlen(st_token)+1); 
-		k=0;
 		j=0;
 
 		if(size_chaine<0)
@@ -155,13 +169,17 @@ ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements)
 					consommation = atof(st_token);
 					break;
 				case 2:
-					temps = atof(st_token)
+					temps = atof(st_token);
 					break;
-				case 3,4,5,6,7,8:
-						ST_EQUIPEMENTS * nouveau = NULL,suivant = NULL;
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
 						nouveau = (ST_EQUIPEMENTS*) malloc (sizeof(ST_EQUIPEMENTS));
-						suivant = tableau_equipements[atoi(st_token)];
-						tableau_equipements[atoi(st_token)]=nouveau;
+						suivant = &(tableau_equipements[atoi(st_token)]);
+						tableau_equipements[atoi(st_token)]= *nouveau;
 						tableau_equipements[atoi(st_token)].suiv = suivant;
 						tableau_equipements[atoi(st_token)].consommation_equipement = consommation;
 						tableau_equipements[atoi(st_token)].nombre_heures_utilisation_journalier = temps;
