@@ -13,7 +13,7 @@ PATH_TESTS=../tests
 
 Production: clean init 
 
-Tests: clean init test_meteo test_fichiers test_gestion_habitations test_ihm test_production
+Tests: clean init test_meteo test_fichiers test_gestion_habitations test_ihm test_production test_consomation
 
 test_meteo.o: $(PATH_TESTS)/test_meteo.c 
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
@@ -28,6 +28,9 @@ test_gestion_habitations.o: $(PATH_TESTS)/test_gestion_habitations.c
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
 test_production.o: $(PATH_TESTS)/test_production.c 
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
+test_consomation.o: $(PATH_TESTS)/test_consomation.c 
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
 meteo.o: $(PATH_SRC)/meteo.c $(PATH_INC)/meteo.h
@@ -45,6 +48,9 @@ ihm_general.o:$(PATH_SRC)/ihm_general.c $(PATH_INC)/ihm_general.h
 production.o: $(PATH_SRC)/production.c $(PATH_INC)/production.h
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
+consomation.o: $(PATH_SRC)/consomation.c $(PATH_INC)/consomation.h
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
 test_meteo: test_meteo.o meteo.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
@@ -54,10 +60,13 @@ test_fichiers: test_fichiers.o gestion_fichiers.o
 test_gestion_habitations: test_gestion_habitations.o gestion_habitations.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
-test_ihm: test_ihm.o gestion_habitations.o gestion_fichiers.o ihm_general.o 
+test_ihm: test_ihm.o ihm_general.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_production: test_production.o production.o
+	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
+
+test_consomation: test_consomation.o consomation.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 clean:
