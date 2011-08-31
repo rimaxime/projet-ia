@@ -116,3 +116,72 @@ STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departement
 	*size_tab=i;
 	return tableau_departements;
 }
+
+ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements)
+{
+    char *st_token=NULL;
+	char chaine[CMAX];
+	int i=0,j=0,k=0;
+	int size_chaine=0;
+	memset(chaine,0,sizeof(chaine));
+	FILE* fp;
+	float consommation;
+	float temps;
+	fp = fopen("../ressource/Equipements.csv","r");
+	if(fp==NULL)
+	{
+	  fprintf(stderr,"Erreur d'ouverture fichier\n");
+	  exit(1);
+	}
+	while(fgets(chaine,CMAX,fp)!=NULL)
+	{
+		size_chaine=strlen(chaine)-1; 
+		st_token=strtok(chaine,";"); 
+		size_chaine-=(strlen(st_token)+1); 
+		k=0;
+		j=0;
+
+		if(size_chaine<0)
+			i--;
+		
+		while(st_token!=NULL && size_chaine>=0)
+		{
+			switch(j)
+			{			
+				case 0:
+					strcpy(nom_equipement,st_token);
+					break;
+				case 1:
+					consommation = atof(st_token);
+					break;
+				case 2:
+					temps = atof(st_token)
+					break;
+				case 3,4,5,6,7,8:
+						ST_EQUIPEMENTS * nouveau = NULL,suivant = NULL;
+						nouveau = (ST_EQUIPEMENTS*) malloc (sizeof(ST_EQUIPEMENTS));
+						suivant = tableau_equipements[atoi(st_token)];
+						tableau_equipements[atoi(st_token)]=nouveau;
+						tableau_equipements[atoi(st_token)].suiv = suivant;
+						tableau_equipements[atoi(st_token)].consommation_equipement = consommation;
+						tableau_equipements[atoi(st_token)].nombre_heures_utilisation_journalier = temps;
+						tableau_equipements[atoi(st_token)].Largeur = 0;
+						tableau_equipements[atoi(st_token)].Longueur = 0;
+						tableau_equipements[atoi(st_token)].coordX1 = 0;
+						tableau_equipements[atoi(st_token)].coordY1 = 0;
+						tableau_equipements[atoi(st_token)].coordX2 = 0;
+						tableau_equipements[atoi(st_token)].coordY2 = 0;
+					break;	
+				default:
+					break;
+			}
+			st_token=strtok(NULL,";");
+			size_chaine-=(strlen(st_token)+1);
+			j++;
+			
+		}
+		memset(chaine,0,sizeof(chaine));
+		i++;
+	}
+	return tableau_equipements;
+}

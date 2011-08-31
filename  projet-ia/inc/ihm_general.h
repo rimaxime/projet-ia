@@ -23,6 +23,7 @@ struct _Data
     GtkWidget *supprimerpiece;
     GtkWidget *panneausolaires;
     GtkWidget *chauffage;
+	GtkWidget *equipements;
 	
     //champs habitation
     GtkWidget *Departement_habitation;
@@ -61,8 +62,15 @@ struct _Data
     GtkWidget *gaz;
     GtkWidget *electricite;
     GtkWidget *climatisation;
-    
-    
+    GtkWidget *popup_chauffage;
+	
+	//Gestion des équipements
+	ST_EQUIPEMENTS Tableau_Equipements[];
+	GtkWidget *liste_equipements_possible;
+    GtkWidget *liste_equipements_piece;
+	GtkWidget *equipements_piece;
+	GtkWidget *selection_equipement_possible;
+	GtkWidget *selection_equipement_piece;
 };
 
 
@@ -117,5 +125,22 @@ void on_valider_panneau_clicked(GtkWidget *widget, Data *data);
 
 void on_parametres_chauffage_clicked(GtkWidget *widget, Data *data);
 
+void on_chauffage_bois_value_changed(GtkWidget *widget, Data *data);
+
+void on_chauffage_gaz_value_changed(GtkWidget *widget, Data *data);
+
+void on_chauffage_electricite_value_changed(GtkWidget *widget, Data *data);
+
+void on_valider_chauffage_clicked(GtkWidget *widget, Data *data);
+
 Data champ_chauffage(GtkBuilder *builder, Data data);
+
+void on_gestion_equipements_clicked(GtkWidget *widget, Data *data);
+
+void on_equipement_piece_changed(GtkWidget *widget, Data *data);
+
+void on_ajouter_equipement_clicked(GtkWidget *widget, Data *data);
+
+void on_supprimer_equipement_clicked(GtkWidget *widget, Data *data);
+
 #endif

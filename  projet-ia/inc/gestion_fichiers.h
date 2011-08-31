@@ -27,5 +27,6 @@
 
 STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departements, int* size_tab);
 
+ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements);
 
 #endif
