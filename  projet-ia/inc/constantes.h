@@ -52,7 +52,7 @@
 #define POLYCRISTALLIN_REND 0.13
 #define AMORPHE_REND 0.1
 #define TEMP_REF 25
-#define REND_TH 0.03
+#define REND_TH 0.003
 #define PRIX_ACHAT 0.00042
 #define PRIX_VENTE 0.00012
 
