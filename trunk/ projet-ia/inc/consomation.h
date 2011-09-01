@@ -12,6 +12,13 @@
 
 
 //Prototypes
-
+float consommation_equipements(ST_EQUIPEMENTS Equipement);
+float consommation_equipements_piece(ST_PIECES Piece);
+float consommation_equipements_habitation(ST_HABITATIONS Habitations);
+float volume_piece(ST_PIECES Piece);
+float volume_habitation(ST_HABITATIONS Habitation);
+float consommation_chauffage(ST_JOUR Jour, ST_HABITATIONS Habitation);
+float consommation_climatisation(ST_JOUR Jour, ST_HABITATIONS Habitation);
+void consommation_globale(PTR_ST_JOUR Jour, ST_HABITATIONS Habitation);
 
 #endif

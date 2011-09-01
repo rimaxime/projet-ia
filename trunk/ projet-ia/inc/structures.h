@@ -121,7 +121,11 @@ typedef struct Habitations
 	ST_PIECES* LC_Pieces;
 	ST_PANNEAUX* LC_Panneaux;
 	float inclinaison_toit;
-	char Isolation[CMAX]; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
+	int Isolation[CMAX]; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
+	//0 : Bonne isolation
+	//1 : Isolation normale
+	//2 : Isolation faible
+	//3 : Pas d'isolation
 	int Exposition; //l'exposition correspond à un entier :
 	//1 Sud
 	//2 Sud Ouest
@@ -131,11 +135,12 @@ typedef struct Habitations
 	//6 Nord Est
 	//7 Est
 	//8 Sud Est
+	int climatisation;//0 : Oui 1 : Non
+	int pourcentage_elec;//pourcentage du chauffage fait par un source electrique
 	char Departement[CMAX];
 	int chauffage_bois;
 	int chauffage_gaz;
 	int chauffage_electricite;
-	int climatisation;
 }ST_HABITATIONS;  
 
 typedef struct jour

@@ -54,4 +54,31 @@
 #define TEMP_REF 25
 #define REND_TH 0.03
 
+/**
+  * \brief Constantes chauffage
+  */
+
+#define TEMPERATURE_INTERIEURE 20
+#define COEFF_ISOLATION_BONNE 0.8
+#define COEFF_ISOLATION_NORMALE 1
+#define COEFF_ISOLATION_FAIBLE 1.2
+#define C0EFF_ISOLATION_NULLE 1.4
+
+#define VOLUME_1 10
+#define VOLUME_2 15
+#define VOLUME_3 20
+#define VOLUME_4 30
+
+#define CONSO_CLIM_V1 1600
+#define CONSO_CLIM_V2 2000
+#define CONSO_CLIM_V3 2400
+#define CONSO_CLIM_V4 3200
+
+
+/**
+  * \brief Constantes habitations
+  */
+
+#define HABITATIONS_HAUTEUR 2.5
+
 #endif
