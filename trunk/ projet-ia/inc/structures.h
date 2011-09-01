@@ -121,7 +121,7 @@ typedef struct Habitations
 	ST_PIECES* LC_Pieces;
 	ST_PANNEAUX* LC_Panneaux;
 	float inclinaison_toit;
-	int Isolation[CMAX]; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
+	int Isolation; //le type d'isolation correspond à un chiffre (à lister ci-dessous)
 	//0 : Bonne isolation
 	//1 : Isolation normale
 	//2 : Isolation faible
@@ -163,13 +163,5 @@ typedef struct donne_geo
   int orientation; //Orientation de la maison °/sud
   float rendement; //Redement géographique
 }ST_DonneGeo;
-
-typedef struct parametres_simulation
-{
- ST_Date date_initiale;
- ST_Date date_finale;
- int vitesse;
- //int allant de 1 à 5, vitesse initiale = 5 
-}ST_PARAMETRES_SIMULATION;
 
 #endif

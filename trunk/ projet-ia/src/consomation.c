@@ -70,6 +70,25 @@ float volume_habitation(ST_HABITATIONS Habitation)
   }
 }
 
+float consommation_climatisation(ST_JOUR Jour, ST_HABITATIONS Habitation)
+{
+    float conso_clim = 0;
+    float volume;
+    volume=volume_habitation(Habitation);
+    if(volume == 0)
+      conso_clim = 0;
+    else if(volume < VOLUME_1)
+      conso_clim = CONSO_CLIM_V1;
+    else if(volume < VOLUME_2)
+      conso_clim = CONSO_CLIM_V2;
+    else if(volume < VOLUME_3)
+      conso_clim = CONSO_CLIM_V3;
+    else
+      conso_clim = CONSO_CLIM_V4;
+    
+    return conso_clim;  
+}
+
 float consommation_chauffage(ST_JOUR Jour, ST_HABITATIONS Habitation)
 {
   float conso_chauff;
@@ -103,24 +122,6 @@ float consommation_chauffage(ST_JOUR Jour, ST_HABITATIONS Habitation)
     return -2;
 }
 
-float consommation_climatisation(ST_JOUR Jour, ST_HABITATIONS Habitation)
-{
-    float conso_clim = 0;
-    float volume;
-    volume=volume_habitation(Habitation);
-    if(volume == 0)
-      conso_clim = 0;
-    else if(volume < VOLUME_1)
-      conso_clim = CONSO_CLIM_V1;
-    else if(volume < VOLUME_2)
-      conso_clim = CONSO_CLIM_V2;
-    else if(volume < VOLUME_3)
-      conso_clim = CONSO_CLIM_V3;
-    else
-      conso_clim = CONSO_CLIM_V4;
-    
-    return conso_clim;  
-}
 
 void consommation_globale(PTR_ST_JOUR Jour, ST_HABITATIONS Habitation)
 {

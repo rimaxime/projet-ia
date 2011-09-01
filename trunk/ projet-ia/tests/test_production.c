@@ -35,7 +35,6 @@ int main(void)
 }
 void test_rendement_geo()
 {
-  printf("\nTEST_RENDEMENT GEO ENTREE");
   ST_DonneGeo Geo;
   Geo.orientation = 0;
   Geo.inclinaison = 0;
