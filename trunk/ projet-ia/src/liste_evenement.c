@@ -103,6 +103,8 @@ ST_JOUR* creer_liste_jours(ST_Date Date_Debut,ST_Date Date_Fin, ST_HABITATIONS H
    Nouveau = creer_jour(Date_Debut,Habitation,Donnee_geo,departements,Jour_precedent);
    if(Jour_precedent == NULL)
    {
+    Jour_precedent = (ST_JOUR*) malloc (sizeof(ST_JOUR)); //Added
+    Jour_precedent = Nouveau; //Added
     tete_liste = Nouveau;
     Liste = tete_liste;
    }
@@ -116,28 +118,26 @@ ST_JOUR* creer_liste_jours(ST_Date Date_Debut,ST_Date Date_Fin, ST_HABITATIONS H
      Liste->suiv = Nouveau;
      Liste = Nouveau;
    }
+   
    if(Date_Debut.Mois == 12 && Date_Debut.Jour ==31)
    {
      Date_Debut.Mois = 1;
      Date_Debut.Jour =1;
      Date_Debut.Annee = Date_Debut.Annee + 1;
    }
-   else if(Date_Debut.Mois % 2 != 0 && Date_Debut.Jour == 31)
+   else if(Date_Debut.Mois % 2 != 1 && Date_Debut.Jour == 31)
    {
     Date_Debut.Mois = Date_Debut.Mois + 1;
     Date_Debut.Jour = 1;
    }
-   else if((Date_Debut.Mois == 2 && Date_Debut.Jour == 28) ||(Date_Debut.Mois % 2 == 0 && Date_Debut.Jour == 30))
+   else if((Date_Debut.Mois == 2 && Date_Debut.Jour == 28) ||(Date_Debut.Mois % 2 == 1 && Date_Debut.Jour == 30))
    {
      Date_Debut.Mois = Date_Debut.Mois + 1;
      Date_Debut.Jour = 1;
    }
    else
      Date_Debut.Jour = Date_Debut.Jour + 1;
-   
-   
-     
-   
+  
    
 }
  return(tete_liste);

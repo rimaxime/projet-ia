@@ -115,10 +115,10 @@ float Rendement_thermique(ST_SimuMeteo Jour)
   else
     rend_th = 1 + REND_TH*(TEMP_REF - Jour.temp); 
 
-  if(rend_th > 1.5)
-    rend_th = 1.5;
-  else if(rend_th < 0.5)
-    rend_th = 0.5;
+  if(rend_th > 1.2)
+    rend_th = 1.2;
+  else if(rend_th < 0.7)
+    rend_th = 0.7;
   return rend_th;
 }
 
@@ -133,9 +133,7 @@ float Prod_jour(PTR_ST_SimuMeteo Jour,ST_DonneGeo Donnees,PTR_ST_PANNEAUX Pannea
 {
   float production;
   Rendement_panneaux(Panneaux);
-  printf("puiss soleil : %f, Rendement geo : %f, Rendement thermique : %f\n",Jour->puiss_soleil,Rendement_geo(Donnees),Rendement_thermique(*Jour));
   production = Jour->puiss_soleil*Rendement_geo(Donnees)*Panneaux->rendement*Rendement_thermique(*Jour);
-  printf("%f\n",production);
   return production;
 }
 
