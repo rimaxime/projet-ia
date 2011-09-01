@@ -16,9 +16,11 @@
 
 
 //Prototypes
-float SimulationTemp(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensuelles);
+float SimulationTemp(ST_JOUR *Jour_prec,ST_DonneeMeteo Normales_Mensuelles);
 void SimulationConditionsMeteo(ST_DonneeMeteo Normales_Mensuelles, PTR_ST_SimuMeteo Meteo_Jour);
 void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_SimuMeteo Meteo_Jour);
+void Calc_puiss_soleil(PTR_ST_SimuMeteo Meteo_Jour);
+void Simu_Jour(PTR_ST_SimuMeteo Meteo_Jour, ST_DonneeMeteo NormalesMensuelles,ST_JOUR *Jour_prec);
 float my_rand(void);
 
 #endif

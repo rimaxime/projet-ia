@@ -179,7 +179,7 @@ void on_valider_parametres_maison_clicked(GtkWidget *widget, Data *data)
      
      Habitation = CreationHabitation(0,
 				     inclinaison,
-				     string_isol,
+				     2,
 				     exposition,
 				     string_dept);
   }   
@@ -187,7 +187,7 @@ void on_valider_parametres_maison_clicked(GtkWidget *widget, Data *data)
     Habitation = ModifierHabitation(Habitation,
 					Habitation->nombre_pieces,
 				    inclinaison,
-				    string_isol,
+				    2,
 				    exposition,
 				    string_dept);
   gtk_widget_hide(data->habitation);
@@ -485,12 +485,12 @@ void on_creer_panneau_clicked(GtkWidget *widget, Data *data)
 	 model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->mppt));
 	 switch(Habitation->LC_Panneaux->MPPT)
 	 {
-		case 1:
+		case 0:
 				if(gtk_tree_model_get_iter_from_string(model,&iter,"Oui"))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->mppt),&iter);
 				break;
 		
-		case 2:
+		case 1:
 				if(gtk_tree_model_get_iter_from_string(model,&iter,"Non"))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->mppt),&iter);
 				break;
@@ -498,12 +498,12 @@ void on_creer_panneau_clicked(GtkWidget *widget, Data *data)
 	 model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->autorotation));
 	 switch(Habitation->LC_Panneaux->auto_rotation)
 	 {
-		case 1:
+		case 0:
 				if(gtk_tree_model_get_iter_from_string(model,&iter,"Oui"))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->autorotation),&iter);
 				break;
 		
-		case 2:
+		case 1:
 				if(gtk_tree_model_get_iter_from_string(model,&iter,"Non"))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->autorotation),&iter);
 				break;
@@ -552,17 +552,17 @@ void on_valider_panneau_clicked(GtkWidget *widget, Data *data)
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->mppt));
     gtk_tree_model_get(model, &iter, 0, &string_mppt, -1);  }
   if(strcasecmp(string_mppt,"Oui") == 0)
-    mppt = 1;
+    mppt = 0;
   else
-    mppt = 2;
+    mppt = 1;
     
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->autorotation),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->autorotation));
     gtk_tree_model_get(model, &iter, 0, &string_autorotation, -1);  }
   if(strcasecmp(string_autorotation,"Oui") == 0)
-    autorotation = 1;
+    autorotation = 0;
   else
-    autorotation = 2;  
+    autorotation = 1;  
     
   int extraction_type;
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->type_panneau),&iter)){
@@ -617,12 +617,12 @@ void on_parametres_chauffage_clicked(GtkWidget *widget, Data *data)
 	 model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->climatisation));
 	 switch(Habitation->climatisation)
 	 {
-		case 1:
+		case 0:
 				if(gtk_tree_model_get_iter_from_string(model,&iter,"Oui"))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->climatisation),&iter);
 				break;
 		
-		case 2:
+		case 1:
 				if(gtk_tree_model_get_iter_from_string(model,&iter,"Non"))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->climatisation),&iter);
 				break;
@@ -688,9 +688,9 @@ void on_valider_chauffage_clicked(GtkWidget *widget, Data *data)
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->climatisation));
     gtk_tree_model_get(model, &iter, 0, &string_climatisation, -1);  }
   if(strcasecmp(string_climatisation,"Oui") == 0)
-    Habitation->climatisation = 1;
+    Habitation->climatisation = 0;
   else
-    Habitation->climatisation = 2; 
+    Habitation->climatisation = 1; 
 	
   if((Habitation->chauffage_bois + Habitation->chauffage_gaz + Habitation->chauffage_electricite) < 100)
 	gtk_widget_show(data->popup_chauffage);

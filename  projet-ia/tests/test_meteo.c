@@ -19,7 +19,7 @@ int main(void)
 	simulation_temperature();
 	//simulation_condition();
 	//simulation_hsoleil();
-	//simulation_myrand();
+	simulation_myrand();
 	return 0;
 }
 
@@ -28,7 +28,7 @@ void simulation_temperature()
 {
   int n,t;
   ST_DonneeMeteo Normales;
-  ST_SimuMeteo Prec;
+  ST_JOUR Prec;
 	float prec;	
 	FILE *Simu;
 	Simu = fopen("Simu_temperature_complete.csv","w+");
@@ -37,38 +37,42 @@ void simulation_temperature()
 	//printf("Entrer le nombre de test a faire : ");
 	//n=scanf("%d",&t);
 	t=40;
-	Prec.temp=-15;
+	Prec.temperature=-15;
 	Normales.temp_min=13;
 	Normales.temp_max=24;
-	fprintf(Simu,"INFERIEUR\nTemp_prec;Temp_min; Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temp,Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"INFERIEUR\nTemp_prec;Temp_min; Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temperature,Normales.temp_min,Normales.temp_max);
+	
 	for(n=0;n<t;n++)
 	{
-	  prec=SimulationTemp(Prec,Normales);
+	  prec=SimulationTemp(&Prec,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
-	  Prec.temp=prec;
+	  Prec.temperature=prec;
 	}
 	t=40;
-	Prec.temp=17;
+	Prec.temperature=17;
 	Normales.temp_min=10;
 	Normales.temp_max=28;
-	fprintf(Simu,"NORMAL\nTemp_prec;Temp_min;Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temp,Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"NORMAL\nTemp_prec;Temp_min;Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temperature,Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
-	  prec=SimulationTemp(Prec,Normales);
+	  prec=SimulationTemp(&Prec,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
-	  Prec.temp=prec;
+	  Prec.temperature=prec;
 	}
 	t=40;
-	Prec.temp=45;
+	Prec.temperature=45;
 	Normales.temp_min=5;
 	Normales.temp_max=14;
-	fprintf(Simu,"SUPERIEUR\nTemp_prec;Temp_min; Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temp,Normales.temp_min,Normales.temp_max);
+	fprintf(Simu,"SUPERIEUR\nTemp_prec;Temp_min; Temp_max;\n%2.2f;%2.2f;%2.2f\n",Prec.temperature,Normales.temp_min,Normales.temp_max);
 	for(n=0;n<t;n++)
 	{
-	  prec=SimulationTemp(Prec,Normales);
+	  prec=SimulationTemp(&Prec,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
-	  Prec.temp=prec;
+	  Prec.temperature=prec;
 	}
+	ST_JOUR *Prec2 = NULL;
+	prec = SimulationTemp(Prec2,Normales);
+	printf("%f : prec\n",prec);
 	fclose(Simu);
 	printf("** SUCCES **\n");  
 }
@@ -117,7 +121,7 @@ void simulation_myrand()
   float i,r;
   r=100;
   int n;
-  for(n=0;n<20;n++)
+  for(n=0;n<200;n++)
   {
     i=my_rand();
     printf("%f \n",i);

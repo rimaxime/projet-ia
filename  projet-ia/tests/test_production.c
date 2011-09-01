@@ -40,7 +40,7 @@ void test_rendement_geo()
   Geo.inclinaison = 0;
   Geo.rendement = 0;
   FILE *rend_geo;
-	rend_geo= fopen("Test_rendement_geo.csv","w+");
+  rend_geo= fopen("Test_rendement_geo.csv","w+");
   fprintf(rend_geo,"Inclinaison ; Orientation ; Rendement\n");
   
   while(Geo.inclinaison < 100)
@@ -115,7 +115,7 @@ void test_rendement_thermique()
 void test_prod_jour()
 {
   FILE *prod;
-    prod= fopen("Test_rendement_geo.csv","w+");
+    prod= fopen("Test_production_jour.csv","w+");
   fprintf(prod,"Test en cour de realisation");
   fclose(prod);
   

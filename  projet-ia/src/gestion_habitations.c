@@ -15,7 +15,7 @@
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, La nouvelle habitation 
  */
-ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, char Isolation[CMAX],int Exposition, char Departement[CMAX])
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX])
 {
   ST_HABITATIONS *Nouveau = NULL;
   
@@ -28,7 +28,7 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, ch
   Nouveau->nombre_pieces = nombre_pieces;
   
   Nouveau->inclinaison_toit = inclinaison_toit;
-  strcpy(Nouveau->Isolation,Isolation);
+  Nouveau->Isolation = Isolation;
   Nouveau->Exposition = Exposition;
   Nouveau->LC_Pieces = NULL;
   Nouveau->LC_Panneaux = NULL;  
@@ -48,11 +48,11 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, ch
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, L'habitation 
  */
-ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, char Isolation[CMAX],int Exposition, char Departement[CMAX])
+ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX])
 {
   Habitation->nombre_pieces = nombre_pieces;
   Habitation->inclinaison_toit = inclinaison_toit;
-  strcpy(Habitation->Isolation,Isolation);
+  Habitation->Isolation = Isolation;
   Habitation->Exposition = Exposition;
   strcpy(Habitation->Departement,Departement);
   return Habitation;
