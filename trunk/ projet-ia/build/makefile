@@ -13,7 +13,7 @@ PATH_TESTS=../tests
 
 Production: clean init 
 
-Tests: clean init test_meteo test_fichiers test_gestion_habitations test_ihm test_production test_consomation
+Tests: clean init test_meteo test_fichiers test_gestion_habitations test_ihm test_production test_consomation test_liste_evenement
 
 test_meteo.o: $(PATH_TESTS)/test_meteo.c 
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
@@ -51,28 +51,37 @@ production.o: $(PATH_SRC)/production.c $(PATH_INC)/production.h
 consomation.o: $(PATH_SRC)/consomation.c $(PATH_INC)/consomation.h
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
+liste_evenement.o: $(PATH_SRC)/liste_evenement.c $(PATH_INC)/liste_evenement.h
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
+test_liste_evenement.o: $(PATH_TESTS)/test_liste_evenement.c 
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
 test_meteo: test_meteo.o meteo.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_fichiers: test_fichiers.o gestion_fichiers.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
-test_gestion_habitations: test_gestion_habitations.o gestion_habitations.o
+test_gestion_habitations: test_gestion_habitations.o gestion_habitations.o gestion_fichiers.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_ihm: test_ihm.o ihm_general.o gestion_habitations.o gestion_fichiers.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
-test_production: test_production.o production.o
+test_production: test_production.o production.o meteo.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_consomation: test_consomation.o consomation.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
+test_liste_evenement:test_liste_evenement.o meteo.o production.o consomation.o gestion_fichiers.o liste_evenement.o 
+	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
+
 clean:
 	-rm *.o
-	-rm -R ../obj/*
-	-rm -R ../out/*
+	-rmdir -R ../obj/*
+	-rmdir -R ../out/*
 	
 init:
 	-mkdir ../obj/

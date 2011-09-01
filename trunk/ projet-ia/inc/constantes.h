@@ -53,6 +53,8 @@
 #define AMORPHE_REND 0.1
 #define TEMP_REF 25
 #define REND_TH 0.03
+#define PRIX_ACHAT 0.00042
+#define PRIX_VENTE 0.00012
 
 /**
   * \brief Constantes chauffage
@@ -64,15 +66,7 @@
 #define COEFF_ISOLATION_FAIBLE 1.2
 #define C0EFF_ISOLATION_NULLE 1.4
 
-#define VOLUME_1 10
-#define VOLUME_2 15
-#define VOLUME_3 20
-#define VOLUME_4 30
-
-#define CONSO_CLIM_V1 1600
-#define CONSO_CLIM_V2 2000
-#define CONSO_CLIM_V3 2400
-#define CONSO_CLIM_V4 3200
+#define COEFF_CONSO_CLIM 0.3
 
 
 /**

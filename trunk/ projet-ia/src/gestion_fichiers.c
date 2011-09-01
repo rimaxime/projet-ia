@@ -64,19 +64,19 @@ STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT *tableau_departement
 			switch(j)
 			{			
 				case 0:
-					if(compte_mois==1)
+					if(compte_mois==0)
 					 strcpy(tableau_departements[i].num_departement,(st_token));
 					break;
 				case 1:
-					if(compte_mois==1)
+					if(compte_mois==0)
 					  strcpy(tableau_departements[i].nom_departement,st_token);
 					break;
 				case 2:
-					if(compte_mois==1)
+					if(compte_mois==0)
 					 strcpy(tableau_departements[i].nom_region,st_token);
 					break;
 				case 3:
-					if(compte_mois==1)
+					if(compte_mois==0)
 					  tableau_departements[i].zone_climatique=atoi(st_token);
 					break;
 				case 4:
@@ -128,12 +128,11 @@ ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements)
 	int size_chaine=0;
 	memset(chaine,0,sizeof(chaine));
 	FILE* ft;
-	float consommation;
-	float temps;
+	float consommation=0;
+	float temps=0;
 	int id;
 	char nom_equipement[CMAX];
 	ST_EQUIPEMENTS* nouveau = NULL;
-	ST_EQUIPEMENTS suivant;
 	ft = fopen("../ressource/Equipements.csv","r");
 	if(ft==NULL)
 	{
@@ -229,3 +228,111 @@ ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements)
 	free(ft);
 	return tableau_equipements;
 }
+
+
+ST_DonneGeo* RecupererInfosGeographique(ST_DonneGeo *tableau_geo)
+{
+	char *st_token=NULL;
+	char chaine[CMAX];
+	int i=0,j=0,k=0;
+	int compte_degres = 10;
+	int size_chaine=0;
+	int inclinaison=0;
+	int exposition=0;
+	float rendement=0;
+	memset(chaine,0,sizeof(chaine));
+	FILE* fp;
+	fp = fopen("../ressource/Projet_Rendement_Geo.csv","r");
+	if(fp==NULL)
+	{
+	  fprintf(stderr,"Erreur d'ouverture fichier\n");
+	  exit(-1);
+	}
+	while(fgets(chaine,CMAX,fp)!=NULL)
+	{
+		size_chaine=strlen(chaine)-1; 
+		st_token=strtok(chaine,";"); 
+		size_chaine-=(strlen(st_token)+1); 
+		k=0;
+		j=0;
+
+		if(size_chaine>0)
+		{
+		  if(compte_degres>=10)
+		  {
+			tableau_geo=(ST_DonneGeo *)realloc(tableau_geo,(i+1)*sizeof(ST_DonneGeo));	//Il faut que st_recover=NULL -->realloc=malloc a la difference que l'on peut deplace dans une zone mémoire de taille suffisante si la premiere ne l'est pas et fait un free de la première zone.
+//	Exemple si le malloc M prend 2 case mémoire et qu'il nous en faut 3 et que l'espace contigu le première malloc est occupé xx on réallou R plus loin ou la place est suffisante MMxx0O0-->00xxRRR
+				if(tableau_geo==NULL)						
+				{
+					fprintf(stdout,"RecupérerInfoFichier : Erreur d'alloc mémoire \n");
+					exit(-1);
+				}
+				
+				memset(tableau_geo+i,0,sizeof(ST_DonneGeo));
+				compte_degres=0;
+		  }
+		}
+		else
+			i--;
+		
+		while(st_token!=NULL && size_chaine>=0)
+		{
+			switch(j)
+			{			
+				case 0:
+					inclinaison = atoi(st_token);
+					break;
+				case 1:
+					exposition = atoi(st_token);
+					break;
+				case 2:
+					rendement = atof(st_token);
+					if(compte_degres == 0)
+					{
+					  tableau_geo[i].inclinaison = inclinaison;
+					  tableau_geo[i].orientation = exposition;
+					  tableau_geo[i].rendement = rendement;
+					  tableau_geo[i].suiv = NULL;
+					}
+					else
+					{
+					 ST_DonneGeo* Nouveau = NULL;
+					 Nouveau = (ST_DonneGeo*) malloc (sizeof(ST_DonneGeo));
+					 Nouveau->inclinaison = inclinaison;
+					 Nouveau->orientation = exposition;
+					 Nouveau->rendement = rendement;
+					 Nouveau->suiv = NULL;
+					 
+					 ST_DonneGeo *test = NULL;
+					 test = &(tableau_geo[i]);
+					 ST_DonneGeo* precedent = test;
+					 while(test != NULL)
+					 {
+					   precedent = test;
+				           test = test->suiv;
+					 }
+					 precedent->suiv = Nouveau;
+					}
+					break;
+				default:
+					break;
+			}
+			st_token=strtok(NULL,";");
+			size_chaine-=(strlen(st_token)+1);
+			j++;
+			
+		}
+		memset(chaine,0,sizeof(chaine));
+		compte_degres++;
+		if(compte_degres == 10)
+			i++;
+	}
+	fclose(fp);
+	return tableau_geo;
+}
+  
+  
+  
+  
+  
+  

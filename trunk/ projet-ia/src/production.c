@@ -10,25 +10,6 @@
 //Fonctions
 
 /**
- * \name Calc_puiss_soleil
- * \brief  Calcul de la puissance solaire journalière
- * \param PTR_ST_SimuMeteo Meteo_jour
- * \return none
- */
-
-void Calc_puiss_soleil(PTR_ST_SimuMeteo Meteo_Jour) //voir si on prend en compte l'indice climatique du departement
-{
-  if(Meteo_Jour->condition == 0)
-    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.2*my_rand()*PUISSANCE_SOLEIL;
-  else if(Meteo_Jour->condition == 4)
-    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.1*my_rand()*PUISSANCE_SOLEIL;
-  else if(Meteo_Jour->condition == 1)
-    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.2*2*(my_rand()-0.5)*PUISSANCE_SOLEIL;
-  else
-    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.03*2*(my_rand()-0.5)*PUISSANCE_SOLEIL;
-}
-
-/**
  * \name   Rendement_geo
  * \brief  Renvoi le rendement geographique
  * \param  ST_DonneGeo Donnees;
@@ -61,7 +42,7 @@ void Rendement_panneaux(PTR_ST_PANNEAUX Panneaux)
 {
   switch(Panneaux->type)
   {  
-    case 0 :
+    case 1 :
       if(Panneaux->MPPT == 0 || Panneaux->auto_rotation == 0)
     {
       if(Panneaux->MPPT == 0)
@@ -78,7 +59,7 @@ void Rendement_panneaux(PTR_ST_PANNEAUX Panneaux)
       Panneaux->rendement = MONOCRISTALLIN_REND;
   break;
   
-    case 1 :
+    case 2 :
       if(Panneaux->MPPT == 0 || Panneaux->auto_rotation == 0)
       {
 	if(Panneaux->MPPT == 0)
@@ -95,7 +76,7 @@ void Rendement_panneaux(PTR_ST_PANNEAUX Panneaux)
 	Panneaux->rendement = POLYCRISTALLIN_REND;
       break;
       
-    case 2 :
+    case 3 :
       if(Panneaux->MPPT == 0 || Panneaux->auto_rotation == 0)
       {
 	if(Panneaux->MPPT == 0)
@@ -134,7 +115,7 @@ float Rendement_thermique(ST_SimuMeteo Jour)
   else
     rend_th = 1 + REND_TH*(TEMP_REF - Jour.temp); 
 
-  if(rend_th > 2)
+  if(rend_th > 1.5)
     rend_th = 1.5;
   else if(rend_th < 0.5)
     rend_th = 0.5;
@@ -148,10 +129,13 @@ float Rendement_thermique(ST_SimuMeteo Jour)
  * \return  Prod_jour
  */
 
-float Prod_jour(PTR_ST_SimuMeteo Jour,ST_DonneGeo Donnees,ST_PANNEAUX Panneaux)
+float Prod_jour(PTR_ST_SimuMeteo Jour,ST_DonneGeo Donnees,PTR_ST_PANNEAUX Panneaux)
 {
   float production;
-  production = Jour->puiss_soleil*Rendement_geo(Donnees)*Panneaux.rendement*Rendement_thermique(*Jour);
+  Rendement_panneaux(Panneaux);
+  printf("puiss soleil : %f, Rendement geo : %f, Rendement thermique : %f\n",Jour->puiss_soleil,Rendement_geo(Donnees),Rendement_thermique(*Jour));
+  production = Jour->puiss_soleil*Rendement_geo(Donnees)*Panneaux->rendement*Rendement_thermique(*Jour);
+  printf("%f\n",production);
   return production;
 }
 
@@ -162,7 +146,7 @@ float Prod_jour(PTR_ST_SimuMeteo Jour,ST_DonneGeo Donnees,ST_PANNEAUX Panneaux)
  * \brief  Genere un nombre aleatoire floatant entre 0 et 1.
  * \param  none
  * \return Nombre aleatoire
- */
+ *//*
 float my_rand(void)
 {
   static int tab[TMAX];
@@ -185,4 +169,4 @@ float my_rand(void)
   tab[index]= rand();
   r=((rn%100)/r);
   return(r);
-}
+}*/

@@ -28,7 +28,7 @@
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, La nouvelle habitation 
  */
-ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, char* Isolation,int Exposition, char* Departement);
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX]);
 
 /**
  * \name   Modifier Habitation
@@ -37,7 +37,7 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, ch
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, L'habitation 
  */
-ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, char Isolation[CMAX],int Exposition, char Departement[CMAX]);
+ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX]);
 
 /**
  * \name   Creation des Pieces

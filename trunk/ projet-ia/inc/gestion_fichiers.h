@@ -29,4 +29,6 @@ STR_DEPARTEMENT * RecupererInfosDepartement(STR_DEPARTEMENT * tableau_departemen
 
 ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements);
 
+ST_DonneGeo* RecupererInfosGeographique(ST_DonneGeo *tableau_geo);
+
 #endif

@@ -68,7 +68,7 @@ typedef struct Panneaux
   int surface;
   float rendement;
   int MPPT; //Ajout du module Maximum Power Power Tracking : Rendement 15% -> 30%
-  int auto_rotation; // 1 : Oui 2: Non
+  int auto_rotation; // 0 : Oui 1: Non
   //struct Panneaux *suiv;
 }ST_PANNEAUX;
 typedef ST_PANNEAUX* PTR_ST_PANNEAUX;
@@ -136,7 +136,6 @@ typedef struct Habitations
 	//7 Est
 	//8 Sud Est
 	int climatisation;//0 : Oui 1 : Non
-	int pourcentage_elec;//pourcentage du chauffage fait par un source electrique
 	char Departement[CMAX];
 	int chauffage_bois;
 	int chauffage_gaz;
@@ -162,6 +161,16 @@ typedef struct donne_geo
   int inclinaison; //Inclinaison du toit en degré
   int orientation; //Orientation de la maison °/sud
   float rendement; //Redement géographique
+  struct donne_geo *suiv;
 }ST_DonneGeo;
+
+typedef struct parametres_simulation
+{
+ ST_Date date_initiale;
+ ST_Date date_finale;
+ ST_Date date_courante;
+ int vitesse;
+ //int allant de 1 à 5, vitesse initiale = 5 
+}ST_PARAMETRES_SIMULATION;
 
 #endif

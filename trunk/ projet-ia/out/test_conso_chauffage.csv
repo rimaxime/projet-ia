@@ -1,0 +1,7 @@
+Test de consommation chauffage
+Temperature Jour ; Conso chauffage
+-10.00 ; 50400.00
+0.00 ; 33600.00
+10.00 ; 16800.00
+20.00 ; 0.00
+30.00 ; 0.00

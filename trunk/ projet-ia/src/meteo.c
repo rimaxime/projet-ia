@@ -15,7 +15,7 @@
  * \param  Structure Simulation météo jour précédent, structures des normales mensuelles
  * \return Météo du jour 
  */
-float SimulationTemp(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensuelles)
+float SimulationTemp(ST_JOUR *Jour_prec,ST_DonneeMeteo Normales_Mensuelles)
 {
   //Créations des variables locales
   float nombre_aleatoire,r,temp;
@@ -23,12 +23,19 @@ float SimulationTemp(ST_SimuMeteo Meteo_Precedente,ST_DonneeMeteo Normales_Mensu
   //Création d'un nombre aléatoire
   nombre_aleatoire=my_rand();
   //Calcul de la temérature journalière
+  if((Jour_prec) == NULL)
+  {
+    float nombre_aleatoire2;
+    nombre_aleatoire2 = my_rand();
+    Jour_prec = (ST_JOUR*) malloc (sizeof(ST_JOUR));
+    Jour_prec->temperature = Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nombre_aleatoire2);
+  }  
   temp = (Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nombre_aleatoire)) * 0.6 
-	  + Meteo_Precedente.temp * 0.4;
+	  + Jour_prec->temperature * 0.4;
   if(temp>Normales_Mensuelles.temp_max)
-    temp= 0.7*Meteo_Precedente.temp - 0.3*((Meteo_Precedente.temp-Normales_Mensuelles.temp_max)*nombre_aleatoire);
+    temp= 0.7*Jour_prec->temperature - 0.3*((Jour_prec->temperature-Normales_Mensuelles.temp_max)*nombre_aleatoire);
   else if(temp<Normales_Mensuelles.temp_min)
-    temp= 0.7*Meteo_Precedente.temp + 0.3*((Normales_Mensuelles.temp_min - Meteo_Precedente.temp)*nombre_aleatoire);
+    temp= 0.7*Jour_prec->temperature + 0.3*((Normales_Mensuelles.temp_min - Jour_prec->temperature)*nombre_aleatoire);
   return temp;   
 }
 
@@ -116,6 +123,33 @@ void SimulationHeuresEnsoleillement(ST_DonneeMeteo NormalesMensuelles, PTR_ST_Si
     Meteo_Jour->h_soleil = 1*nombre_aleatoire*nb_hnormales;
   else
      Meteo_Jour->h_soleil = 0.8*nombre_aleatoire*nb_hnormales;    
+}
+
+/**
+ * \name Calc_puiss_soleil
+ * \brief  Calcul de la puissance solaire journalière
+ * \param PTR_ST_SimuMeteo Meteo_jour
+ * \return none
+ */
+
+void Calc_puiss_soleil(PTR_ST_SimuMeteo Meteo_Jour)
+{
+  if(Meteo_Jour->condition == 0)
+    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.2*my_rand()*PUISSANCE_SOLEIL;
+  else if(Meteo_Jour->condition == 4)
+    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.1*my_rand()*PUISSANCE_SOLEIL;
+  else if(Meteo_Jour->condition == 1)
+    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL + 0.2*2*(my_rand()-0.5)*PUISSANCE_SOLEIL;
+  else
+    Meteo_Jour->puiss_soleil = PUISSANCE_SOLEIL - 0.2*my_rand()*PUISSANCE_SOLEIL;
+}
+
+void Simu_Jour(PTR_ST_SimuMeteo Meteo_Jour, ST_DonneeMeteo NormalesMensuelles,ST_JOUR *Jour_prec)
+{
+  Meteo_Jour->temp=SimulationTemp(Jour_prec,NormalesMensuelles);
+  SimulationConditionsMeteo(NormalesMensuelles, Meteo_Jour);
+  SimulationHeuresEnsoleillement(NormalesMensuelles, Meteo_Jour);
+  Calc_puiss_soleil(Meteo_Jour);
 }
 
 /**
