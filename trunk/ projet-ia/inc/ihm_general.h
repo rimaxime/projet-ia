@@ -81,6 +81,9 @@ struct _Data
 
   //tests image
   GtkWidget *image_meteo;
+  
+  //Da habitation
+  GtkWidget *DA_Habitation;
 };
 
 

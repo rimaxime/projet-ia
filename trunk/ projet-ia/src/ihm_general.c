@@ -2,9 +2,11 @@
 
 #include "../inc/ihm_general.h"
 
-ST_HABITATIONS* Habitation = NULL;
+static ST_HABITATIONS* Habitation = NULL;
 ST_PARAMETRES_SIMULATION Parametres_simulation;
 
+
+static cairo_surface_t *surface_habitation = NULL;
 //test pause
 int test_pause = 0;
 
@@ -54,7 +56,10 @@ Data champs_habitation(GtkBuilder *builder, Data data, int size_tab, STR_DEPARTE
   
   
   //test a supprimer
+  data.DA_Habitation = GTK_WIDGET( gtk_builder_get_object( builder, "dessin_maison" ) );
   data.image_meteo = GTK_WIDGET( gtk_builder_get_object( builder, "meteo" ) );
+  gtk_widget_set_sensitive(data.DA_Habitation,FALSE);
+  
   return data;
 }
 
@@ -129,6 +134,7 @@ void connexion_signaux(GtkBuilder *builder, Data data)
 }
 
 
+
 void  on_ouvrir_activate (GtkWidget * user_data)
 { 
   gtk_widget_show(user_data);
@@ -155,14 +161,21 @@ void on_valider_parametres_maison_clicked(GtkWidget *widget, Data *data)
   GtkTreeIter iter,iter2;
   gchar *string_isol = NULL;
   gchar *string_dept = NULL;
+  gchar *string_ihm_dpt = NULL;
+  gchar *string_ihm_isolation = NULL;
+  int extraction=0;
   GtkTreeModel *model;
   GtkTreeModel *model2;
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->Isolation),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->Isolation));
-    gtk_tree_model_get(model, &iter, 0, &string_isol, -1);  }  
+    gtk_tree_model_get(model, &iter, 0, &string_isol, -1);  
+    extraction = atoi(strtok(string_isol," "));
+    string_ihm_isolation = gtk_tree_model_get_string_from_iter(model,&iter);} 
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->Departement_habitation),&iter2)){
     model2 = gtk_combo_box_get_model(GTK_COMBO_BOX(data->Departement_habitation));
-    gtk_tree_model_get(model2, &iter2, 0, &string_dept, -1);}
+    gtk_tree_model_get(model2, &iter2, 0, &string_dept, -1);
+    string_ihm_dpt = gtk_tree_model_get_string_from_iter(model2,&iter2);
+  }
 
   GtkAdjustment *adjust;
   gdouble inclinaison = 0;
@@ -179,42 +192,45 @@ void on_valider_parametres_maison_clicked(GtkWidget *widget, Data *data)
      
      Habitation = CreationHabitation(0,
 				     inclinaison,
-				     2,
+				     (extraction-1),
 				     exposition,
-				     string_dept);
+				     string_dept,
+				     string_ihm_dpt,
+				     string_ihm_isolation
+				    );
   }   
   else
     Habitation = ModifierHabitation(Habitation,
-					Habitation->nombre_pieces,
+				    Habitation->nombre_pieces,
 				    inclinaison,
-				    2,
+				    (extraction-1),
 				    exposition,
-				    string_dept);
+				    string_dept,
+				    string_ihm_dpt,
+				    string_ihm_isolation
+ 				  );
   gtk_widget_hide(data->habitation);
 }
 
 void on_parametres_maison_clicked(GtkWidget *widget, Data *data)
 {
-  gtk_widget_show(widget);
-  /*if(Habitation != NULL)
+  gtk_widget_show(data->habitation);
+ if(Habitation != NULL)
   {
     GtkTreeIter iter;
     GtkTreeModel *model;
     GtkAdjustment *adjust;
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->Departement_habitation));
-    if(gtk_tree_model_get_iter_from_string(model,&iter,Habitation->Departement))
+    if(gtk_tree_model_get_iter_from_string(model,&iter,Habitation->Departement_ihm))
       gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->Departement_habitation),&iter);
-	
-    model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->Isolation));
-    if(gtk_tree_model_get_iter_from_string(model,&iter,Habitation->Isolation))
-      gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->Isolation),&iter);
-	
     adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->Inclinaison_habitation)); 
     gtk_adjustment_set_value(adjust,Habitation->inclinaison_toit);
-	
+   
     adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->Exposition_habitation)); 
     gtk_adjustment_set_value(adjust,Habitation->Exposition);
-  }*/
+    
+    
+  }
 }
 
 
@@ -252,6 +268,7 @@ void on_valider_piece_clicked(GtkWidget *widget,Data *data)
   GtkAdjustment *adjust;
   gdouble largeur = 0;
   gdouble longueur = 0;
+  gchar* string_type_ihm = NULL;
   adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->LargeurPiece)); 
   largeur = gtk_adjustment_get_value(adjust);
   adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->LongueurPiece)); 
@@ -266,13 +283,16 @@ void on_valider_piece_clicked(GtkWidget *widget,Data *data)
   GtkTreeModel *model;
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->TypePiece),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->TypePiece));
-    gtk_tree_model_get(model, &iter, 0, &string_type, -1);  }
+    gtk_tree_model_get(model, &iter, 0, &string_type, -1);
+    string_type_ihm = gtk_tree_model_get_string_from_iter(model,&iter);
+  }
   extraction = atoi(strtok(string_type," "));
   ST_PIECES * Nouvelle = NULL;
-  Nouvelle = CreationPiece(Nom_piece,extraction,largeur,longueur,0,0,0,0);
+  Nouvelle = CreationPiece(Nom_piece,extraction,largeur,longueur,0,0,0,0,string_type_ihm);
   Habitation->LC_Pieces = InsererTrierPiece(Nouvelle, Habitation->LC_Pieces);
   Habitation->nombre_pieces = Habitation->nombre_pieces + 1;
   gtk_widget_hide(data->piece);
+  gtk_widget_set_sensitive(data->DA_Habitation,TRUE);
  
 }
 
@@ -315,7 +335,8 @@ void on_valider_modification_piece_clicked(GtkWidget *widget, Data *data)
 {
   GtkTreeIter iter;
   gchar *string_nom_piece = NULL;
-  gchar *string_type;
+  gchar *string_type = NULL;
+  gchar *string_type_ihm = NULL;
   GtkTreeModel *model;
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->ModificationNomPiece),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->ModificationNomPiece));
@@ -324,7 +345,9 @@ void on_valider_modification_piece_clicked(GtkWidget *widget, Data *data)
   int extraction;
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->ModificationTypePiece),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->ModificationTypePiece));
-    gtk_tree_model_get(model, &iter, 0, &string_type, -1);  }
+    gtk_tree_model_get(model, &iter, 0, &string_type, -1);
+    string_type_ihm = gtk_tree_model_get_string_from_iter(model,&iter);
+  }
   extraction = atoi(strtok(string_type," "));
 
   GtkAdjustment *adjust;
@@ -343,7 +366,7 @@ void on_valider_modification_piece_clicked(GtkWidget *widget, Data *data)
 	exit(-1);
   }
   else
-    Piece = ModifierPiece(Piece,extraction,largeur,longueur);
+    Piece = ModifierPiece(Piece,extraction,largeur,longueur,string_type_ihm);
 	
   gtk_widget_hide(data->modificationpiece);
 
@@ -425,38 +448,8 @@ void on_modification_nom_piece_changed(GtkWidget *widget, Data *data)
 	
     
       model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->ModificationTypePiece));
-	  switch(Piece->type_piece)
-	  {
-		case 1:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"1 Chambre"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->ModificationTypePiece),&iter);
-				break;
-		case 2:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"2 Salon/Salle à manger"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->ModificationTypePiece),&iter);
-				break;
-				
-		case 3:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"3 Cuisine"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->ModificationTypePiece),&iter);
-				break;
-		
-		case 4:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"4 Salle de bain"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->ModificationTypePiece),&iter);
-				break;
-		
-		case 5:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"5 Toilettes"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->ModificationTypePiece),&iter);
-				break;
-				
-		case 6:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"6 Buanderie"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->ModificationTypePiece),&iter);
-				break;
-	  }
-	  
+      if(gtk_tree_model_get_iter_from_string(model,&iter,Piece->type_piece_ihm))
+        gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->ModificationTypePiece),&iter);
 	  
 	  
 	  gtk_widget_set_sensitive(data->ModificationTypePiece,TRUE);
@@ -615,18 +608,8 @@ void on_parametres_chauffage_clicked(GtkWidget *widget, Data *data)
 	 gtk_adjustment_set_value(adjust,Habitation->chauffage_electricite);
 	 gtk_adjustment_set_upper(adjust,100 - Habitation->chauffage_bois - Habitation->chauffage_gaz);
 	 model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->climatisation));
-	 switch(Habitation->climatisation)
-	 {
-		case 0:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"Oui"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->climatisation),&iter);
-				break;
-		
-		case 1:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"Non"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->climatisation),&iter);
-				break;
-     }
+	 if(gtk_tree_model_get_iter_from_string(model,&iter,Habitation->climatisation_ihm))
+            gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->climatisation),&iter);
 	 
 	}
   }  
@@ -683,15 +666,18 @@ void on_valider_chauffage_clicked(GtkWidget *widget, Data *data)
   
   GtkTreeIter iter;
   gchar *string_climatisation = NULL;
+  gchar *string_climatisation_ihm = NULL;
   GtkTreeModel *model;
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->climatisation),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->climatisation));
-    gtk_tree_model_get(model, &iter, 0, &string_climatisation, -1);  }
+    gtk_tree_model_get(model, &iter, 0, &string_climatisation, -1); 
+    string_climatisation_ihm = gtk_tree_model_get_string_from_iter(model,&iter); 
+  }
   if(strcasecmp(string_climatisation,"Oui") == 0)
     Habitation->climatisation = 0;
   else
     Habitation->climatisation = 1; 
-	
+  strcpy(Habitation ->climatisation_ihm,string_climatisation_ihm);	
   if((Habitation->chauffage_bois + Habitation->chauffage_gaz + Habitation->chauffage_electricite) < 100)
 	gtk_widget_show(data->popup_chauffage);
   else
@@ -765,6 +751,7 @@ void on_equipement_piece_changed(GtkWidget *widget, Data *data)
             gtk_list_store_set(store, &iter_equipements_possibles,0, Test->nom_equipement, -1);
             Test = Test->suiv;
 	  }
+	  data->selection_equipement_possible = gtk_tree_view_get_selection(GTK_TREE_VIEW(data->liste_equipements_possible));
 	  
 	}
   }
@@ -915,11 +902,12 @@ void on_calendar2_day_selected_double_click(GtkWidget *widget, Data *data)
 void on_play_clicked(GtkWidget *widget, Data *data)
 {
  test_pause =0;
-//  while(test_pause == 0)
-//  {
-//   printf("play\n"); 
-//  } 
-  gtk_image_set_from_file(GTK_IMAGE(data->image_meteo),"../ressource/icones_meteo/partly-cloudy-day-icon.png");
+  while(test_pause == 0)
+  {
+   printf("play\n"); 
+   gtk_main_iteration();
+  } 
+  gtk_image_set_from_file(GTK_IMAGE(data->image_meteo),"../ressource/icone_meteo/partly-cloudy-day-icon350.png");
 }
 
 void on_pause_clicked(GtkWidget *widget, Data *data)
@@ -929,37 +917,64 @@ void on_pause_clicked(GtkWidget *widget, Data *data)
   
 }
 
+
+void on_dessin_maison_configure_event(GtkWidget *widget, GdkEventConfigure *event)
+{
+  cairo_t *cr = NULL;
+  
+  if(surface_habitation)
+  {
+    cairo_surface_destroy(surface_habitation);
+  }
+  surface_habitation = gdk_window_create_similar_surface(widget->window, 
+					      CAIRO_CONTENT_COLOR,
+					      widget->allocation.width,
+					      widget->allocation.height);
+  cr = cairo_create(surface_habitation);
+  cairo_set_source_rgb(cr,1,1,1);
+  cairo_paint(cr);
+  cairo_destroy(cr);
+}
+
+
 void on_dessin_maison_expose_event(GtkWidget *da,GdkEventExpose *event)
 {
   //a manager ! 
  cairo_t *cr = NULL;
  cr = gdk_cairo_create(da->window);
+ cairo_set_source_surface(cr,surface_habitation,0,0);
  gdk_cairo_rectangle(cr, &event->area);
- cairo_clip(cr);
- cairo_set_source_rgb(cr,0.45777,0,0.45777);
- cairo_rectangle(cr,20,50,10,10);
  cairo_fill(cr);
  cairo_destroy(cr);
 }
 
-void on_dessin_maison_button_press_event(GtkWidget *da,GdkEventButton *event)
+void on_dessin_maison_button_press_event(GtkWidget *da,GdkEventButton *event,Data *data)
 {
-  GdkRectangle update;
+
   if(event->button == 1)
   {
-    printf("entrée\n");
-  update.x = 0;
-  update.y = 0;
-  update.width = 600;
-  update.height = 600;
+      GdkRectangle update;
+  memset(&update,0,sizeof(GdkRectangle));  
   cairo_t *cr = NULL;
- cr = gdk_cairo_create(da->window);
- gdk_cairo_rectangle(cr, &update);
- cairo_clip(cr);
- cairo_set_source_rgb(cr,0.45777,0,0.45777);
- cairo_rectangle(cr,event->x,event->y,10,10);
- cairo_fill(cr);
- cairo_destroy(cr);
+   
+   
+    update.x = event->x ;
+    update.y = event->y ;
+    update.width = 60;
+    update.height = 60;  
+    cr =cairo_create(surface_habitation);
+    cairo_set_source_rgb(cr,0,0,0);  
+    gdk_cairo_rectangle(cr, &update );
+    cairo_move_to(cr,event->x+5,event->y+10);
+    cairo_set_source_rgb(cr,0.45,0,0);
+    cairo_show_text(cr,"Test");
+     //cairo_rectangle(cr,event->x,event->y,10,10);  
+    cairo_fill(cr);
+    cairo_destroy(cr);
+    gdk_window_invalidate_rect(da->window,
+			       &update,
+			       FALSE);
+    gtk_widget_set_sensitive(data->DA_Habitation,FALSE);
   }
 }
 

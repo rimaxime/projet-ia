@@ -9,6 +9,7 @@
     <property name="default_width">800</property>
     <property name="default_height">600</property>
     <property name="icon_name">weather-clear</property>
+    <signal name="destroy_event" handler="gtk_main_quit"/>
     <child>
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
@@ -197,7 +198,7 @@
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
-                        <signal name="clicked" handler="on_parametres_maison_clicked" object="parametres_habitation"/>
+                        <signal name="clicked" handler="on_parametres_maison_clicked"/>
                       </object>
                       <packing>
                         <property name="position">0</property>
@@ -291,6 +292,7 @@
                     <signal name="destroy" handler="gtk_main_quit"/>
                     <signal name="expose_event" handler="on_dessin_maison_expose_event" object="dessin_maison"/>
                     <signal name="button_press_event" handler="on_dessin_maison_button_press_event"/>
+                    <signal name="configure_event" handler="on_dessin_maison_configure_event"/>
                     <signal name="motion_notify_event" handler="on_dessin_maison_motion_notify_event"/>
                   </object>
                   <packing>
@@ -762,7 +764,6 @@ où nous sommes</property>
                     <property name="max_length">5</property>
                     <property name="invisible_char">•</property>
                     <property name="adjustment">adjustment1</property>
-                    <property name="digits">1</property>
                     <property name="numeric">True</property>
                     <property name="wrap">True</property>
                   </object>
@@ -893,8 +894,9 @@ où nous sommes</property>
     </action-widgets>
   </object>
   <object class="GtkAdjustment" id="adjustment1">
-    <property name="upper">180</property>
-    <property name="step_increment">0.10000000000000001</property>
+    <property name="lower">10</property>
+    <property name="upper">90</property>
+    <property name="step_increment">10</property>
   </object>
   <object class="GtkListStore" id="liststore1">
     <columns>
@@ -903,28 +905,16 @@ où nous sommes</property>
     </columns>
     <data>
       <row>
-        <col id="0" translatable="yes">Sud</col>
+        <col id="0" translatable="yes">1 Bonne Isolation</col>
       </row>
       <row>
-        <col id="0" translatable="yes">Sud-Est</col>
+        <col id="0" translatable="yes">2 Isolation Normale</col>
       </row>
       <row>
-        <col id="0" translatable="yes">Est</col>
+        <col id="0" translatable="yes">3 Isolation Faible</col>
       </row>
       <row>
-        <col id="0" translatable="yes">Nord-Est</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Nord</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Nord-Ouest</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Ouest</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Sud_Ouest</col>
+        <col id="0" translatable="yes">4 Pas d'Isolation</col>
       </row>
     </data>
   </object>
@@ -950,7 +940,7 @@ où nous sommes</property>
     </data>
   </object>
   <object class="GtkWindow" id="creation_piece">
-    <property name="title" translatable="yes">Creer/Modifier une pièce</property>
+    <property name="title" translatable="yes">Creer une pièce</property>
     <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="deletable">False</property>
@@ -1839,6 +1829,7 @@ d'intéragir sur les pièces</property>
     <property name="step_increment">0.10000000000000001</property>
   </object>
   <object class="GtkWindow" id="parametres_chauffag">
+    <property name="title" translatable="yes">Gestion des paramètres de chauffage</property>
     <child>
       <object class="GtkVBox" id="vbox10">
         <property name="visible">True</property>
@@ -2078,13 +2069,8 @@ d'intéragir sur les pièces</property>
       </row>
     </data>
   </object>
-  <object class="GtkListStore" id="liststore8">
-    <columns>
-      <!-- column-name gchararray1 -->
-      <column type="gchararray"/>
-    </columns>
-  </object>
   <object class="GtkWindow" id="parametres_equipements">
+    <property name="title" translatable="yes">Gestion des équipements</property>
     <child>
       <object class="GtkVBox" id="vbox13">
         <property name="visible">True</property>
@@ -2178,6 +2164,8 @@ d'intéragir sur les pièces</property>
               <object class="GtkTreeView" id="arbre_equipement_piece">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="headers_visible">False</property>
+                <property name="headers_clickable">False</property>
                 <child>
                   <object class="GtkTreeViewColumn" id="treeviewcolumn2"/>
                 </child>
@@ -2229,8 +2217,8 @@ d'intéragir sur les pièces</property>
               <object class="GtkTreeView" id="arbre_equipement_possible">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="model">liststore8</property>
                 <property name="headers_visible">False</property>
+                <property name="headers_clickable">False</property>
                 <property name="search_column">0</property>
                 <child>
                   <object class="GtkTreeViewColumn" id="treeviewcolumn1">
@@ -2292,6 +2280,7 @@ d'intéragir sur les pièces</property>
   </object>
   <object class="GtkDialog" id="popup_chauffage">
     <property name="border_width">5</property>
+    <property name="title" translatable="yes">Attention Chauffage</property>
     <property name="window_position">center-on-parent</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
@@ -2342,7 +2331,7 @@ doit être égal à 100</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="gtk_widget_hide"/>
+                <signal name="clicked" handler="gtk_widget_hide" object="popup_chauffage"/>
               </object>
               <packing>
                 <property name="expand">False</property>
