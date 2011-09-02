@@ -31,4 +31,6 @@ ST_EQUIPEMENTS * RecupererInfosEquipements(ST_EQUIPEMENTS *tableau_equipements);
 
 ST_DonneGeo* RecupererInfosGeographique(ST_DonneGeo *tableau_geo);
 
+void Exporter_Evenement_Fichier(ST_JOUR *Tete,char Nom_fichier[CMAX]);
+
 #endif
