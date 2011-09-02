@@ -29,13 +29,15 @@ float SimulationTemp(ST_JOUR *Jour_prec,ST_DonneeMeteo Normales_Mensuelles)
     nombre_aleatoire2 = my_rand();
     Jour_prec = (ST_JOUR*) malloc (sizeof(ST_JOUR));
     Jour_prec->temperature = Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nombre_aleatoire2);
-  }  
+  }
+  
   temp = (Normales_Mensuelles.temp_min + ((Normales_Mensuelles.temp_max-Normales_Mensuelles.temp_min)*nombre_aleatoire)) * 0.6 
 	  + Jour_prec->temperature * 0.4;
-  if(temp>Normales_Mensuelles.temp_max)
+  if(temp > Normales_Mensuelles.temp_max)
     temp= 0.7*Jour_prec->temperature - 0.3*((Jour_prec->temperature-Normales_Mensuelles.temp_max)*nombre_aleatoire);
-  else if(temp<Normales_Mensuelles.temp_min)
+  else if(temp < Normales_Mensuelles.temp_min)
     temp= 0.7*Jour_prec->temperature + 0.3*((Normales_Mensuelles.temp_min - Jour_prec->temperature)*nombre_aleatoire);
+  printf("\nMois : %d | Normale_Min/Max : %2.2f/%2.2f  |Temperature : %2.2f\n",Normales_Mensuelles.num_mois, Normales_Mensuelles.temp_min, Normales_Mensuelles.temp_max,temp);
   return temp;   
 }
 

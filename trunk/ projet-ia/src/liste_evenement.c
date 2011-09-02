@@ -112,11 +112,13 @@ ST_JOUR* creer_liste_jours(ST_Date Date_Debut,ST_Date Date_Fin, ST_HABITATIONS H
    {
      tete_liste->suiv = Nouveau;
      Liste = Nouveau;
+     Jour_precedent = Nouveau;
    }
    else
    {
      Liste->suiv = Nouveau;
      Liste = Nouveau;
+     Jour_precedent = Nouveau;
    }
    
    if(Date_Debut.Mois == 12 && Date_Debut.Jour ==31)

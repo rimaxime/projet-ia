@@ -126,6 +126,16 @@ Data champ_equipements(GtkBuilder *builder, Data data)
   
   data.selection_equipement_possible = gtk_tree_view_get_selection(GTK_TREE_VIEW(data.liste_equipements_possible));
   data.selection_equipement_piece = gtk_tree_view_get_selection(GTK_TREE_VIEW(data.liste_equipements_piece));
+  GtkCellRenderer *renderer;
+  GtkTreeViewColumn *column;
+  GtkListStore *store;
+  renderer = gtk_cell_renderer_text_new();
+  column = gtk_tree_view_column_new_with_attributes("List Itemps",renderer,"text",0,NULL);
+  gtk_tree_view_append_column(GTK_TREE_VIEW(data.liste_equipements_possible),column);//modif date_equipement_possible par data.liste_equipement_possible
+  store = gtk_list_store_new(1,G_TYPE_STRING);
+  gtk_tree_view_set_model(GTK_TREE_VIEW(data.liste_equipements_possible),GTK_TREE_MODEL(store));
+  g_object_unref(store);
+  
   return data;
 }
 
@@ -487,56 +497,21 @@ void on_creer_panneau_clicked(GtkWidget *widget, Data *data)
 	 GtkTreeIter iter;
      GtkTreeModel *model;
 	 model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->mppt));
-	 switch(Habitation->LC_Panneaux->MPPT)
-	 {
-		case 0:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"Oui"))
+	 if(gtk_tree_model_get_iter_from_string(model,&iter,Habitation->LC_Panneaux->MPPT_ihm))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->mppt),&iter);
-				break;
-		
-		case 1:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"Non"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->mppt),&iter);
-				break;
-     }
+	
 	 model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->autorotation));
-	 switch(Habitation->LC_Panneaux->auto_rotation)
-	 {
-		case 0:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"Oui"))
+	 if(gtk_tree_model_get_iter_from_string(model,&iter,Habitation->LC_Panneaux->auto_rotation_ihm))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->autorotation),&iter);
-				break;
-		
-		case 1:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"Non"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->autorotation),&iter);
-				break;
-     }
 	 model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->type_panneau));
-	 switch(Habitation->LC_Panneaux->type)
-	 {
-		case 1:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"1 Monocristallins"))
+	 if(gtk_tree_model_get_iter_from_string(model,&iter,Habitation->LC_Panneaux->type_ihm))
 					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->type_panneau),&iter);
-				break;
-		
-		case 2:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"2 Polycristallins"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->type_panneau),&iter);
-				break;
-		
-		case 3:
-				if(gtk_tree_model_get_iter_from_string(model,&iter,"3 Amorphes"))
-					gtk_combo_box_set_active_iter(GTK_COMBO_BOX(data->type_panneau),&iter);
-				break;				
-     }
+	 
 	 GtkAdjustment *adjust;
 	 adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->largeur_panneau)); 
 	 gtk_adjustment_set_value(adjust,Habitation->LC_Panneaux->Largeur);
 	 adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->longueur_panneau)); 
 	 gtk_adjustment_set_value(adjust,Habitation->LC_Panneaux->Longueur);
-	 adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->inclinaison_panneau)); 
-	 gtk_adjustment_set_value(adjust,Habitation->LC_Panneaux->inclinaison_panneau);
    }
   }  
 
@@ -550,11 +525,17 @@ void on_valider_panneau_clicked(GtkWidget *widget, Data *data)
   gchar *string_type = NULL;
   gchar *string_mppt = NULL;
   gchar *string_autorotation = NULL;
+  gchar *string_mppt_ihm = NULL;
+  gchar *string_type_ihm = NULL;
+  gchar *string_autorotation_ihm = NULL;
   GtkTreeModel *model;
   int mppt =1,autorotation = 1;
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->mppt),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->mppt));
-    gtk_tree_model_get(model, &iter, 0, &string_mppt, -1);  }
+    gtk_tree_model_get(model, &iter, 0, &string_mppt, -1);
+    string_mppt_ihm = gtk_tree_model_get_string_from_iter(model,&iter);
+    
+  }
   if(strcasecmp(string_mppt,"Oui") == 0)
     mppt = 0;
   else
@@ -562,7 +543,9 @@ void on_valider_panneau_clicked(GtkWidget *widget, Data *data)
     
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->autorotation),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->autorotation));
-    gtk_tree_model_get(model, &iter, 0, &string_autorotation, -1);  }
+    gtk_tree_model_get(model, &iter, 0, &string_autorotation, -1);  
+    string_autorotation_ihm = gtk_tree_model_get_string_from_iter(model,&iter); 
+  }
   if(strcasecmp(string_autorotation,"Oui") == 0)
     autorotation = 0;
   else
@@ -571,27 +554,29 @@ void on_valider_panneau_clicked(GtkWidget *widget, Data *data)
   int extraction_type;
   if(gtk_combo_box_get_active_iter(GTK_COMBO_BOX(data->type_panneau),&iter)){
     model = gtk_combo_box_get_model(GTK_COMBO_BOX(data->type_panneau));
-    gtk_tree_model_get(model, &iter, 0, &string_type, -1);  }
+    gtk_tree_model_get(model, &iter, 0, &string_type, -1); 
+    string_type_ihm = gtk_tree_model_get_string_from_iter(model,&iter);
+  }
   extraction_type = atoi(strtok(string_type," "));
 
   GtkAdjustment *adjust;
   gdouble largeur = 0;
   gdouble longueur = 0;
-  gdouble inclinaison = 0;
   adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->largeur_panneau)); 
   largeur = gtk_adjustment_get_value(adjust);
   adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->longueur_panneau)); 
   longueur = gtk_adjustment_get_value(adjust);
-  adjust = gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(data->inclinaison_panneau)); 
-  inclinaison = gtk_adjustment_get_value(adjust);
+
   
   if(Habitation->LC_Panneaux == NULL)
   {
-    Habitation->LC_Panneaux = CreationPanneaux(1, extraction_type, largeur,longueur, inclinaison,Habitation->Exposition);
+    Habitation->LC_Panneaux = CreationPanneaux(1, extraction_type, largeur,longueur, Habitation->inclinaison_toit,Habitation->Exposition,string_type_ihm,
+					       string_autorotation_ihm,string_mppt_ihm);
     
   }
   else
-    Habitation->LC_Panneaux = ModifierPanneaux( Habitation->LC_Panneaux, extraction_type, largeur,longueur, inclinaison,Habitation->Exposition);
+    Habitation->LC_Panneaux = ModifierPanneaux( Habitation->LC_Panneaux, extraction_type, largeur,longueur, Habitation->inclinaison_toit,Habitation->Exposition,string_type_ihm,
+					       string_autorotation_ihm,string_mppt_ihm);
    
   
   gtk_widget_hide(data->panneausolaires);    
@@ -742,6 +727,7 @@ void on_equipement_piece_changed(GtkWidget *widget, Data *data)
     {
 	  GtkTreeIter iter_equipements;
 	  GtkListStore *store;
+
 	  store = gtk_list_store_new(1,G_TYPE_STRING);
 	  while(Piece->LC_Equipements != NULL)
 	  {
@@ -755,7 +741,7 @@ void on_equipement_piece_changed(GtkWidget *widget, Data *data)
 	  ST_EQUIPEMENTS *Test = NULL;
 	  
 	  Test = &(data->Tableau_Equipements[Piece->type_piece]);
-	  gtk_tree_view_set_model(GTK_TREE_VIEW(data->liste_equipements_possible),GTK_TREE_MODEL(store));
+	  store = GTK_LIST_STORE(gtk_tree_view_get_model(GTK_TREE_VIEW(data->liste_equipements_possible)));
 	  while(Test != NULL)
 	  {
 	    gtk_list_store_prepend(store,&iter_equipements_possibles);

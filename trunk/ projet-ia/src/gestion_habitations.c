@@ -222,7 +222,8 @@ ST_EQUIPEMENTS* InsererTrierEquipements(ST_EQUIPEMENTS *Nouveau, ST_EQUIPEMENTS 
  * \param  float Largeur, Longueur représente la taille du panneau solaire, inclinaison_panneau qui est l'inclinaison du panneau
  * \return ST_EQUIPEMENTS* Retour de l'équipement une fois completé
  */
-ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition)
+ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition,char string_type_ihm[CMAX],
+					      char string_autorotation_ihm[CMAX],char string_mppt_ihm[CMAX])
 {
   ST_PANNEAUX *Nouveau = NULL;
   Nouveau = (ST_PANNEAUX *) malloc (sizeof(ST_PANNEAUX));
@@ -238,18 +239,25 @@ ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueu
   Nouveau->Longueur = Longueur;
   Nouveau->inclinaison_panneau = inclinaison_panneau;
   Nouveau->Exposition = Exposition;
+  strcpy(Nouveau->type_ihm,string_type_ihm);
+  strcpy(Nouveau->auto_rotation_ihm,string_autorotation_ihm);
+  strcpy(Nouveau->MPPT_ihm,string_mppt_ihm);
   //Nouveau->suiv = NULL;
   return Nouveau; 
 }
 
 
-ST_PANNEAUX* ModifierPanneaux(ST_PANNEAUX *Panneau, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition)
+ST_PANNEAUX* ModifierPanneaux(ST_PANNEAUX *Panneau, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition, char string_type_ihm[CMAX],
+					      char string_autorotation_ihm[CMAX],char string_mppt_ihm[CMAX])
 {
   Panneau->type = type;
   Panneau->Largeur = Largeur;
   Panneau->Longueur = Longueur;
   Panneau->inclinaison_panneau = inclinaison_panneau;
   Panneau->Exposition = Exposition;
+  strcpy(Panneau->type_ihm,string_type_ihm);
+  strcpy(Panneau->auto_rotation_ihm,string_autorotation_ihm);
+  strcpy(Panneau->MPPT_ihm,string_mppt_ihm);
   return Panneau;
 }
 

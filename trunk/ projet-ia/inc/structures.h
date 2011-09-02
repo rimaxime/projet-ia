@@ -61,6 +61,7 @@ typedef struct Panneaux
 {
   int indice;
   int type; //1 : Monocristallins 2 : Polycristallins 3: Amorphes
+  char type_ihm[CMAX];
   float Largeur;
   float Longueur;
   float inclinaison_panneau;
@@ -68,7 +69,9 @@ typedef struct Panneaux
   int surface;
   float rendement;
   int MPPT; //Ajout du module Maximum Power Power Tracking : Rendement 15% -> 30%
+  char MPPT_ihm[CMAX];
   int auto_rotation; // 0 : Oui 1: Non
+  char auto_rotation_ihm[CMAX];
   //struct Panneaux *suiv;
 }ST_PANNEAUX;
 typedef ST_PANNEAUX* PTR_ST_PANNEAUX;
@@ -174,7 +177,9 @@ typedef struct parametres_simulation
  ST_Date date_finale;
  ST_Date date_courante;
  int vitesse;
- //int allant de 1 à 5, vitesse initiale = 5 
+ //int allant de 1 à 5, vitesse initiale = 5
+ int modification_habitation;
+ int modification_date;
 }ST_PARAMETRES_SIMULATION;
 
 #endif

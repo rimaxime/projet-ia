@@ -126,7 +126,7 @@ void test_inserertrier_equipement()
 void test_creation_panneaux()
 {
   ST_PANNEAUX *Nouveau = NULL;
-  Nouveau = CreationPanneaux(1, 2,3,4,5,6);
+  Nouveau = CreationPanneaux(1, 2,3,4,5,6,"","","");
   TEST_TITLE("test_creation_panneaux");
   TEST(Nouveau->type == 2);
   TEST(Nouveau->indice == 1);

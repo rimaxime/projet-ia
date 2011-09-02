@@ -2,7 +2,7 @@
   * \file gestion_fichiers.c
   * \brief Récupére les données des bases de données pour les
   * les mettre dans des tableaux / listes
-  * \author MRI
+  * \author MRI & BEC
   * \date 11/07/2011
   */
 
@@ -418,6 +418,35 @@ void Exporter_Evenement_Fichier(ST_JOUR *Tete,char Nom_fichier[CMAX])
   fclose(report_evenement);  
 }
   
+/*void save_simu(ST_HABITATIONS *Habitation,ST_PARAMETRES_SIMULATION *Param_Simu, ST_JOUR *tete)
+{
+  ST_PARAMETRES_SIMULATION *param = Param_Simu;
+  ST_JOUR *liste = tete;
+  FILE *simu;
+	simu=fopen("Sauvegarde_simu.csv","w+"); //Voir comment passer le nom en parametres
+  if(simu == NULL)
+  {
+    printf("\nErreur d'ouverture fichier \n");
+    exit(-1);
+  }
   
+  if(Habitation == NULL)
+  {
+    printf("\nSauvegarde impossible : Pas de d'habitation definie\n");
+    exit(-1);    
+  }
   
+  fprintf(simu,"h|%d|%f|%d|%s|%d|%d|%s|%s|%s|%d|%d|%d|\n",Habitation->nombre_pieces,Habitation->inclinaison_toit,
+	  Habitation->Isolation,Habitation->Isolation_ihm,Habitation->Exposition,Habitation->climatisation,Habitation
+	  ->climatisation_ihm,Habitation->Departement,Habitation->Departement_ihm,Habitation->chauffage_bois,Habitation
+	  ->chauffage_gaz,Habitation->chauffage_electricite);
+  while(param != NULL)
+  {
+    fprintf(simu,"s|||||||||||||||||||",)
+    
+  }
   
+
+
+  
+}*/
