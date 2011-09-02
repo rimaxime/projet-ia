@@ -331,7 +331,92 @@ ST_DonneGeo* RecupererInfosGeographique(ST_DonneGeo *tableau_geo)
 	return tableau_geo;
 }
   
+void Exporter_Evenement_Fichier(ST_JOUR *Tete,char Nom_fichier[CMAX])
+{
+  ST_JOUR *courant= Tete;
+  float somme_prod,somme_gain,somme_conso,somme_cout;
+  somme_prod=0;
+  somme_gain=0;
+  somme_conso=0;
+  somme_cout=0;
+  float temp_moy,temp_min,temp_max,somme_temp,i;
+  temp_moy=Tete->temperature;
+  temp_min=Tete->temperature;
+  temp_max=Tete->temperature;
+  somme_temp=0;
+  i=0;
+  ST_Date Date_min;
+  Date_min.Jour=0;
+  Date_min.Mois=0;
+  Date_min.Annee=0;
+  ST_Date Date_max;
+  Date_max.Jour=0;
+  Date_max.Mois=0;
+  Date_max.Annee=0;
+ 
+  FILE *report_evenement;
+	report_evenement=fopen("Nom_fichier.csv","w+"); //Voir comment passer le nom en parametres
+  if(report_evenement == NULL)
+  {
+    printf("\nErreur d'ouverture fichier \n");
+    exit(-1);
+  }
+  if(Tete == NULL)
+    printf("\nLa file d'evenement est vide\n");
+  //Calcul des statistiques 
+  while(courant !=NULL)
+  {
+    i++;
+    somme_prod += courant->production;
+    somme_gain += courant->gain;
+    somme_conso += courant->consommation;
+    somme_cout += courant->cout;
+    somme_temp += courant->temperature; 
+    temp_moy=somme_temp/i;
+    if(courant->temperature < temp_min)
+    {
+      temp_min = courant->temperature;
+      Date_min.Jour = courant->date.Jour;
+      Date_min.Mois = courant->date.Mois;
+      Date_min.Annee = courant->date.Annee;
+    }
+    if(courant->temperature > temp_max)
+    {
+      temp_max = courant->temperature;
+      Date_max.Jour = courant->date.Jour;
+      Date_max.Mois = courant->date.Mois;
+      Date_max.Annee = courant->date.Annee;
+    }   
+    courant=courant->suiv;
+  }
   
+  fprintf(report_evenement,"___SOLARIS Report\n\n");
+  fprintf(report_evenement,"File_Name : %s\n\n",Nom_fichier);
+  fprintf(report_evenement,"\nTotal : \n");  
+  fprintf(report_evenement,"\tEnergie Produite  = %2.2f KWh soit %2.2f €\n",somme_prod/1000,somme_gain);  
+  fprintf(report_evenement,"\tEnergie Consommée = %2.2f KWh soit %2.2f €\n\n",somme_conso/1000,somme_cout);  
+  fprintf(report_evenement,"Statistiques :\n");
+  fprintf(report_evenement,"\tTemperature Moy : %2.2f°C\n",temp_moy);
+  fprintf(report_evenement,"\tTemperature Min : %2.2f°C le %d/%d/%d\n",temp_min,Date_min.Jour,Date_min.Mois,Date_min.Annee);
+  fprintf(report_evenement,"\tTemperature Max : %2.2f°C le %d/%d/%d\n\n",temp_max,Date_max.Jour,Date_max.Mois,Date_max.Annee);
+  fprintf(report_evenement,"\nDetails :\n");
+  
+  while(Tete != NULL)
+  {
+    fprintf(report_evenement,"\nDate : %d / %d / %d",Tete->date.Jour,Tete->date.Mois,Tete->date.Annee);
+    fprintf(report_evenement,"\n\tTemperature:  %f",Tete->temperature);
+    fprintf(report_evenement,"\n\tCondition:    %d",Tete->condition);
+    fprintf(report_evenement,"\n\tProduction:   %f",Tete->production);
+    fprintf(report_evenement,"\n\tConsommation: %f",Tete->consommation);
+    fprintf(report_evenement,"\n\tGain:         %f",Tete->gain); 
+    fprintf(report_evenement,"\n\tCout:         %f\n",Tete->cout);
+    Tete=Tete->suiv;
+  }
+  fprintf(report_evenement,"\n\n__________________________________");  
+  fprintf(report_evenement,"\n Solaris 2011 © All right reserved");
+    
+  fclose(report_evenement);  
+}
   
   
   

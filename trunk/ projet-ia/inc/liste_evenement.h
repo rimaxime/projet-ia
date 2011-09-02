@@ -24,4 +24,12 @@ ST_DonneGeo* parseur_donnees_geo(ST_DonneGeo *Tableau_Geo, int inclinaison, int 
 
 ST_JOUR* creer_liste_jours(ST_Date Date_Debut,ST_Date Date_Fin, ST_HABITATIONS Habitation, ST_DonneGeo Donnee_geo,STR_DEPARTEMENT departements, ST_JOUR *Jour_precedent);
 
+void supprimer_jour(ST_Date Date_sup, PTR_ST_JOUR *tete);
+
+void supprimer_liste_jour(ST_Date Date_Debut,ST_Date Date_Fin , PTR_ST_JOUR *tete);
+
+int comparer_date(ST_Date Date1, ST_Date Date2); //if Date1 > Date2 = 1; Date1=Date2 =0 ; Date1 < Date2 = -1
+
+ST_JOUR* retrouver_jour(ST_Date Date_rech, ST_JOUR *tete);
+
 #endif

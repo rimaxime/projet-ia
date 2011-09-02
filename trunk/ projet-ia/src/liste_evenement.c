@@ -142,3 +142,105 @@ ST_JOUR* creer_liste_jours(ST_Date Date_Debut,ST_Date Date_Fin, ST_HABITATIONS H
 }
  return(tete_liste);
 }
+
+void supprimer_jour(ST_Date Date_sup, PTR_ST_JOUR *tete)
+{
+  ST_JOUR *prec = NULL;
+  ST_JOUR *courant = *tete;
+  
+  if(*tete == NULL)
+    printf("\nSuppression impossible : La liste est vide\n");
+  
+  while(courant != NULL)
+  {
+    if(comparer_date(courant->date,Date_sup)==0)
+    {
+      if(courant == *tete)
+	*tete=courant->suiv;
+      else
+	prec->suiv=courant->suiv;
+      free(courant);
+      courant=NULL;
+    }
+    else
+    {
+      prec=courant;
+      courant=courant->suiv;
+    }
+  }
+}
+
+void supprimer_liste_jour(ST_Date Date_Debut,ST_Date Date_Fin , PTR_ST_JOUR *tete)
+{
+ ST_JOUR *prec = NULL;
+ ST_JOUR *courant = *tete;
+ ST_JOUR *suiv = courant->suiv;
+ 
+ if(*tete == NULL)
+   printf("\nSuppression impossible : La liste est vite\n");
+ else
+ {
+   while(courant!=NULL)
+   {
+      if(comparer_date(courant->date,Date_Debut)==0)
+      {
+	if(courant == *tete)
+	{
+	  while(courant!=NULL && comparer_date(courant->date,Date_Fin) != 1)
+	  {
+	    suiv=courant->suiv;
+	    free(courant);
+	    courant=suiv;
+	  }
+	  *tete=suiv;
+	}
+	else
+	{
+	  while(courant!=NULL && comparer_date(courant->date,Date_Fin) !=1)
+	  {
+	    suiv=courant->suiv;
+	    free(courant);
+	    courant=suiv;
+	  }
+	  prec->suiv=suiv;
+	}
+      }
+      else
+      {
+	prec=courant;
+	courant=courant->suiv;
+      }
+   }
+  }
+}
+
+
+int comparer_date(ST_Date Date1, ST_Date Date2) //if Date1 > Date2 = 1; Date1=Date2 =0 ; Date1 < Date2 = -1
+{
+  if(Date1.Annee > Date2.Annee)
+    return 1;
+  else if(Date1.Annee == Date2.Annee && Date1.Mois > Date2.Mois)
+    return 1;
+  else if(Date1.Annee == Date2.Annee && Date1.Mois == Date2.Mois && Date1.Jour > Date2.Jour)
+    return 1;
+  else if(Date1.Annee == Date2.Annee && Date1.Mois == Date2.Mois && Date1.Jour == Date2.Jour)
+    return 0;
+  else
+    return -1; 
+}
+
+ST_JOUR* retrouver_jour(ST_Date Date_rech, ST_JOUR *tete)
+{
+  ST_JOUR *courant=tete;
+  if(tete==NULL)
+    printf("\nRecherche impossible : La liste est vide\n");
+    
+  while(courant != NULL)
+  {
+    if(comparer_date(Date_rech,courant->date)==0)
+      return courant;
+    else
+      courant=courant->suiv;  
+  }
+  return tete;
+}
