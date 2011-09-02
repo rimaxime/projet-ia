@@ -965,9 +965,8 @@ void on_dessin_maison_button_press_event(GtkWidget *da,GdkEventButton *event,Dat
     cr =cairo_create(surface_habitation);
     cairo_set_source_rgb(cr,0,0,0);  
     gdk_cairo_rectangle(cr, &update );
-    cairo_move_to(cr,event->x+5,event->y+10);
-    cairo_set_source_rgb(cr,0.45,0,0);
-    cairo_show_text(cr,"Test");
+    
+    
      //cairo_rectangle(cr,event->x,event->y,10,10);  
     cairo_fill(cr);
     cairo_destroy(cr);
