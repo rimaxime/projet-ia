@@ -4,2632 +4,2632 @@ File_Name : essai
 
 
 Total : 
-	Energie Produite  = 15824.03 KWh soit 6646.09 €
-	Energie Consommée = 14841.68 KWh soit 1781.00 €
+	Energie Produite  = 5329.57 KWh soit 2238.42 €
+	Energie Consommée = 12515.43 KWh soit 1501.85 €
 
 Statistiques :
-	Temperature Moy : 9.20°C
-	Temperature Min : 4.58°C le 9/2/2010
-	Temperature Max : 19.51°C le 18/7/2010
+	Temperature Moy : 13.91°C
+	Temperature Min : 3.72°C le 30/1/2010
+	Temperature Max : 26.18°C le 14/7/2010
 
 
 Details :
 
 Date : 1 / 1 / 2010
-	Temperature:  6.948000
-	Condition:    0
-	Production:   54975.496094
-	Consommation: 49164.359375
-	Gain:         23.089708
-	Cout:         5.899723
+	Temperature:  5.592000
+	Condition:    2
+	Production:   13607.913086
+	Consommation: 51442.441406
+	Gain:         5.715323
+	Cout:         6.173093
 
 Date : 2 / 1 / 2010
-	Temperature:  6.307200
+	Temperature:  5.692800
 	Condition:    0
-	Production:   54698.527344
-	Consommation: 50240.902344
-	Gain:         22.973381
-	Cout:         6.028908
+	Production:   18331.666016
+	Consommation: 51273.097656
+	Gain:         7.699300
+	Cout:         6.152772
 
 Date : 3 / 1 / 2010
-	Temperature:  7.747200
-	Condition:    0
-	Production:   52408.492188
-	Consommation: 47821.703125
-	Gain:         22.011566
-	Cout:         5.738605
+	Temperature:  6.273120
+	Condition:    2
+	Production:   14930.168945
+	Consommation: 50298.160156
+	Gain:         6.270671
+	Cout:         6.035779
 
 Date : 4 / 1 / 2010
-	Temperature:  5.587200
-	Condition:    3
-	Production:   39123.285156
-	Consommation: 51450.503906
-	Gain:         16.431780
-	Cout:         6.174060
+	Temperature:  5.137248
+	Condition:    2
+	Production:   15042.762695
+	Consommation: 52206.421875
+	Gain:         6.317960
+	Cout:         6.264771
 
 Date : 5 / 1 / 2010
-	Temperature:  4.975200
-	Condition:    0
-	Production:   48089.640625
-	Consommation: 52478.664062
-	Gain:         20.197649
-	Cout:         6.297440
+	Temperature:  5.438899
+	Condition:    1
+	Production:   16993.136719
+	Consommation: 51699.648438
+	Gain:         7.137117
+	Cout:         6.203958
 
 Date : 6 / 1 / 2010
-	Temperature:  8.107200
+	Temperature:  4.767560
 	Condition:    0
-	Production:   54887.964844
-	Consommation: 47216.906250
-	Gain:         23.052944
-	Cout:         5.666029
+	Production:   18057.310547
+	Consommation: 52827.500000
+	Gain:         7.584071
+	Cout:         6.339300
 
 Date : 7 / 1 / 2010
-	Temperature:  7.891200
+	Temperature:  6.443024
 	Condition:    0
-	Production:   53513.566406
-	Consommation: 47579.785156
-	Gain:         22.475697
-	Cout:         5.709574
+	Production:   17137.339844
+	Consommation: 50012.718750
+	Gain:         7.197683
+	Cout:         6.001526
 
 Date : 8 / 1 / 2010
-	Temperature:  4.939200
+	Temperature:  5.745210
 	Condition:    0
-	Production:   54248.371094
-	Consommation: 52539.144531
-	Gain:         22.784315
-	Cout:         6.304698
+	Production:   16110.174805
+	Consommation: 51185.046875
+	Gain:         6.766273
+	Cout:         6.142206
 
 Date : 9 / 1 / 2010
-	Temperature:  7.639200
+	Temperature:  5.466084
 	Condition:    1
-	Production:   47163.382812
-	Consommation: 48003.144531
-	Gain:         19.808620
-	Cout:         5.760377
+	Production:   15511.479492
+	Consommation: 51653.980469
+	Gain:         6.514821
+	Cout:         6.198478
 
 Date : 10 / 1 / 2010
-	Temperature:  6.919200
+	Temperature:  5.642434
 	Condition:    0
-	Production:   50272.812500
-	Consommation: 49212.742188
-	Gain:         21.114582
-	Cout:         5.905529
+	Production:   17079.832031
+	Consommation: 51357.710938
+	Gain:         7.173530
+	Cout:         6.162925
 
 Date : 11 / 1 / 2010
-	Temperature:  5.695200
+	Temperature:  4.344974
 	Condition:    0
-	Production:   50164.500000
-	Consommation: 51269.062500
-	Gain:         21.069090
-	Cout:         6.152287
+	Production:   18111.177734
+	Consommation: 53537.445312
+	Gain:         7.606695
+	Cout:         6.424493
 
 Date : 12 / 1 / 2010
-	Temperature:  5.407200
+	Temperature:  5.301990
 	Condition:    0
-	Production:   55405.660156
-	Consommation: 51752.902344
-	Gain:         23.270378
-	Cout:         6.210348
+	Production:   17257.302734
+	Consommation: 51929.656250
+	Gain:         7.248067
+	Cout:         6.231559
 
 Date : 13 / 1 / 2010
-	Temperature:  5.587200
-	Condition:    0
-	Production:   49707.363281
-	Consommation: 51450.503906
-	Gain:         20.877092
-	Cout:         6.174060
+	Temperature:  5.900796
+	Condition:    3
+	Production:   15267.376953
+	Consommation: 50923.664062
+	Gain:         6.412298
+	Cout:         6.110840
 
 Date : 14 / 1 / 2010
-	Temperature:  4.759200
+	Temperature:  5.600318
 	Condition:    0
-	Production:   54939.054688
-	Consommation: 52841.542969
-	Gain:         23.074402
-	Cout:         6.340985
+	Production:   16921.025391
+	Consommation: 51428.464844
+	Gain:         7.106831
+	Cout:         6.171416
 
 Date : 15 / 1 / 2010
-	Temperature:  7.603200
-	Condition:    1
-	Production:   49047.437500
-	Consommation: 48063.625000
-	Gain:         20.599922
-	Cout:         5.767635
+	Temperature:  6.020127
+	Condition:    0
+	Production:   19150.054688
+	Consommation: 50723.187500
+	Gain:         8.043023
+	Cout:         6.086782
 
 Date : 16 / 1 / 2010
-	Temperature:  6.271200
-	Condition:    2
-	Production:   44895.105469
-	Consommation: 50301.382812
-	Gain:         18.855944
-	Cout:         6.036166
+	Temperature:  5.180051
+	Condition:    0
+	Production:   17842.998047
+	Consommation: 52134.515625
+	Gain:         7.494059
+	Cout:         6.256142
 
 Date : 17 / 1 / 2010
-	Temperature:  5.623200
-	Condition:    2
-	Production:   38268.871094
-	Consommation: 51390.023438
-	Gain:         16.072926
-	Cout:         6.166803
+	Temperature:  5.780020
+	Condition:    1
+	Production:   13825.731445
+	Consommation: 51126.566406
+	Gain:         5.806807
+	Cout:         6.135188
 
 Date : 18 / 1 / 2010
-	Temperature:  6.703200
-	Condition:    2
-	Production:   43521.191406
-	Consommation: 49575.625000
-	Gain:         18.278900
-	Cout:         5.949075
+	Temperature:  5.084008
+	Condition:    0
+	Production:   17106.875000
+	Consommation: 52295.867188
+	Gain:         7.184887
+	Cout:         6.275504
 
 Date : 19 / 1 / 2010
-	Temperature:  5.407200
+	Temperature:  4.913603
 	Condition:    0
-	Production:   54554.722656
-	Consommation: 51752.902344
-	Gain:         22.912983
-	Cout:         6.210348
+	Production:   18501.099609
+	Consommation: 52582.144531
+	Gain:         7.770462
+	Cout:         6.309857
 
 Date : 20 / 1 / 2010
-	Temperature:  4.651200
+	Temperature:  5.997441
 	Condition:    0
-	Production:   51450.031250
-	Consommation: 53022.984375
-	Gain:         21.609013
-	Cout:         6.362758
+	Production:   18926.355469
+	Consommation: 50761.296875
+	Gain:         7.949069
+	Cout:         6.091356
 
 Date : 21 / 1 / 2010
-	Temperature:  4.903200
+	Temperature:  6.430976
 	Condition:    0
-	Production:   49614.382812
-	Consommation: 52599.625000
-	Gain:         20.838041
-	Cout:         6.311955
+	Production:   19224.003906
+	Consommation: 50032.960938
+	Gain:         8.074081
+	Cout:         6.003955
 
 Date : 22 / 1 / 2010
-	Temperature:  5.443200
-	Condition:    2
-	Production:   41597.277344
-	Consommation: 51692.421875
-	Gain:         17.470856
-	Cout:         6.203091
+	Temperature:  4.408391
+	Condition:    0
+	Production:   17785.152344
+	Consommation: 53430.902344
+	Gain:         7.469764
+	Cout:         6.411708
 
 Date : 23 / 1 / 2010
-	Temperature:  6.127200
-	Condition:    0
-	Production:   49348.203125
-	Consommation: 50543.304688
-	Gain:         20.726246
-	Cout:         6.065197
+	Temperature:  4.571356
+	Condition:    2
+	Production:   15712.125977
+	Consommation: 53157.121094
+	Gain:         6.599093
+	Cout:         6.378855
 
 Date : 24 / 1 / 2010
-	Temperature:  4.723200
-	Condition:    2
-	Production:   44713.574219
-	Consommation: 52902.023438
-	Gain:         18.779701
-	Cout:         6.348243
+	Temperature:  5.212543
+	Condition:    0
+	Production:   18871.906250
+	Consommation: 52079.929688
+	Gain:         7.926200
+	Cout:         6.249591
 
 Date : 25 / 1 / 2010
-	Temperature:  7.135200
-	Condition:    2
-	Production:   39704.281250
-	Consommation: 48849.863281
-	Gain:         16.675798
-	Cout:         5.861984
+	Temperature:  5.001017
+	Condition:    0
+	Production:   16885.328125
+	Consommation: 52435.292969
+	Gain:         7.091837
+	Cout:         6.292235
 
 Date : 26 / 1 / 2010
-	Temperature:  6.307200
+	Temperature:  4.124407
 	Condition:    0
-	Production:   53000.984375
-	Consommation: 50240.902344
-	Gain:         22.260414
-	Cout:         6.028908
+	Production:   18833.148438
+	Consommation: 53907.996094
+	Gain:         7.909922
+	Cout:         6.468959
 
 Date : 27 / 1 / 2010
-	Temperature:  5.335200
-	Condition:    2
-	Production:   42933.964844
-	Consommation: 51873.863281
-	Gain:         18.032265
-	Cout:         6.224864
+	Temperature:  4.025763
+	Condition:    1
+	Production:   17642.816406
+	Consommation: 54073.718750
+	Gain:         7.409983
+	Cout:         6.488846
 
 Date : 28 / 1 / 2010
-	Temperature:  6.847200
+	Temperature:  4.058305
 	Condition:    0
-	Production:   52543.027344
-	Consommation: 49333.703125
-	Gain:         22.068071
-	Cout:         5.920044
+	Production:   17253.476562
+	Consommation: 54019.046875
+	Gain:         7.246460
+	Cout:         6.482285
 
 Date : 29 / 1 / 2010
-	Temperature:  6.667200
-	Condition:    2
-	Production:   40416.671875
-	Consommation: 49636.105469
-	Gain:         16.975002
-	Cout:         5.956333
+	Temperature:  3.891322
+	Condition:    0
+	Production:   18166.710938
+	Consommation: 54299.578125
+	Gain:         7.630019
+	Cout:         6.515949
 
 Date : 30 / 1 / 2010
-	Temperature:  4.651200
+	Temperature:  3.716529
 	Condition:    0
-	Production:   52208.042969
-	Consommation: 53022.984375
-	Gain:         21.927378
-	Cout:         6.362758
+	Production:   19081.220703
+	Consommation: 54593.230469
+	Gain:         8.014112
+	Cout:         6.551188
 
 Date : 1 / 2 / 2010
-	Temperature:  6.691200
+	Temperature:  4.294611
 	Condition:    2
-	Production:   45689.390625
-	Consommation: 49595.785156
-	Gain:         19.189543
-	Cout:         5.951494
+	Production:   14400.595703
+	Consommation: 53622.054688
+	Gain:         6.048250
+	Cout:         6.434647
 
 Date : 2 / 2 / 2010
-	Temperature:  7.939200
-	Condition:    1
-	Production:   49188.187500
-	Consommation: 47499.144531
-	Gain:         20.659039
-	Cout:         5.699897
+	Temperature:  7.213844
+	Condition:    0
+	Production:   16555.423828
+	Consommation: 48717.742188
+	Gain:         6.953278
+	Cout:         5.846129
 
 Date : 3 / 2 / 2010
-	Temperature:  7.939200
-	Condition:    1
-	Production:   48249.480469
-	Consommation: 47499.144531
-	Gain:         20.264782
-	Cout:         5.699897
+	Temperature:  5.261538
+	Condition:    3
+	Production:   14779.868164
+	Consommation: 51997.617188
+	Gain:         6.207545
+	Cout:         6.239714
 
 Date : 4 / 2 / 2010
-	Temperature:  7.219200
-	Condition:    3
-	Production:   39976.976562
-	Consommation: 48708.742188
-	Gain:         16.790329
-	Cout:         5.845049
+	Temperature:  7.696615
+	Condition:    1
+	Production:   17971.673828
+	Consommation: 47906.687500
+	Gain:         7.548103
+	Cout:         5.748803
 
 Date : 5 / 2 / 2010
-	Temperature:  5.299200
-	Condition:    0
-	Production:   52490.703125
-	Consommation: 51934.343750
-	Gain:         22.046095
-	Cout:         6.232121
+	Temperature:  7.662646
+	Condition:    1
+	Production:   15031.148438
+	Consommation: 47963.753906
+	Gain:         6.313082
+	Cout:         5.755651
 
 Date : 6 / 2 / 2010
-	Temperature:  9.043200
-	Condition:    0
-	Production:   52027.601562
-	Consommation: 45644.425781
-	Gain:         21.851593
-	Cout:         5.477331
+	Temperature:  4.865058
+	Condition:    1
+	Production:   13990.556641
+	Consommation: 52663.703125
+	Gain:         5.876034
+	Cout:         6.319644
 
 Date : 7 / 2 / 2010
-	Temperature:  7.555200
-	Condition:    0
-	Production:   47738.519531
-	Consommation: 48144.265625
-	Gain:         20.050179
-	Cout:         5.777312
+	Temperature:  7.250023
+	Condition:    2
+	Production:   13768.083008
+	Consommation: 48656.960938
+	Gain:         5.782595
+	Cout:         5.838835
 
 Date : 8 / 2 / 2010
-	Temperature:  6.979200
-	Condition:    0
-	Production:   55064.746094
-	Consommation: 49111.945312
-	Gain:         23.127193
-	Cout:         5.893434
+	Temperature:  7.100009
+	Condition:    2
+	Production:   15407.622070
+	Consommation: 48908.984375
+	Gain:         6.471201
+	Cout:         5.869078
 
 Date : 9 / 2 / 2010
-	Temperature:  4.579200
+	Temperature:  4.928004
 	Condition:    0
-	Production:   55914.730469
-	Consommation: 53143.945312
-	Gain:         23.484186
-	Cout:         6.377274
+	Production:   19112.724609
+	Consommation: 52557.953125
+	Gain:         8.027345
+	Cout:         6.306954
 
 Date : 10 / 2 / 2010
-	Temperature:  6.403200
+	Temperature:  6.459201
 	Condition:    0
-	Production:   50158.070312
-	Consommation: 50079.625000
-	Gain:         21.066389
-	Cout:         6.009555
+	Production:   18741.095703
+	Consommation: 49985.542969
+	Gain:         7.871261
+	Cout:         5.998265
 
 Date : 11 / 2 / 2010
-	Temperature:  7.459200
+	Temperature:  8.943681
 	Condition:    0
-	Production:   50289.562500
-	Consommation: 48305.542969
-	Gain:         21.121616
-	Cout:         5.796665
+	Production:   16155.218750
+	Consommation: 45811.617188
+	Gain:         6.785192
+	Cout:         5.497394
 
 Date : 12 / 2 / 2010
-	Temperature:  5.539200
-	Condition:    0
-	Production:   49619.613281
-	Consommation: 51531.144531
-	Gain:         20.840237
-	Cout:         6.183737
+	Temperature:  8.545472
+	Condition:    1
+	Production:   16779.744141
+	Consommation: 46480.605469
+	Gain:         7.047493
+	Cout:         5.577672
 
 Date : 13 / 2 / 2010
-	Temperature:  6.691200
+	Temperature:  5.938189
 	Condition:    0
-	Production:   49174.972656
-	Consommation: 49595.785156
-	Gain:         20.653488
-	Cout:         5.951494
+	Production:   16647.708984
+	Consommation: 50860.843750
+	Gain:         6.992038
+	Cout:         6.103301
 
 Date : 14 / 2 / 2010
-	Temperature:  5.923200
-	Condition:    0
-	Production:   55891.117188
-	Consommation: 50886.023438
-	Gain:         23.474270
-	Cout:         6.106323
+	Temperature:  5.135276
+	Condition:    3
+	Production:   13689.956055
+	Consommation: 52209.738281
+	Gain:         5.749782
+	Cout:         6.265169
 
 Date : 15 / 2 / 2010
-	Temperature:  6.499200
-	Condition:    2
-	Production:   41378.542969
-	Consommation: 49918.343750
-	Gain:         17.378988
-	Cout:         5.990201
+	Temperature:  5.822110
+	Condition:    1
+	Production:   13952.674805
+	Consommation: 51055.855469
+	Gain:         5.860124
+	Cout:         6.126703
 
 Date : 16 / 2 / 2010
-	Temperature:  6.499200
-	Condition:    2
-	Production:   38550.851562
-	Consommation: 49918.343750
-	Gain:         16.191359
-	Cout:         5.990201
+	Temperature:  4.848844
+	Condition:    0
+	Production:   16860.361328
+	Consommation: 52690.941406
+	Gain:         7.081351
+	Cout:         6.322913
 
 Date : 17 / 2 / 2010
-	Temperature:  7.171200
-	Condition:    1
-	Production:   42146.195312
-	Consommation: 48789.382812
-	Gain:         17.701403
-	Cout:         5.854726
+	Temperature:  6.667538
+	Condition:    0
+	Production:   18730.001953
+	Consommation: 49635.535156
+	Gain:         7.866601
+	Cout:         5.956264
 
 Date : 18 / 2 / 2010
-	Temperature:  6.451200
-	Condition:    1
-	Production:   54487.613281
-	Consommation: 49998.984375
-	Gain:         22.884796
-	Cout:         5.999878
+	Temperature:  8.787015
+	Condition:    0
+	Production:   17023.185547
+	Consommation: 46074.816406
+	Gain:         7.149737
+	Cout:         5.528978
 
 Date : 19 / 2 / 2010
-	Temperature:  8.227200
+	Temperature:  6.610806
 	Condition:    0
-	Production:   51023.625000
-	Consommation: 47015.304688
-	Gain:         21.429922
-	Cout:         5.641837
+	Production:   18444.328125
+	Consommation: 49730.847656
+	Gain:         7.746618
+	Cout:         5.967702
 
 Date : 20 / 2 / 2010
-	Temperature:  6.211200
-	Condition:    2
-	Production:   43204.753906
-	Consommation: 50402.183594
-	Gain:         18.145996
-	Cout:         6.048262
+	Temperature:  6.892323
+	Condition:    0
+	Production:   16025.709961
+	Consommation: 49257.898438
+	Gain:         6.730798
+	Cout:         5.910948
 
 Date : 21 / 2 / 2010
-	Temperature:  8.419200
-	Condition:    2
-	Production:   44621.187500
-	Consommation: 46692.742188
-	Gain:         18.740898
-	Cout:         5.603129
+	Temperature:  4.988929
+	Condition:    0
+	Production:   17530.404297
+	Consommation: 52455.597656
+	Gain:         7.362770
+	Cout:         6.294672
 
 Date : 22 / 2 / 2010
-	Temperature:  9.283200
-	Condition:    2
-	Production:   40209.527344
-	Consommation: 45241.222656
-	Gain:         16.888000
-	Cout:         5.428946
+	Temperature:  4.083572
+	Condition:    0
+	Production:   16347.633789
+	Consommation: 53976.597656
+	Gain:         6.866006
+	Cout:         6.477192
 
 Date : 23 / 2 / 2010
-	Temperature:  5.923200
-	Condition:    3
-	Production:   44845.070312
-	Consommation: 50886.023438
-	Gain:         18.834929
-	Cout:         6.106323
+	Temperature:  6.025429
+	Condition:    2
+	Production:   14844.282227
+	Consommation: 50714.281250
+	Gain:         6.234599
+	Cout:         6.085714
 
 Date : 24 / 2 / 2010
-	Temperature:  4.867200
-	Condition:    2
-	Production:   46968.015625
-	Consommation: 52660.105469
-	Gain:         19.726566
-	Cout:         6.319212
+	Temperature:  5.074172
+	Condition:    0
+	Production:   18750.431641
+	Consommation: 52312.390625
+	Gain:         7.875181
+	Cout:         6.277487
 
 Date : 25 / 2 / 2010
-	Temperature:  9.283200
-	Condition:    0
-	Production:   54049.085938
-	Consommation: 45241.222656
-	Gain:         22.700615
-	Cout:         5.428946
+	Temperature:  8.581669
+	Condition:    2
+	Production:   15215.037109
+	Consommation: 46419.796875
+	Gain:         6.390316
+	Cout:         5.570375
 
 Date : 26 / 2 / 2010
-	Temperature:  6.979200
-	Condition:    1
-	Production:   52146.785156
-	Consommation: 49111.945312
-	Gain:         21.901649
-	Cout:         5.893434
+	Temperature:  7.632668
+	Condition:    0
+	Production:   17207.337891
+	Consommation: 48014.117188
+	Gain:         7.227082
+	Cout:         5.761694
 
 Date : 27 / 2 / 2010
-	Temperature:  4.819200
-	Condition:    0
-	Production:   55308.554688
-	Consommation: 52740.742188
-	Gain:         23.229593
-	Cout:         6.328889
+	Temperature:  8.069067
+	Condition:    2
+	Production:   15045.671875
+	Consommation: 47280.968750
+	Gain:         6.319182
+	Cout:         5.673716
 
 Date : 28 / 2 / 2010
-	Temperature:  5.011200
-	Condition:    0
-	Production:   53764.042969
-	Consommation: 52418.183594
-	Gain:         22.580898
-	Cout:         6.290182
+	Temperature:  8.387627
+	Condition:    2
+	Production:   13659.640625
+	Consommation: 46745.789062
+	Gain:         5.737049
+	Cout:         5.609495
 
 Date : 1 / 3 / 2010
-	Temperature:  9.187200
+	Temperature:  9.955050
 	Condition:    0
-	Production:   47984.093750
-	Consommation: 45402.503906
-	Gain:         20.153320
-	Cout:         5.448300
+	Production:   17442.882812
+	Consommation: 44112.515625
+	Gain:         7.326011
+	Cout:         5.293502
 
 Date : 2 / 3 / 2010
-	Temperature:  8.035200
+	Temperature:  9.190021
 	Condition:    2
-	Production:   37725.636719
-	Consommation: 47337.863281
-	Gain:         15.844768
-	Cout:         5.680543
+	Production:   15379.623047
+	Consommation: 45397.765625
+	Gain:         6.459442
+	Cout:         5.447732
 
 Date : 3 / 3 / 2010
-	Temperature:  9.283200
-	Condition:    2
-	Production:   42547.289062
-	Consommation: 45241.222656
-	Gain:         17.869862
-	Cout:         5.428946
+	Temperature:  7.732008
+	Condition:    0
+	Production:   18193.683594
+	Consommation: 47847.226562
+	Gain:         7.641347
+	Cout:         5.741667
 
 Date : 4 / 3 / 2010
-	Temperature:  5.923200
+	Temperature:  7.772803
 	Condition:    0
-	Production:   52397.921875
-	Consommation: 50886.023438
-	Gain:         22.007128
-	Cout:         6.106323
+	Production:   19118.730469
+	Consommation: 47778.691406
+	Gain:         8.029867
+	Cout:         5.733443
 
 Date : 5 / 3 / 2010
-	Temperature:  6.883200
+	Temperature:  6.877121
 	Condition:    0
-	Production:   51690.265625
-	Consommation: 49273.222656
-	Gain:         21.709911
-	Cout:         5.912786
+	Production:   17276.462891
+	Consommation: 49283.437500
+	Gain:         7.256114
+	Cout:         5.914012
 
 Date : 6 / 3 / 2010
-	Temperature:  8.755200
-	Condition:    2
-	Production:   40176.699219
-	Consommation: 46128.261719
-	Gain:         16.874214
-	Cout:         5.535391
+	Temperature:  9.206849
+	Condition:    0
+	Production:   16238.571289
+	Consommation: 45369.492188
+	Gain:         6.820200
+	Cout:         5.444339
 
 Date : 7 / 3 / 2010
-	Temperature:  6.979200
-	Condition:    0
-	Production:   49228.824219
-	Consommation: 49111.945312
-	Gain:         20.676105
-	Cout:         5.893434
+	Temperature:  10.762740
+	Condition:    2
+	Production:   13376.740234
+	Consommation: 42755.597656
+	Gain:         5.618231
+	Cout:         5.130672
 
 Date : 8 / 3 / 2010
-	Temperature:  6.595200
+	Temperature:  12.009096
 	Condition:    0
-	Production:   52863.390625
-	Consommation: 49757.062500
-	Gain:         22.202625
-	Cout:         5.970848
+	Production:   18824.523438
+	Consommation: 40661.718750
+	Gain:         7.906300
+	Cout:         4.879406
 
 Date : 9 / 3 / 2010
-	Temperature:  10.051200
-	Condition:    2
-	Production:   38814.789062
-	Consommation: 43950.984375
-	Gain:         16.302212
-	Cout:         5.274118
+	Temperature:  10.011639
+	Condition:    0
+	Production:   17027.078125
+	Consommation: 44017.445312
+	Gain:         7.151372
+	Cout:         5.282094
 
 Date : 10 / 3 / 2010
-	Temperature:  9.235200
-	Condition:    2
-	Production:   41898.476562
-	Consommation: 45321.863281
-	Gain:         17.597361
-	Cout:         5.438623
+	Temperature:  11.516655
+	Condition:    0
+	Production:   15972.987305
+	Consommation: 41489.019531
+	Gain:         6.708655
+	Cout:         4.978683
 
 Date : 11 / 3 / 2010
-	Temperature:  6.211200
-	Condition:    0
-	Production:   53581.441406
-	Consommation: 50402.183594
-	Gain:         22.504206
-	Cout:         6.048262
+	Temperature:  12.070662
+	Condition:    1
+	Production:   16673.792969
+	Consommation: 40558.289062
+	Gain:         7.002993
+	Cout:         4.866995
 
 Date : 12 / 3 / 2010
-	Temperature:  7.747200
+	Temperature:  12.196264
 	Condition:    0
-	Production:   53065.945312
-	Consommation: 47821.703125
-	Gain:         22.287697
-	Cout:         5.738605
+	Production:   16067.959961
+	Consommation: 40347.277344
+	Gain:         6.748543
+	Cout:         4.841673
 
 Date : 13 / 3 / 2010
-	Temperature:  6.499200
-	Condition:    0
-	Production:   50709.925781
-	Consommation: 49918.343750
-	Gain:         21.298168
-	Cout:         5.990201
+	Temperature:  12.102506
+	Condition:    2
+	Production:   12914.686523
+	Consommation: 40504.789062
+	Gain:         5.424168
+	Cout:         4.860575
 
 Date : 14 / 3 / 2010
-	Temperature:  8.083200
-	Condition:    1
-	Production:   40723.089844
-	Consommation: 47257.226562
-	Gain:         17.103699
-	Cout:         5.670867
+	Temperature:  11.537003
+	Condition:    0
+	Production:   17996.230469
+	Consommation: 41454.835938
+	Gain:         7.558417
+	Cout:         4.974580
 
 Date : 15 / 3 / 2010
-	Temperature:  9.379200
-	Condition:    2
-	Production:   39544.074219
-	Consommation: 45079.945312
-	Gain:         16.608511
-	Cout:         5.409594
+	Temperature:  12.030801
+	Condition:    0
+	Production:   16201.972656
+	Consommation: 40625.253906
+	Gain:         6.804828
+	Cout:         4.875031
 
 Date : 16 / 3 / 2010
-	Temperature:  9.235200
-	Condition:    0
-	Production:   51811.957031
-	Consommation: 45321.863281
-	Gain:         21.761023
-	Cout:         5.438623
+	Temperature:  10.452320
+	Condition:    2
+	Production:   13420.414062
+	Consommation: 43277.101562
+	Gain:         5.636574
+	Cout:         5.193252
 
 Date : 17 / 3 / 2010
-	Temperature:  5.923200
-	Condition:    2
-	Production:   37953.089844
-	Consommation: 50886.023438
-	Gain:         15.940297
-	Cout:         6.106323
+	Temperature:  8.140928
+	Condition:    0
+	Production:   17405.962891
+	Consommation: 47160.242188
+	Gain:         7.310504
+	Cout:         5.659229
 
 Date : 18 / 3 / 2010
-	Temperature:  9.043200
-	Condition:    1
-	Production:   52589.050781
-	Consommation: 45644.425781
-	Gain:         22.087402
-	Cout:         5.477331
+	Temperature:  6.592371
+	Condition:    2
+	Production:   13023.982422
+	Consommation: 49761.816406
+	Gain:         5.470073
+	Cout:         5.971418
 
 Date : 19 / 3 / 2010
-	Temperature:  9.907200
-	Condition:    0
-	Production:   54512.523438
-	Consommation: 44192.902344
-	Gain:         22.895260
-	Cout:         5.303148
+	Temperature:  5.972949
+	Condition:    2
+	Production:   13207.593750
+	Consommation: 50802.445312
+	Gain:         5.547189
+	Cout:         6.096293
 
 Date : 20 / 3 / 2010
-	Temperature:  7.603200
-	Condition:    1
-	Production:   54685.070312
-	Consommation: 48063.625000
-	Gain:         22.967730
-	Cout:         5.767635
+	Temperature:  7.789179
+	Condition:    0
+	Production:   17711.171875
+	Consommation: 47751.179688
+	Gain:         7.438692
+	Cout:         5.730142
 
 Date : 21 / 3 / 2010
-	Temperature:  8.227200
+	Temperature:  9.763672
 	Condition:    0
-	Production:   53931.222656
-	Consommation: 47015.304688
-	Gain:         22.651114
-	Cout:         5.641837
+	Production:   17516.042969
+	Consommation: 44434.031250
+	Gain:         7.356739
+	Cout:         5.332084
 
 Date : 22 / 3 / 2010
-	Temperature:  6.067200
+	Temperature:  8.633469
 	Condition:    2
-	Production:   40108.144531
-	Consommation: 50644.105469
-	Gain:         16.845421
-	Cout:         6.077292
+	Production:   14957.641602
+	Consommation: 46332.773438
+	Gain:         6.282209
+	Cout:         5.559933
 
 Date : 23 / 3 / 2010
-	Temperature:  10.531200
+	Temperature:  7.893387
 	Condition:    0
-	Production:   48824.324219
-	Consommation: 43144.582031
-	Gain:         20.506216
-	Cout:         5.177350
+	Production:   18185.310547
+	Consommation: 47576.109375
+	Gain:         7.637830
+	Cout:         5.709133
 
 Date : 24 / 3 / 2010
-	Temperature:  10.483200
-	Condition:    0
-	Production:   47433.226562
-	Consommation: 43225.222656
-	Gain:         19.921955
-	Cout:         5.187027
+	Temperature:  6.589355
+	Condition:    3
+	Production:   15782.892578
+	Consommation: 49766.882812
+	Gain:         6.628815
+	Cout:         5.972026
 
 Date : 25 / 3 / 2010
-	Temperature:  10.483200
-	Condition:    0
-	Production:   47526.414062
-	Consommation: 43225.222656
-	Gain:         19.961094
-	Cout:         5.187027
+	Temperature:  7.459742
+	Condition:    2
+	Production:   12927.867188
+	Consommation: 48304.632812
+	Gain:         5.429704
+	Cout:         5.796556
 
 Date : 26 / 3 / 2010
-	Temperature:  10.051200
-	Condition:    0
-	Production:   51131.023438
-	Consommation: 43950.984375
-	Gain:         21.475029
-	Cout:         5.274118
+	Temperature:  10.543897
+	Condition:    2
+	Production:   13543.755859
+	Consommation: 43123.253906
+	Gain:         5.688377
+	Cout:         5.174790
 
 Date : 27 / 3 / 2010
-	Temperature:  9.715199
-	Condition:    2
-	Production:   38011.683594
-	Consommation: 44515.464844
-	Gain:         15.964908
-	Cout:         5.341856
+	Temperature:  7.793559
+	Condition:    0
+	Production:   17519.134766
+	Consommation: 47743.820312
+	Gain:         7.358037
+	Cout:         5.729259
 
 Date : 28 / 3 / 2010
-	Temperature:  8.419200
-	Condition:    0
-	Production:   55214.031250
-	Consommation: 46692.742188
-	Gain:         23.189894
-	Cout:         5.603129
+	Temperature:  7.557424
+	Condition:    1
+	Production:   14139.916992
+	Consommation: 48140.527344
+	Gain:         5.938765
+	Cout:         5.776863
 
 Date : 29 / 3 / 2010
-	Temperature:  9.811200
-	Condition:    0
-	Production:   47151.386719
-	Consommation: 44354.183594
-	Gain:         19.803583
-	Cout:         5.322502
+	Temperature:  6.262969
+	Condition:    1
+	Production:   15283.796875
+	Consommation: 50315.210938
+	Gain:         6.419195
+	Cout:         6.037825
 
 Date : 30 / 3 / 2010
-	Temperature:  9.763200
+	Temperature:  7.809188
 	Condition:    2
-	Production:   41181.437500
-	Consommation: 44434.824219
-	Gain:         17.296204
-	Cout:         5.332179
+	Production:   15376.512695
+	Consommation: 47717.562500
+	Gain:         6.458135
+	Cout:         5.726108
 
 Date : 1 / 4 / 2010
-	Temperature:  8.599200
-	Condition:    2
-	Production:   41412.648438
-	Consommation: 46390.343750
-	Gain:         17.393312
-	Cout:         5.566841
+	Temperature:  9.699676
+	Condition:    1
+	Production:   17042.328125
+	Consommation: 44541.546875
+	Gain:         7.157778
+	Cout:         5.344985
 
 Date : 2 / 4 / 2010
-	Temperature:  9.301200
+	Temperature:  10.239870
 	Condition:    0
-	Production:   51334.632812
-	Consommation: 45210.984375
-	Gain:         21.560545
-	Cout:         5.425318
+	Production:   17396.875000
+	Consommation: 43634.019531
+	Gain:         7.306688
+	Cout:         5.236083
 
 Date : 3 / 4 / 2010
-	Temperature:  8.221200
+	Temperature:  10.347948
 	Condition:    2
-	Production:   40613.250000
-	Consommation: 47025.382812
-	Gain:         17.057566
-	Cout:         5.643046
+	Production:   14947.781250
+	Consommation: 43452.445312
+	Gain:         6.278068
+	Cout:         5.214293
 
 Date : 4 / 4 / 2010
-	Temperature:  8.707200
-	Condition:    1
-	Production:   55636.917969
-	Consommation: 46208.902344
-	Gain:         23.367506
-	Cout:         5.545068
+	Temperature:  9.797179
+	Condition:    0
+	Production:   16910.417969
+	Consommation: 44377.738281
+	Gain:         7.102375
+	Cout:         5.325329
 
 Date : 5 / 4 / 2010
-	Temperature:  8.437200
-	Condition:    2
-	Production:   46212.429688
-	Consommation: 46662.503906
-	Gain:         19.409220
-	Cout:         5.599501
+	Temperature:  9.792871
+	Condition:    0
+	Production:   17069.560547
+	Consommation: 44384.976562
+	Gain:         7.169215
+	Cout:         5.326197
 
 Date : 6 / 4 / 2010
-	Temperature:  9.247200
+	Temperature:  12.383149
 	Condition:    0
-	Production:   54148.179688
-	Consommation: 45301.703125
-	Gain:         22.742235
-	Cout:         5.436204
+	Production:   16122.384766
+	Consommation: 40033.308594
+	Gain:         6.771401
+	Cout:         4.803997
 
 Date : 7 / 4 / 2010
-	Temperature:  8.437200
+	Temperature:  13.851259
 	Condition:    0
-	Production:   50524.339844
-	Consommation: 46662.503906
-	Gain:         21.220222
-	Cout:         5.599501
+	Production:   16839.384766
+	Consommation: 37566.882812
+	Gain:         7.072542
+	Cout:         4.508026
 
 Date : 8 / 4 / 2010
-	Temperature:  10.165200
-	Condition:    0
-	Production:   46823.671875
-	Consommation: 43759.464844
-	Gain:         19.665941
-	Cout:         5.251136
+	Temperature:  14.222504
+	Condition:    2
+	Production:   13118.055664
+	Consommation: 36943.195312
+	Gain:         5.509583
+	Cout:         4.433184
 
 Date : 9 / 4 / 2010
-	Temperature:  9.247200
-	Condition:    2
-	Production:   41897.039062
-	Consommation: 45301.703125
-	Gain:         17.596756
-	Cout:         5.436204
+	Temperature:  11.509002
+	Condition:    0
+	Production:   17301.816406
+	Consommation: 41501.878906
+	Gain:         7.266763
+	Cout:         4.980226
 
 Date : 10 / 4 / 2010
-	Temperature:  7.789200
+	Temperature:  11.503601
 	Condition:    0
-	Production:   51369.191406
-	Consommation: 47751.144531
-	Gain:         21.575062
-	Cout:         5.730137
+	Production:   17049.039062
+	Consommation: 41510.949219
+	Gain:         7.160596
+	Cout:         4.981314
 
 Date : 11 / 4 / 2010
-	Temperature:  9.949200
-	Condition:    0
-	Production:   48812.695312
-	Consommation: 44122.343750
-	Gain:         20.501331
-	Cout:         5.294681
+	Temperature:  12.689441
+	Condition:    2
+	Production:   14248.269531
+	Consommation: 39518.738281
+	Gain:         5.984273
+	Cout:         4.742249
 
 Date : 12 / 4 / 2010
-	Temperature:  12.163199
-	Condition:    3
-	Production:   46276.753906
-	Consommation: 40402.824219
-	Gain:         19.436235
-	Cout:         4.848339
+	Temperature:  12.947777
+	Condition:    1
+	Production:   17639.531250
+	Consommation: 39084.734375
+	Gain:         7.408603
+	Cout:         4.690168
 
 Date : 13 / 4 / 2010
-	Temperature:  9.301200
-	Condition:    1
-	Production:   46004.808594
-	Consommation: 45210.984375
-	Gain:         19.322020
-	Cout:         5.425318
+	Temperature:  9.649111
+	Condition:    2
+	Production:   13006.200195
+	Consommation: 44626.492188
+	Gain:         5.462604
+	Cout:         5.355179
 
 Date : 14 / 4 / 2010
-	Temperature:  11.029200
+	Temperature:  8.275644
 	Condition:    2
-	Production:   40566.652344
-	Consommation: 42307.945312
-	Gain:         17.037994
-	Cout:         5.076953
+	Production:   12833.954102
+	Consommation: 46933.917969
+	Gain:         5.390261
+	Cout:         5.632070
 
 Date : 15 / 4 / 2010
-	Temperature:  8.707200
-	Condition:    2
-	Production:   38027.925781
-	Consommation: 46208.902344
-	Gain:         15.971729
-	Cout:         5.545068
+	Temperature:  10.696258
+	Condition:    0
+	Production:   16866.792969
+	Consommation: 42867.289062
+	Gain:         7.084053
+	Cout:         5.144075
 
 Date : 16 / 4 / 2010
-	Temperature:  9.031200
-	Condition:    1
-	Production:   51842.234375
-	Consommation: 45664.582031
-	Gain:         21.773739
-	Cout:         5.479750
+	Temperature:  12.582503
+	Condition:    2
+	Production:   13495.900391
+	Consommation: 39698.394531
+	Gain:         5.668278
+	Cout:         4.763807
 
 Date : 17 / 4 / 2010
-	Temperature:  4.863600
+	Temperature:  13.337001
 	Condition:    2
-	Production:   46210.937500
-	Consommation: 52666.152344
-	Gain:         19.408592
-	Cout:         6.319938
+	Production:   14662.067383
+	Consommation: 38430.839844
+	Gain:         6.158069
+	Cout:         4.611701
 
 Date : 18 / 4 / 2010
-	Temperature:  11.677200
+	Temperature:  10.614800
 	Condition:    0
-	Production:   52378.214844
-	Consommation: 41219.304688
-	Gain:         21.998850
-	Cout:         4.946317
+	Production:   16014.523438
+	Consommation: 43004.136719
+	Gain:         6.726100
+	Cout:         5.160496
 
 Date : 19 / 4 / 2010
-	Temperature:  11.515200
-	Condition:    2
-	Production:   42182.308594
-	Consommation: 41491.464844
-	Gain:         17.716570
-	Cout:         4.978976
+	Temperature:  8.445920
+	Condition:    0
+	Production:   17837.539062
+	Consommation: 46647.855469
+	Gain:         7.491766
+	Cout:         5.597743
 
 Date : 20 / 4 / 2010
-	Temperature:  7.681200
+	Temperature:  11.898368
 	Condition:    0
-	Production:   49036.527344
-	Consommation: 47932.582031
-	Gain:         20.595341
-	Cout:         5.751910
+	Production:   16808.468750
+	Consommation: 40847.742188
+	Gain:         7.059557
+	Cout:         4.901729
 
 Date : 21 / 4 / 2010
-	Temperature:  10.759200
-	Condition:    0
-	Production:   49630.351562
-	Consommation: 42761.542969
-	Gain:         20.844748
-	Cout:         5.131385
+	Temperature:  11.767347
+	Condition:    1
+	Production:   17636.605469
+	Consommation: 41067.855469
+	Gain:         7.407374
+	Cout:         4.928143
 
 Date : 22 / 4 / 2010
-	Temperature:  10.543200
-	Condition:    0
-	Production:   51617.828125
-	Consommation: 43124.421875
-	Gain:         21.679487
-	Cout:         5.174931
+	Temperature:  14.036939
+	Condition:    1
+	Production:   14004.323242
+	Consommation: 37254.941406
+	Gain:         5.881816
+	Cout:         4.470593
 
 Date : 23 / 4 / 2010
-	Temperature:  7.303200
+	Temperature:  10.462775
 	Condition:    0
-	Production:   50311.921875
-	Consommation: 48567.625000
-	Gain:         21.131008
-	Cout:         5.828115
+	Production:   17893.347656
+	Consommation: 43259.539062
+	Gain:         7.515206
+	Cout:         5.191144
 
 Date : 24 / 4 / 2010
-	Temperature:  10.489200
-	Condition:    0
-	Production:   49109.781250
-	Consommation: 43215.144531
-	Gain:         20.626108
-	Cout:         5.185817
+	Temperature:  9.303110
+	Condition:    2
+	Production:   13751.231445
+	Consommation: 45207.773438
+	Gain:         5.775517
+	Cout:         5.424933
 
 Date : 25 / 4 / 2010
-	Temperature:  12.271200
-	Condition:    0
-	Production:   54328.089844
-	Consommation: 40221.382812
-	Gain:         22.817797
-	Cout:         4.826566
+	Temperature:  10.081244
+	Condition:    2
+	Production:   15689.731445
+	Consommation: 43900.507812
+	Gain:         6.589687
+	Cout:         5.268061
 
 Date : 26 / 4 / 2010
-	Temperature:  7.627200
-	Condition:    2
-	Production:   46225.453125
-	Consommation: 48023.304688
-	Gain:         19.414690
-	Cout:         5.762796
+	Temperature:  10.122498
+	Condition:    0
+	Production:   17243.958984
+	Consommation: 43831.203125
+	Gain:         7.242463
+	Cout:         5.259744
 
 Date : 27 / 4 / 2010
-	Temperature:  12.109200
-	Condition:    2
-	Production:   42944.847656
-	Consommation: 40493.542969
-	Gain:         18.036837
-	Cout:         4.859225
+	Temperature:  10.732999
+	Condition:    0
+	Production:   18576.875000
+	Consommation: 42805.562500
+	Gain:         7.802287
+	Cout:         5.136668
 
 Date : 28 / 4 / 2010
-	Temperature:  7.249200
-	Condition:    0
-	Production:   55398.656250
-	Consommation: 48658.343750
-	Gain:         23.267435
-	Cout:         5.839001
+	Temperature:  12.597199
+	Condition:    2
+	Production:   14189.010742
+	Consommation: 39673.703125
+	Gain:         5.959384
+	Cout:         4.760844
 
 Date : 29 / 4 / 2010
-	Temperature:  9.679200
-	Condition:    1
-	Production:   42779.238281
-	Consommation: 44575.945312
-	Gain:         17.967279
-	Cout:         5.349113
+	Temperature:  10.048880
+	Condition:    2
+	Production:   15564.134766
+	Consommation: 43954.882812
+	Gain:         6.536937
+	Cout:         5.274586
 
 Date : 30 / 4 / 2010
-	Temperature:  8.167200
-	Condition:    1
-	Production:   44278.085938
-	Consommation: 47116.105469
-	Gain:         18.596796
-	Cout:         5.653933
+	Temperature:  12.809552
+	Condition:    2
+	Production:   13865.178711
+	Consommation: 39316.953125
+	Gain:         5.823375
+	Cout:         4.718034
 
 Date : 31 / 4 / 2010
-	Temperature:  11.785200
-	Condition:    3
-	Production:   37414.617188
-	Consommation: 41037.863281
-	Gain:         15.714139
-	Cout:         4.924543
+	Temperature:  11.807821
+	Condition:    2
+	Production:   15043.087891
+	Consommation: 40999.859375
+	Gain:         6.318097
+	Cout:         4.919983
 
 Date : 1 / 5 / 2010
-	Temperature:  12.241199
+	Temperature:  12.511128
 	Condition:    0
-	Production:   49418.738281
-	Consommation: 40271.785156
-	Gain:         20.755871
-	Cout:         4.832614
+	Production:   16021.804688
+	Consommation: 39818.304688
+	Gain:         6.729158
+	Cout:         4.778196
 
 Date : 2 / 5 / 2010
-	Temperature:  12.889200
-	Condition:    3
-	Production:   37573.058594
-	Consommation: 39183.144531
-	Gain:         15.780684
-	Cout:         4.701977
+	Temperature:  13.440452
+	Condition:    0
+	Production:   18526.542969
+	Consommation: 38257.042969
+	Gain:         7.781148
+	Cout:         4.590845
 
 Date : 3 / 5 / 2010
-	Temperature:  5.228280
-	Condition:    2
-	Production:   40865.839844
-	Consommation: 52053.488281
-	Gain:         17.163652
-	Cout:         6.246418
+	Temperature:  13.866180
+	Condition:    0
+	Production:   17404.134766
+	Consommation: 37541.816406
+	Gain:         7.309736
+	Cout:         4.505018
 
 Date : 4 / 5 / 2010
-	Temperature:  4.985160
-	Condition:    1
-	Production:   51117.468750
-	Consommation: 52461.929688
-	Gain:         21.469336
-	Cout:         6.295432
+	Temperature:  12.848473
+	Condition:    0
+	Production:   18085.716797
+	Consommation: 39251.566406
+	Gain:         7.596001
+	Cout:         4.710188
 
 Date : 5 / 5 / 2010
-	Temperature:  5.082408
-	Condition:    1
-	Production:   40125.632812
-	Consommation: 52298.554688
-	Gain:         16.852766
-	Cout:         6.275826
+	Temperature:  13.359389
+	Condition:    0
+	Production:   17587.048828
+	Consommation: 38393.226562
+	Gain:         7.386560
+	Cout:         4.607187
 
 Date : 6 / 5 / 2010
-	Temperature:  11.593200
+	Temperature:  14.427755
 	Condition:    0
-	Production:   47003.191406
-	Consommation: 41360.425781
-	Gain:         19.741341
-	Cout:         4.963251
+	Production:   16372.105469
+	Consommation: 36598.371094
+	Gain:         6.876285
+	Cout:         4.391805
 
 Date : 7 / 5 / 2010
-	Temperature:  5.143188
-	Condition:    1
-	Production:   53743.957031
-	Consommation: 52196.445312
-	Gain:         22.572462
-	Cout:         6.263574
+	Temperature:  15.395103
+	Condition:    0
+	Production:   17326.884766
+	Consommation: 34973.226562
+	Gain:         7.277292
+	Cout:         4.196787
 
 Date : 8 / 5 / 2010
-	Temperature:  5.179656
+	Temperature:  15.404041
 	Condition:    2
-	Production:   42196.000000
-	Consommation: 52135.179688
-	Gain:         17.722321
-	Cout:         6.256222
+	Production:   12822.811523
+	Consommation: 34958.210938
+	Gain:         5.385581
+	Cout:         4.194985
 
 Date : 9 / 5 / 2010
-	Temperature:  5.203968
+	Temperature:  17.189617
 	Condition:    0
-	Production:   52031.843750
-	Consommation: 52094.332031
-	Gain:         21.853374
-	Cout:         6.251320
+	Production:   16987.320312
+	Consommation: 31958.443359
+	Gain:         7.134674
+	Cout:         3.835013
 
 Date : 10 / 5 / 2010
-	Temperature:  12.997200
+	Temperature:  16.499847
 	Condition:    0
-	Production:   50883.550781
-	Consommation: 39001.703125
-	Gain:         21.371092
-	Cout:         4.680204
+	Production:   16834.615234
+	Consommation: 33117.257812
+	Gain:         7.070538
+	Cout:         3.974071
 
 Date : 11 / 5 / 2010
-	Temperature:  5.228280
+	Temperature:  13.847939
 	Condition:    0
-	Production:   49284.957031
-	Consommation: 52053.488281
-	Gain:         20.699682
-	Cout:         6.246418
+	Production:   16870.964844
+	Consommation: 37572.464844
+	Gain:         7.085805
+	Cout:         4.508696
 
 Date : 12 / 5 / 2010
-	Temperature:  13.105200
-	Condition:    0
-	Production:   51052.609375
-	Consommation: 38820.265625
-	Gain:         21.442097
-	Cout:         4.658432
+	Temperature:  14.785175
+	Condition:    2
+	Production:   14412.531250
+	Consommation: 35997.906250
+	Gain:         6.053263
+	Cout:         4.319749
 
 Date : 13 / 5 / 2010
-	Temperature:  4.887912
-	Condition:    1
-	Production:   42041.484375
-	Consommation: 52625.308594
-	Gain:         17.657423
-	Cout:         6.315037
+	Temperature:  12.676070
+	Condition:    0
+	Production:   15919.590820
+	Consommation: 39541.203125
+	Gain:         6.686228
+	Cout:         4.744945
 
 Date : 14 / 5 / 2010
-	Temperature:  13.429200
-	Condition:    1
-	Production:   48232.707031
-	Consommation: 38275.945312
-	Gain:         20.257736
-	Cout:         4.593113
+	Temperature:  12.102428
+	Condition:    2
+	Production:   15282.909180
+	Consommation: 40504.921875
+	Gain:         6.418822
+	Cout:         4.860590
 
 Date : 15 / 5 / 2010
-	Temperature:  5.094564
-	Condition:    0
-	Production:   49871.417969
-	Consommation: 52278.132812
-	Gain:         20.945995
-	Cout:         6.273376
+	Temperature:  14.302971
+	Condition:    2
+	Production:   13271.866211
+	Consommation: 36808.007812
+	Gain:         5.574184
+	Cout:         4.416961
 
 Date : 16 / 5 / 2010
-	Temperature:  5.167500
-	Condition:    2
-	Production:   47306.562500
-	Consommation: 52155.601562
-	Gain:         19.868755
-	Cout:         6.258672
+	Temperature:  16.209188
+	Condition:    1
+	Production:   14914.422852
+	Consommation: 33605.562500
+	Gain:         6.264058
+	Cout:         4.032668
 
 Date : 17 / 5 / 2010
-	Temperature:  5.045940
+	Temperature:  16.647676
 	Condition:    0
-	Production:   54894.500000
-	Consommation: 52359.820312
-	Gain:         23.055689
-	Cout:         6.283178
+	Production:   16297.584961
+	Consommation: 32868.902344
+	Gain:         6.844986
+	Cout:         3.944268
 
 Date : 18 / 5 / 2010
-	Temperature:  12.241199
-	Condition:    0
-	Production:   52385.718750
-	Consommation: 40271.785156
-	Gain:         22.002001
-	Cout:         4.832614
+	Temperature:  13.421071
+	Condition:    1
+	Production:   15287.614258
+	Consommation: 38289.601562
+	Gain:         6.420798
+	Cout:         4.594752
 
 Date : 19 / 5 / 2010
-	Temperature:  11.593200
+	Temperature:  14.722428
 	Condition:    0
-	Production:   47096.082031
-	Consommation: 41360.425781
-	Gain:         19.780354
-	Cout:         4.963251
+	Production:   17423.546875
+	Consommation: 36103.320312
+	Gain:         7.317890
+	Cout:         4.332398
 
 Date : 20 / 5 / 2010
-	Temperature:  11.701200
-	Condition:    0
-	Production:   54603.292969
-	Consommation: 41178.984375
-	Gain:         22.933384
-	Cout:         4.941478
+	Temperature:  17.510971
+	Condition:    1
+	Production:   16784.820312
+	Consommation: 31418.568359
+	Gain:         7.049624
+	Cout:         3.770228
 
 Date : 21 / 5 / 2010
-	Temperature:  11.053200
+	Temperature:  15.926389
 	Condition:    0
-	Production:   55356.628906
-	Consommation: 42267.625000
-	Gain:         23.249784
-	Cout:         5.072115
+	Production:   17737.226562
+	Consommation: 34080.667969
+	Gain:         7.449636
+	Cout:         4.089680
 
 Date : 22 / 5 / 2010
-	Temperature:  5.191812
+	Temperature:  13.618555
 	Condition:    0
-	Production:   52128.242188
-	Consommation: 52114.753906
-	Gain:         21.893862
-	Cout:         6.253770
+	Production:   17668.148438
+	Consommation: 37957.828125
+	Gain:         7.420622
+	Cout:         4.554939
 
 Date : 23 / 5 / 2010
-	Temperature:  13.051200
+	Temperature:  14.855422
 	Condition:    0
-	Production:   54390.632812
-	Consommation: 38910.984375
-	Gain:         22.844067
-	Cout:         4.669318
+	Production:   17886.681641
+	Consommation: 35879.890625
+	Gain:         7.512406
+	Cout:         4.305587
 
 Date : 24 / 5 / 2010
-	Temperature:  4.973004
+	Temperature:  17.456169
 	Condition:    0
-	Production:   54716.503906
-	Consommation: 52482.351562
-	Gain:         22.980932
-	Cout:         6.297882
+	Production:   18248.654297
+	Consommation: 31510.636719
+	Gain:         7.664435
+	Cout:         3.781276
 
 Date : 25 / 5 / 2010
-	Temperature:  5.179656
+	Temperature:  18.442467
 	Condition:    0
-	Production:   49007.910156
-	Consommation: 52135.179688
-	Gain:         20.583323
-	Cout:         6.256222
+	Production:   16800.941406
+	Consommation: 29853.656250
+	Gain:         7.056396
+	Cout:         3.582439
 
 Date : 26 / 5 / 2010
-	Temperature:  12.781200
+	Temperature:  17.972986
 	Condition:    1
-	Production:   53137.140625
-	Consommation: 39364.582031
-	Gain:         22.317598
-	Cout:         4.723750
+	Production:   12788.835938
+	Consommation: 30642.382812
+	Gain:         5.371311
+	Cout:         3.677086
 
 Date : 27 / 5 / 2010
-	Temperature:  5.131032
+	Temperature:  17.785194
 	Condition:    0
-	Production:   48636.167969
-	Consommation: 52216.867188
-	Gain:         20.427191
-	Cout:         6.266024
+	Production:   16056.981445
+	Consommation: 30957.873047
+	Gain:         6.743932
+	Cout:         3.714945
 
 Date : 28 / 5 / 2010
-	Temperature:  5.021628
-	Condition:    0
-	Production:   48745.886719
-	Consommation: 52400.664062
-	Gain:         20.473272
-	Cout:         6.288080
+	Temperature:  15.712078
+	Condition:    2
+	Production:   15404.798828
+	Consommation: 34440.707031
+	Gain:         6.470016
+	Cout:         4.132885
 
 Date : 29 / 5 / 2010
-	Temperature:  12.133200
-	Condition:    2
-	Production:   38953.750000
-	Consommation: 40453.222656
-	Gain:         16.360575
-	Cout:         4.854387
+	Temperature:  14.558831
+	Condition:    0
+	Production:   16115.048828
+	Consommation: 36378.164062
+	Gain:         6.768321
+	Cout:         4.365380
 
 Date : 30 / 5 / 2010
-	Temperature:  5.118876
-	Condition:    0
-	Production:   51003.496094
-	Consommation: 52237.289062
-	Gain:         21.421469
-	Cout:         6.268475
+	Temperature:  13.827533
+	Condition:    1
+	Production:   17908.789062
+	Consommation: 37606.746094
+	Gain:         7.521691
+	Cout:         4.512810
 
 Date : 1 / 6 / 2010
-	Temperature:  5.815620
+	Temperature:  19.511013
 	Condition:    0
-	Production:   55719.304688
-	Consommation: 51066.757812
-	Gain:         23.402107
-	Cout:         6.128011
+	Production:   16995.328125
+	Consommation: 28058.498047
+	Gain:         7.138038
+	Cout:         3.367020
 
 Date : 2 / 6 / 2010
-	Temperature:  14.719200
-	Condition:    2
-	Production:   39399.210938
-	Consommation: 36108.742188
-	Gain:         16.547668
-	Cout:         4.333049
+	Temperature:  17.824406
+	Condition:    0
+	Production:   18415.267578
+	Consommation: 30891.998047
+	Gain:         7.734413
+	Cout:         3.707040
 
 Date : 3 / 6 / 2010
-	Temperature:  5.244408
+	Temperature:  16.069763
 	Condition:    1
-	Production:   53728.554688
-	Consommation: 52026.394531
-	Gain:         22.565992
-	Cout:         6.243167
+	Production:   13921.639648
+	Consommation: 33839.796875
+	Gain:         5.847088
+	Cout:         4.060776
 
 Date : 4 / 6 / 2010
-	Temperature:  15.499200
+	Temperature:  17.107904
 	Condition:    0
-	Production:   46014.476562
-	Consommation: 34798.343750
-	Gain:         19.326080
-	Cout:         4.175801
+	Production:   15590.999023
+	Consommation: 32095.720703
+	Gain:         6.548220
+	Cout:         3.851486
 
 Date : 5 / 6 / 2010
-	Temperature:  4.990536
+	Temperature:  17.523161
 	Condition:    0
-	Production:   54240.488281
-	Consommation: 52452.898438
-	Gain:         22.781006
-	Cout:         6.294348
+	Production:   17530.185547
+	Consommation: 31398.089844
+	Gain:         7.362678
+	Cout:         3.767771
 
 Date : 6 / 6 / 2010
-	Temperature:  16.819201
+	Temperature:  15.709265
 	Condition:    0
-	Production:   49222.503906
-	Consommation: 32580.742188
-	Gain:         20.673450
-	Cout:         3.909689
+	Production:   16967.291016
+	Consommation: 34445.433594
+	Gain:         7.126263
+	Cout:         4.133452
 
 Date : 7 / 6 / 2010
-	Temperature:  15.019200
+	Temperature:  16.663706
 	Condition:    2
-	Production:   38629.019531
-	Consommation: 35604.742188
-	Gain:         16.224188
-	Cout:         4.272569
+	Production:   15019.250000
+	Consommation: 32841.972656
+	Gain:         6.308085
+	Cout:         3.941037
 
 Date : 8 / 6 / 2010
-	Temperature:  15.739200
+	Temperature:  17.525482
 	Condition:    0
-	Production:   50571.316406
-	Consommation: 34395.144531
-	Gain:         21.239952
-	Cout:         4.127418
+	Production:   16753.021484
+	Consommation: 31394.189453
+	Gain:         7.036269
+	Cout:         3.767303
 
 Date : 9 / 6 / 2010
-	Temperature:  15.679200
-	Condition:    2
-	Production:   39839.917969
-	Consommation: 34495.945312
-	Gain:         16.732765
-	Cout:         4.139513
+	Temperature:  18.770193
+	Condition:    0
+	Production:   16939.582031
+	Consommation: 29303.076172
+	Gain:         7.114625
+	Cout:         3.516369
 
 Date : 10 / 6 / 2010
-	Temperature:  16.279200
-	Condition:    0
-	Production:   50125.054688
-	Consommation: 33487.945312
-	Gain:         21.052525
-	Cout:         4.018553
+	Temperature:  18.188078
+	Condition:    3
+	Production:   14642.029297
+	Consommation: 30281.029297
+	Gain:         6.149652
+	Cout:         3.633723
 
 Date : 11 / 6 / 2010
-	Temperature:  16.159201
+	Temperature:  19.695230
 	Condition:    0
-	Production:   50509.316406
-	Consommation: 33689.542969
-	Gain:         21.213913
-	Cout:         4.042745
+	Production:   16522.830078
+	Consommation: 27749.013672
+	Gain:         6.939589
+	Cout:         3.329882
 
 Date : 12 / 6 / 2010
-	Temperature:  14.359200
-	Condition:    1
-	Production:   49024.160156
-	Consommation: 36713.542969
-	Gain:         20.590147
-	Cout:         4.405625
+	Temperature:  18.558092
+	Condition:    0
+	Production:   18251.638672
+	Consommation: 29659.404297
+	Gain:         7.665688
+	Cout:         3.559129
 
 Date : 13 / 6 / 2010
-	Temperature:  15.979200
+	Temperature:  17.323236
 	Condition:    0
-	Production:   47050.652344
-	Consommation: 33991.945312
-	Gain:         19.761274
-	Cout:         4.079033
+	Production:   17229.466797
+	Consommation: 31733.962891
+	Gain:         7.236376
+	Cout:         3.808075
 
 Date : 14 / 6 / 2010
-	Temperature:  4.905912
+	Temperature:  19.949295
 	Condition:    0
-	Production:   48667.167969
-	Consommation: 52595.066406
-	Gain:         20.440210
-	Cout:         6.311408
+	Production:   16726.457031
+	Consommation: 27322.183594
+	Gain:         7.025112
+	Cout:         3.278662
 
 Date : 15 / 6 / 2010
-	Temperature:  16.099199
-	Condition:    0
-	Production:   52351.863281
-	Consommation: 33790.343750
-	Gain:         21.987783
-	Cout:         4.054841
+	Temperature:  18.839718
+	Condition:    2
+	Production:   15109.367188
+	Consommation: 29186.273438
+	Gain:         6.345934
+	Cout:         3.502353
 
 Date : 16 / 6 / 2010
-	Temperature:  15.919200
+	Temperature:  16.715887
 	Condition:    0
-	Production:   54947.917969
-	Consommation: 34092.742188
-	Gain:         23.078125
-	Cout:         4.091129
+	Production:   17010.910156
+	Consommation: 32754.310547
+	Gain:         7.144582
+	Cout:         3.930517
 
 Date : 17 / 6 / 2010
-	Temperature:  5.244408
-	Condition:    1
-	Production:   50890.777344
-	Consommation: 52026.394531
-	Gain:         21.374126
-	Cout:         6.243167
+	Temperature:  15.206355
+	Condition:    0
+	Production:   16053.401367
+	Consommation: 35290.324219
+	Gain:         6.742428
+	Cout:         4.234839
 
 Date : 18 / 6 / 2010
-	Temperature:  16.099199
+	Temperature:  17.662542
 	Condition:    0
-	Production:   54552.292969
-	Consommation: 33790.343750
-	Gain:         22.911963
-	Cout:         4.054841
+	Production:   18020.121094
+	Consommation: 31163.929688
+	Gain:         7.568451
+	Cout:         3.739671
 
 Date : 19 / 6 / 2010
-	Temperature:  5.582904
-	Condition:    0
-	Production:   51030.992188
-	Consommation: 51457.722656
-	Gain:         21.433016
-	Cout:         6.174927
+	Temperature:  20.325016
+	Condition:    3
+	Production:   14118.472656
+	Consommation: 27237.000000
+	Gain:         5.929759
+	Cout:         3.268440
 
 Date : 20 / 6 / 2010
-	Temperature:  5.011692
-	Condition:    2
-	Production:   44298.476562
-	Consommation: 52417.355469
-	Gain:         18.605360
-	Cout:         6.290082
+	Temperature:  21.210007
+	Condition:    0
+	Production:   15618.788086
+	Consommation: 27237.000000
+	Gain:         6.559891
+	Cout:         3.268440
 
 Date : 21 / 6 / 2010
-	Temperature:  16.099199
-	Condition:    2
-	Production:   38690.871094
-	Consommation: 33790.343750
-	Gain:         16.250166
-	Cout:         4.054841
+	Temperature:  22.584003
+	Condition:    0
+	Production:   18341.583984
+	Consommation: 27237.000000
+	Gain:         7.703465
+	Cout:         3.268440
 
 Date : 22 / 6 / 2010
-	Temperature:  15.499200
-	Condition:    1
-	Production:   45555.250000
-	Consommation: 34798.343750
-	Gain:         19.133204
-	Cout:         4.175801
+	Temperature:  20.373602
+	Condition:    2
+	Production:   13993.154297
+	Consommation: 27237.000000
+	Gain:         5.877125
+	Cout:         3.268440
 
 Date : 23 / 6 / 2010
-	Temperature:  5.434812
-	Condition:    0
-	Production:   49634.292969
-	Consommation: 51706.515625
-	Gain:         20.846403
-	Cout:         6.204782
+	Temperature:  20.929441
+	Condition:    2
+	Production:   14031.682617
+	Consommation: 27237.000000
+	Gain:         5.893307
+	Cout:         3.268440
 
 Date : 24 / 6 / 2010
-	Temperature:  5.180940
+	Temperature:  19.171776
 	Condition:    0
-	Production:   47967.031250
-	Consommation: 52133.019531
-	Gain:         20.146152
-	Cout:         6.255962
+	Production:   16733.958984
+	Consommation: 28628.416016
+	Gain:         7.028263
+	Cout:         3.435410
 
 Date : 25 / 6 / 2010
-	Temperature:  5.667528
-	Condition:    1
-	Production:   51207.710938
-	Consommation: 51315.550781
-	Gain:         21.507238
-	Cout:         6.157866
+	Temperature:  21.108709
+	Condition:    0
+	Production:   17868.589844
+	Consommation: 27237.000000
+	Gain:         7.504807
+	Cout:         3.268440
 
 Date : 26 / 6 / 2010
-	Temperature:  16.399200
+	Temperature:  19.543484
 	Condition:    0
-	Production:   47542.554688
-	Consommation: 33286.343750
-	Gain:         19.967873
-	Cout:         3.994361
+	Production:   18507.683594
+	Consommation: 28003.947266
+	Gain:         7.773227
+	Cout:         3.360474
 
 Date : 27 / 6 / 2010
-	Temperature:  4.905912
-	Condition:    0
-	Production:   49424.632812
-	Consommation: 52595.066406
-	Gain:         20.758345
-	Cout:         6.311408
+	Temperature:  21.617393
+	Condition:    2
+	Production:   13818.821289
+	Consommation: 27237.000000
+	Gain:         5.803905
+	Cout:         3.268440
 
 Date : 28 / 6 / 2010
-	Temperature:  14.959200
+	Temperature:  21.066957
 	Condition:    0
-	Production:   48202.722656
-	Consommation: 35705.542969
-	Gain:         20.245144
-	Cout:         4.284665
+	Production:   16056.037109
+	Consommation: 27237.000000
+	Gain:         6.743536
+	Cout:         3.268440
 
 Date : 29 / 6 / 2010
-	Temperature:  16.939199
-	Condition:    0
-	Production:   46369.960938
-	Consommation: 32379.144531
-	Gain:         19.475384
-	Cout:         3.885497
+	Temperature:  22.586782
+	Condition:    1
+	Production:   13901.519531
+	Consommation: 27237.000000
+	Gain:         5.838638
+	Cout:         3.268440
 
 Date : 30 / 6 / 2010
-	Temperature:  17.119200
+	Temperature:  20.254713
 	Condition:    0
-	Production:   53201.359375
-	Consommation: 32076.744141
-	Gain:         22.344570
-	Cout:         3.849209
+	Production:   17944.671875
+	Consommation: 27237.000000
+	Gain:         7.536762
+	Cout:         3.268440
 
 Date : 31 / 6 / 2010
-	Temperature:  16.999201
-	Condition:    0
-	Production:   47184.804688
-	Consommation: 32278.341797
-	Gain:         19.817617
-	Cout:         3.873401
+	Temperature:  16.801886
+	Condition:    2
+	Production:   13237.757812
+	Consommation: 32609.832031
+	Gain:         5.559858
+	Cout:         3.913180
 
 Date : 1 / 7 / 2010
-	Temperature:  5.841216
+	Temperature:  19.056755
 	Condition:    0
-	Production:   54109.902344
-	Consommation: 51023.757812
-	Gain:         22.726160
-	Cout:         6.122851
+	Production:   18379.562500
+	Consommation: 28821.652344
+	Gain:         7.719416
+	Cout:         3.458598
 
 Date : 2 / 7 / 2010
-	Temperature:  16.987200
+	Temperature:  23.918701
 	Condition:    0
-	Production:   52673.261719
-	Consommation: 32298.503906
-	Gain:         22.122768
-	Cout:         3.875820
+	Production:   16103.268555
+	Consommation: 27237.000000
+	Gain:         6.763373
+	Cout:         3.268440
 
 Date : 3 / 7 / 2010
-	Temperature:  18.715200
+	Temperature:  22.191481
 	Condition:    0
-	Production:   50677.917969
-	Consommation: 29395.462891
-	Gain:         21.284725
-	Cout:         3.527456
+	Production:   15695.942383
+	Consommation: 27237.000000
+	Gain:         6.592296
+	Cout:         3.268440
 
 Date : 4 / 7 / 2010
-	Temperature:  5.732592
+	Temperature:  20.492592
 	Condition:    0
-	Production:   50442.566406
-	Consommation: 51206.246094
-	Gain:         21.185879
-	Cout:         6.144750
+	Production:   18055.291016
+	Consommation: 27237.000000
+	Gain:         7.583222
+	Cout:         3.268440
 
 Date : 5 / 7 / 2010
-	Temperature:  5.461032
+	Temperature:  19.021036
 	Condition:    0
-	Production:   47928.984375
-	Consommation: 51662.464844
-	Gain:         20.130173
-	Cout:         6.199496
+	Production:   18010.154297
+	Consommation: 28881.660156
+	Gain:         7.564265
+	Cout:         3.465799
 
 Date : 6 / 7 / 2010
-	Temperature:  17.635201
-	Condition:    0
-	Production:   47644.519531
-	Consommation: 31209.863281
-	Gain:         20.010698
-	Cout:         3.745184
+	Temperature:  20.232414
+	Condition:    2
+	Production:   13999.000000
+	Consommation: 27237.000000
+	Gain:         5.879580
+	Cout:         3.268440
 
 Date : 7 / 7 / 2010
-	Temperature:  5.026536
+	Temperature:  22.444965
 	Condition:    0
-	Production:   56317.281250
-	Consommation: 52392.417969
-	Gain:         23.653259
-	Cout:         6.287090
+	Production:   17246.390625
+	Consommation: 27237.000000
+	Gain:         7.243484
+	Cout:         3.268440
 
 Date : 8 / 7 / 2010
-	Temperature:  4.972224
-	Condition:    1
-	Production:   44871.417969
-	Consommation: 52483.664062
-	Gain:         18.845995
-	Cout:         6.298040
+	Temperature:  24.337986
+	Condition:    0
+	Production:   18154.382812
+	Consommation: 27237.000000
+	Gain:         7.624841
+	Cout:         3.268440
 
 Date : 9 / 7 / 2010
-	Temperature:  17.707199
+	Temperature:  20.919195
 	Condition:    0
-	Production:   49824.539062
-	Consommation: 31088.906250
-	Gain:         20.926308
-	Cout:         3.730669
+	Production:   16309.250000
+	Consommation: 27237.000000
+	Gain:         6.849885
+	Cout:         3.268440
 
 Date : 10 / 7 / 2010
-	Temperature:  18.571199
-	Condition:    0
-	Production:   53521.097656
-	Consommation: 29637.384766
-	Gain:         22.478861
-	Cout:         3.556486
+	Temperature:  20.847677
+	Condition:    2
+	Production:   14619.878906
+	Consommation: 27237.000000
+	Gain:         6.140349
+	Cout:         3.268440
 
 Date : 11 / 7 / 2010
-	Temperature:  17.995199
+	Temperature:  22.259071
 	Condition:    0
-	Production:   48597.121094
-	Consommation: 30605.064453
-	Gain:         20.410791
-	Cout:         3.672608
+	Production:   15754.085938
+	Consommation: 27237.000000
+	Gain:         6.616716
+	Cout:         3.268440
 
 Date : 12 / 7 / 2010
-	Temperature:  16.195200
+	Temperature:  23.543629
 	Condition:    0
-	Production:   47479.261719
-	Consommation: 33629.062500
-	Gain:         19.941290
-	Cout:         4.035488
+	Production:   17128.912109
+	Consommation: 27237.000000
+	Gain:         7.194143
+	Cout:         3.268440
 
 Date : 13 / 7 / 2010
-	Temperature:  5.814060
-	Condition:    0
-	Production:   49580.953125
-	Consommation: 51069.378906
-	Gain:         20.824001
-	Cout:         6.128325
+	Temperature:  26.145451
+	Condition:    2
+	Production:   12481.760742
+	Consommation: 27237.000000
+	Gain:         5.242340
+	Cout:         3.268440
 
 Date : 14 / 7 / 2010
-	Temperature:  16.195200
-	Condition:    2
-	Production:   42804.660156
-	Consommation: 33629.062500
-	Gain:         17.977959
-	Cout:         4.035488
+	Temperature:  26.178181
+	Condition:    0
+	Production:   15903.587891
+	Consommation: 27237.000000
+	Gain:         6.679507
+	Cout:         3.268440
 
 Date : 15 / 7 / 2010
-	Temperature:  5.705436
-	Condition:    0
-	Production:   51769.023438
-	Consommation: 51251.867188
-	Gain:         21.742989
-	Cout:         6.150224
+	Temperature:  26.119272
+	Condition:    1
+	Production:   16542.666016
+	Consommation: 27237.000000
+	Gain:         6.947919
+	Cout:         3.268440
 
 Date : 16 / 7 / 2010
-	Temperature:  16.915199
-	Condition:    0
-	Production:   46739.085938
-	Consommation: 32419.464844
-	Gain:         19.630417
-	Cout:         3.890336
+	Temperature:  22.711708
+	Condition:    2
+	Production:   13069.912109
+	Consommation: 27237.000000
+	Gain:         5.489363
+	Cout:         3.268440
 
 Date : 17 / 7 / 2010
-	Temperature:  17.851200
+	Temperature:  23.292683
 	Condition:    0
-	Production:   52357.500000
-	Consommation: 30846.984375
-	Gain:         21.990150
-	Cout:         3.701638
+	Production:   17691.753906
+	Consommation: 27237.000000
+	Gain:         7.430537
+	Cout:         3.268440
 
 Date : 18 / 7 / 2010
-	Temperature:  19.507200
-	Condition:    2
-	Production:   36762.464844
-	Consommation: 28064.904297
-	Gain:         15.440236
-	Cout:         3.367789
+	Temperature:  23.741074
+	Condition:    0
+	Production:   18247.859375
+	Consommation: 27237.000000
+	Gain:         7.664101
+	Cout:         3.268440
 
 Date : 19 / 7 / 2010
-	Temperature:  5.542500
+	Temperature:  24.568430
 	Condition:    0
-	Production:   54344.781250
-	Consommation: 51525.601562
-	Gain:         22.824808
-	Cout:         6.183072
+	Production:   15310.998047
+	Consommation: 27237.000000
+	Gain:         6.430619
+	Cout:         3.268440
 
 Date : 20 / 7 / 2010
-	Temperature:  6.085620
+	Temperature:  19.931372
 	Condition:    0
-	Production:   48221.621094
-	Consommation: 50613.160156
-	Gain:         20.253080
-	Cout:         6.073579
+	Production:   17468.037109
+	Consommation: 27352.294922
+	Gain:         7.336576
+	Cout:         3.282275
 
 Date : 21 / 7 / 2010
-	Temperature:  18.499201
-	Condition:    2
-	Production:   43608.910156
-	Consommation: 29758.341797
-	Gain:         18.315742
-	Cout:         3.571001
+	Temperature:  22.324549
+	Condition:    1
+	Production:   15138.136719
+	Consommation: 27237.000000
+	Gain:         6.358017
+	Cout:         3.268440
 
 Date : 22 / 7 / 2010
-	Temperature:  5.325252
-	Condition:    0
-	Production:   49555.132812
-	Consommation: 51890.578125
-	Gain:         20.813156
-	Cout:         6.226870
+	Temperature:  23.425819
+	Condition:    2
+	Production:   13164.277344
+	Consommation: 27237.000000
+	Gain:         5.528996
+	Cout:         3.268440
 
 Date : 23 / 7 / 2010
-	Temperature:  4.972224
-	Condition:    2
-	Production:   44492.753906
-	Consommation: 52483.664062
-	Gain:         18.686956
-	Cout:         6.298040
+	Temperature:  21.058329
+	Condition:    0
+	Production:   17594.421875
+	Consommation: 27237.000000
+	Gain:         7.389657
+	Cout:         3.268440
 
 Date : 24 / 7 / 2010
-	Temperature:  18.571199
+	Temperature:  23.783331
 	Condition:    0
-	Production:   50790.429688
-	Consommation: 29637.384766
-	Gain:         21.331980
-	Cout:         3.556486
+	Production:   15377.522461
+	Consommation: 27237.000000
+	Gain:         6.458560
+	Cout:         3.268440
 
 Date : 25 / 7 / 2010
-	Temperature:  5.325252
-	Condition:    0
-	Production:   49365.988281
-	Consommation: 51890.578125
-	Gain:         20.733715
-	Cout:         6.226870
+	Temperature:  23.649332
+	Condition:    1
+	Production:   15933.100586
+	Consommation: 27237.000000
+	Gain:         6.691902
+	Cout:         3.268440
 
 Date : 26 / 7 / 2010
-	Temperature:  4.999380
-	Condition:    1
-	Production:   46003.867188
-	Consommation: 52438.042969
-	Gain:         19.321625
-	Cout:         6.292565
+	Temperature:  19.203733
+	Condition:    0
+	Production:   15557.095703
+	Consommation: 28574.728516
+	Gain:         6.533980
+	Cout:         3.428967
 
 Date : 27 / 7 / 2010
-	Temperature:  5.108004
+	Temperature:  18.721493
 	Condition:    0
-	Production:   50910.433594
-	Consommation: 52255.554688
-	Gain:         21.382383
-	Cout:         6.270667
+	Production:   16663.257812
+	Consommation: 29384.892578
+	Gain:         6.998569
+	Cout:         3.526187
 
 Date : 28 / 7 / 2010
-	Temperature:  5.406720
-	Condition:    2
-	Production:   40088.792969
-	Consommation: 51753.710938
-	Gain:         16.837294
-	Cout:         6.210445
+	Temperature:  17.232597
+	Condition:    0
+	Production:   17140.720703
+	Consommation: 31886.236328
+	Gain:         7.199103
+	Cout:         3.826348
 
 Date : 29 / 7 / 2010
-	Temperature:  5.705436
+	Temperature:  18.005039
 	Condition:    0
-	Production:   56398.003906
-	Consommation: 51251.867188
-	Gain:         23.687162
-	Cout:         6.150224
+	Production:   17008.791016
+	Consommation: 30588.533203
+	Gain:         7.143692
+	Cout:         3.670624
 
 Date : 30 / 7 / 2010
-	Temperature:  19.291201
+	Temperature:  19.394016
 	Condition:    0
-	Production:   53680.171875
-	Consommation: 28427.783203
-	Gain:         22.545671
-	Cout:         3.411334
+	Production:   18144.912109
+	Consommation: 28255.052734
+	Gain:         7.620863
+	Cout:         3.390606
 
 Date : 1 / 8 / 2010
-	Temperature:  5.678280
-	Condition:    0
-	Production:   50544.812500
-	Consommation: 51297.488281
-	Gain:         21.228823
-	Cout:         6.155699
+	Temperature:  18.611607
+	Condition:    2
+	Production:   14097.091797
+	Consommation: 29569.500000
+	Gain:         5.920779
+	Cout:         3.548340
 
 Date : 2 / 8 / 2010
-	Temperature:  16.339201
+	Temperature:  23.380642
 	Condition:    1
-	Production:   41778.824219
-	Consommation: 33387.140625
-	Gain:         17.547106
-	Cout:         4.006457
+	Production:   13807.552734
+	Consommation: 27237.000000
+	Gain:         5.799172
+	Cout:         3.268440
 
 Date : 3 / 8 / 2010
-	Temperature:  5.488188
-	Condition:    1
-	Production:   41591.976562
-	Consommation: 51616.843750
-	Gain:         17.468630
-	Cout:         6.194021
+	Temperature:  22.450256
+	Condition:    2
+	Production:   13631.477539
+	Consommation: 27237.000000
+	Gain:         5.725221
+	Cout:         3.268440
 
 Date : 4 / 8 / 2010
-	Temperature:  5.949840
-	Condition:    1
-	Production:   55698.085938
-	Consommation: 50841.269531
-	Gain:         23.393196
-	Cout:         6.100952
+	Temperature:  18.712103
+	Condition:    0
+	Production:   15920.355469
+	Consommation: 29400.667969
+	Gain:         6.686550
+	Cout:         3.528080
 
 Date : 5 / 8 / 2010
-	Temperature:  18.319201
+	Temperature:  18.536840
 	Condition:    0
-	Production:   46273.613281
-	Consommation: 30060.742188
-	Gain:         19.434917
-	Cout:         3.607289
+	Production:   16486.382812
+	Consommation: 29695.107422
+	Gain:         6.924281
+	Cout:         3.563413
 
 Date : 6 / 8 / 2010
-	Temperature:  5.108004
-	Condition:    1
-	Production:   48071.562500
-	Consommation: 52255.554688
-	Gain:         20.190056
-	Cout:         6.270667
+	Temperature:  21.238735
+	Condition:    0
+	Production:   16939.406250
+	Consommation: 27237.000000
+	Gain:         7.114551
+	Cout:         3.268440
 
 Date : 7 / 8 / 2010
-	Temperature:  6.004152
+	Temperature:  24.497494
 	Condition:    0
-	Production:   56255.835938
-	Consommation: 50750.023438
-	Gain:         23.627451
-	Cout:         6.090003
+	Production:   15710.046875
+	Consommation: 27237.000000
+	Gain:         6.598220
+	Cout:         3.268440
 
 Date : 8 / 8 / 2010
-	Temperature:  6.275712
+	Temperature:  22.500998
 	Condition:    0
-	Production:   47724.015625
-	Consommation: 50293.804688
-	Gain:         20.044086
-	Cout:         6.035256
+	Production:   15528.348633
+	Consommation: 27237.000000
+	Gain:         6.521906
+	Cout:         3.268440
 
 Date : 9 / 8 / 2010
-	Temperature:  17.329201
-	Condition:    0
-	Production:   53899.453125
-	Consommation: 31723.943359
-	Gain:         22.637772
-	Cout:         3.806873
+	Temperature:  24.342400
+	Condition:    2
+	Production:   13280.547852
+	Consommation: 27237.000000
+	Gain:         5.577830
+	Cout:         3.268440
 
 Date : 10 / 8 / 2010
-	Temperature:  6.139932
+	Temperature:  19.336960
 	Condition:    0
-	Production:   50573.000000
-	Consommation: 50521.914062
-	Gain:         21.240660
-	Cout:         6.062630
+	Production:   16292.978516
+	Consommation: 28350.908203
+	Gain:         6.843051
+	Cout:         3.402109
 
 Date : 11 / 8 / 2010
-	Temperature:  5.325252
-	Condition:    0
-	Production:   51730.261719
-	Consommation: 51890.578125
-	Gain:         21.726709
-	Cout:         6.226870
+	Temperature:  23.274784
+	Condition:    2
+	Production:   13139.655273
+	Consommation: 27237.000000
+	Gain:         5.518655
+	Cout:         3.268440
 
 Date : 12 / 8 / 2010
-	Temperature:  6.112776
-	Condition:    0
-	Production:   51237.421875
-	Consommation: 50567.535156
-	Gain:         21.519716
-	Cout:         6.068104
+	Temperature:  25.443914
+	Condition:    2
+	Production:   12568.838867
+	Consommation: 27237.000000
+	Gain:         5.278913
+	Cout:         3.268440
 
 Date : 13 / 8 / 2010
-	Temperature:  4.890756
+	Temperature:  23.803566
 	Condition:    0
-	Production:   49900.191406
-	Consommation: 52620.531250
-	Gain:         20.958080
-	Cout:         6.314464
+	Production:   17298.667969
+	Consommation: 27237.000000
+	Gain:         7.265440
+	Cout:         3.268440
 
 Date : 14 / 8 / 2010
-	Temperature:  6.275712
+	Temperature:  19.517426
 	Condition:    0
-	Production:   54797.734375
-	Consommation: 50293.804688
-	Gain:         23.015047
-	Cout:         6.035256
+	Production:   17211.306641
+	Consommation: 28047.724609
+	Gain:         7.228749
+	Cout:         3.365727
 
 Date : 15 / 8 / 2010
-	Temperature:  6.275712
+	Temperature:  22.158970
 	Condition:    0
-	Production:   50081.921875
-	Consommation: 50293.804688
-	Gain:         21.034407
-	Cout:         6.035256
+	Production:   17169.097656
+	Consommation: 27237.000000
+	Gain:         7.211021
+	Cout:         3.268440
 
 Date : 16 / 8 / 2010
-	Temperature:  5.651124
-	Condition:    1
-	Production:   45352.109375
-	Consommation: 51343.113281
-	Gain:         19.047886
-	Cout:         6.161174
+	Temperature:  22.489588
+	Condition:    0
+	Production:   17764.791016
+	Consommation: 27237.000000
+	Gain:         7.461212
+	Cout:         3.268440
 
 Date : 17 / 8 / 2010
-	Temperature:  16.867201
-	Condition:    2
-	Production:   45007.558594
-	Consommation: 32500.103516
-	Gain:         18.903175
-	Cout:         3.900012
+	Temperature:  21.301836
+	Condition:    0
+	Production:   17366.558594
+	Consommation: 27237.000000
+	Gain:         7.293954
+	Cout:         3.268440
 
 Date : 18 / 8 / 2010
-	Temperature:  6.221400
+	Temperature:  18.450735
 	Condition:    0
-	Production:   49806.656250
-	Consommation: 50385.046875
-	Gain:         20.918795
-	Cout:         6.046206
+	Production:   17544.468750
+	Consommation: 29839.765625
+	Gain:         7.368677
+	Cout:         3.580772
 
 Date : 19 / 8 / 2010
-	Temperature:  18.583200
+	Temperature:  22.458294
 	Condition:    2
-	Production:   37408.832031
-	Consommation: 29617.222656
-	Gain:         15.711710
-	Cout:         3.554067
+	Production:   12650.934570
+	Consommation: 27237.000000
+	Gain:         5.313393
+	Cout:         3.268440
 
 Date : 20 / 8 / 2010
-	Temperature:  5.759748
+	Temperature:  24.457317
 	Condition:    0
-	Production:   55350.316406
-	Consommation: 51160.625000
-	Gain:         23.247133
-	Cout:         6.139275
+	Production:   17873.851562
+	Consommation: 27237.000000
+	Gain:         7.507018
+	Cout:         3.268440
 
 Date : 21 / 8 / 2010
-	Temperature:  5.705436
+	Temperature:  21.428926
 	Condition:    0
-	Production:   50163.046875
-	Consommation: 51251.867188
-	Gain:         21.068480
-	Cout:         6.150224
+	Production:   15793.000000
+	Consommation: 27237.000000
+	Gain:         6.633060
+	Cout:         3.268440
 
 Date : 22 / 8 / 2010
-	Temperature:  16.141199
+	Temperature:  19.557571
 	Condition:    0
-	Production:   46295.003906
-	Consommation: 33719.785156
-	Gain:         19.443901
-	Cout:         4.046374
+	Production:   17858.089844
+	Consommation: 27980.279297
+	Gain:         7.500398
+	Cout:         3.357634
 
 Date : 23 / 8 / 2010
-	Temperature:  18.055201
-	Condition:    0
-	Production:   46583.023438
-	Consommation: 30504.263672
-	Gain:         19.564871
-	Cout:         3.660512
+	Temperature:  20.327028
+	Condition:    3
+	Production:   13686.821289
+	Consommation: 27237.000000
+	Gain:         5.748465
+	Cout:         3.268440
 
 Date : 24 / 8 / 2010
-	Temperature:  6.221400
+	Temperature:  23.604811
 	Condition:    0
-	Production:   54711.855469
-	Consommation: 50385.046875
-	Gain:         22.978979
-	Cout:         6.046206
+	Production:   15813.110352
+	Consommation: 27237.000000
+	Gain:         6.641506
+	Cout:         3.268440
 
 Date : 25 / 8 / 2010
-	Temperature:  5.488188
+	Temperature:  25.113924
 	Condition:    0
-	Production:   51895.441406
-	Consommation: 51616.843750
-	Gain:         21.796085
-	Cout:         6.194021
+	Production:   15620.258789
+	Consommation: 27237.000000
+	Gain:         6.560509
+	Cout:         3.268440
 
 Date : 26 / 8 / 2010
-	Temperature:  16.405201
-	Condition:    0
-	Production:   52579.859375
-	Consommation: 33276.261719
-	Gain:         22.083542
-	Cout:         3.993151
+	Temperature:  21.295570
+	Condition:    2
+	Production:   14754.165039
+	Consommation: 27237.000000
+	Gain:         6.196749
+	Cout:         3.268440
 
 Date : 27 / 8 / 2010
-	Temperature:  16.141199
+	Temperature:  19.240229
 	Condition:    0
-	Production:   53537.191406
-	Consommation: 33719.785156
-	Gain:         22.485620
-	Cout:         4.046374
+	Production:   17565.564453
+	Consommation: 28513.416016
+	Gain:         7.377537
+	Cout:         3.421610
 
 Date : 28 / 8 / 2010
-	Temperature:  5.352408
+	Temperature:  22.840092
 	Condition:    0
-	Production:   53901.246094
-	Consommation: 51844.953125
-	Gain:         22.638523
-	Cout:         6.221395
+	Production:   15298.492188
+	Consommation: 27237.000000
+	Gain:         6.425366
+	Cout:         3.268440
 
 Date : 29 / 8 / 2010
-	Temperature:  18.715200
+	Temperature:  24.610037
 	Condition:    0
-	Production:   49222.179688
-	Consommation: 29395.462891
-	Gain:         20.673315
-	Cout:         3.527456
+	Production:   16617.818359
+	Consommation: 27237.000000
+	Gain:         6.979484
+	Cout:         3.268440
 
 Date : 30 / 8 / 2010
-	Temperature:  5.814060
+	Temperature:  22.348015
 	Condition:    0
-	Production:   52697.472656
-	Consommation: 51069.378906
-	Gain:         22.132938
-	Cout:         6.128325
+	Production:   15964.408203
+	Consommation: 27237.000000
+	Gain:         6.705051
+	Cout:         3.268440
 
 Date : 31 / 8 / 2010
-	Temperature:  18.253201
+	Temperature:  20.717207
 	Condition:    0
-	Production:   51657.933594
-	Consommation: 30171.623047
-	Gain:         21.696333
-	Cout:         3.620595
+	Production:   16904.033203
+	Consommation: 27237.000000
+	Gain:         7.099694
+	Cout:         3.268440
 
 Date : 1 / 9 / 2010
-	Temperature:  4.972536
+	Temperature:  22.092882
 	Condition:    0
-	Production:   50645.968750
-	Consommation: 52483.140625
-	Gain:         21.271307
-	Cout:         6.297977
+	Production:   15884.536133
+	Consommation: 27237.000000
+	Gain:         6.671505
+	Cout:         3.268440
 
 Date : 2 / 9 / 2010
-	Temperature:  13.219200
-	Condition:    2
-	Production:   40588.218750
-	Consommation: 38628.742188
-	Gain:         17.047052
-	Cout:         4.635449
+	Temperature:  21.917152
+	Condition:    0
+	Production:   15954.200195
+	Consommation: 27237.000000
+	Gain:         6.700764
+	Cout:         3.268440
 
 Date : 3 / 9 / 2010
-	Temperature:  5.208564
-	Condition:    2
-	Production:   42949.367188
-	Consommation: 52086.613281
-	Gain:         18.038734
-	Cout:         6.250393
+	Temperature:  19.140862
+	Condition:    0
+	Production:   16178.666016
+	Consommation: 28680.353516
+	Gain:         6.795040
+	Cout:         3.441643
 
 Date : 4 / 9 / 2010
-	Temperature:  5.081472
-	Condition:    2
-	Production:   43911.183594
-	Consommation: 52300.128906
-	Gain:         18.442698
-	Cout:         6.276015
+	Temperature:  19.548346
+	Condition:    0
+	Production:   18043.958984
+	Consommation: 27995.779297
+	Gain:         7.578463
+	Cout:         3.359493
 
 Date : 5 / 9 / 2010
-	Temperature:  13.087200
+	Temperature:  21.493338
 	Condition:    0
-	Production:   52720.117188
-	Consommation: 38850.503906
-	Gain:         22.142448
-	Cout:         4.662060
+	Production:   17448.849609
+	Consommation: 27237.000000
+	Gain:         7.328517
+	Cout:         3.268440
 
 Date : 6 / 9 / 2010
-	Temperature:  4.936224
+	Temperature:  17.585335
 	Condition:    0
-	Production:   49420.390625
-	Consommation: 52544.144531
-	Gain:         20.756565
-	Cout:         6.305297
+	Production:   17962.052734
+	Consommation: 31293.636719
+	Gain:         7.544062
+	Cout:         3.755236
 
 Date : 7 / 9 / 2010
-	Temperature:  5.027004
-	Condition:    1
-	Production:   52436.523438
-	Consommation: 52391.632812
-	Gain:         22.023340
-	Cout:         6.286996
+	Temperature:  18.134134
+	Condition:    2
+	Production:   14644.350586
+	Consommation: 30371.654297
+	Gain:         6.150627
+	Cout:         3.644598
 
 Date : 8 / 9 / 2010
-	Temperature:  5.045160
-	Condition:    1
-	Production:   50730.203125
-	Consommation: 52361.132812
-	Gain:         21.306684
-	Cout:         6.283336
+	Temperature:  21.191654
+	Condition:    0
+	Production:   16080.848633
+	Consommation: 27237.000000
+	Gain:         6.753956
+	Cout:         3.268440
 
 Date : 9 / 9 / 2010
-	Temperature:  13.813200
+	Temperature:  16.276661
 	Condition:    0
-	Production:   51686.289062
-	Consommation: 37630.824219
-	Gain:         21.708241
-	Cout:         4.515699
+	Production:   18218.210938
+	Consommation: 33492.210938
+	Gain:         7.651649
+	Cout:         4.019065
 
 Date : 10 / 9 / 2010
-	Temperature:  15.727200
-	Condition:    2
-	Production:   37172.593750
-	Consommation: 34415.304688
-	Gain:         15.612490
-	Cout:         4.129837
+	Temperature:  17.082664
+	Condition:    0
+	Production:   16805.912109
+	Consommation: 32138.123047
+	Gain:         7.058483
+	Cout:         3.856575
 
 Date : 11 / 9 / 2010
-	Temperature:  5.190408
-	Condition:    0
-	Production:   54115.199219
-	Consommation: 52117.113281
-	Gain:         22.728384
-	Cout:         6.254054
+	Temperature:  19.385065
+	Condition:    1
+	Production:   17990.830078
+	Consommation: 28270.089844
+	Gain:         7.556149
+	Cout:         3.392411
 
 Date : 12 / 9 / 2010
-	Temperature:  14.737200
+	Temperature:  20.966026
 	Condition:    0
-	Production:   52652.261719
-	Consommation: 36078.503906
-	Gain:         22.113949
-	Cout:         4.329421
+	Production:   18306.898438
+	Consommation: 27237.000000
+	Gain:         7.688898
+	Cout:         3.268440
 
 Date : 13 / 9 / 2010
-	Temperature:  5.190408
-	Condition:    2
-	Production:   47208.890625
-	Consommation: 52117.113281
-	Gain:         19.827734
-	Cout:         6.254054
+	Temperature:  21.070410
+	Condition:    0
+	Production:   15502.221680
+	Consommation: 27237.000000
+	Gain:         6.510933
+	Cout:         3.268440
 
 Date : 14 / 9 / 2010
-	Temperature:  13.021200
-	Condition:    0
-	Production:   53562.777344
-	Consommation: 38961.382812
-	Gain:         22.496367
-	Cout:         4.675366
+	Temperature:  17.746164
+	Condition:    1
+	Production:   16711.113281
+	Consommation: 31023.443359
+	Gain:         7.018668
+	Cout:         3.722813
 
 Date : 15 / 9 / 2010
-	Temperature:  14.275200
+	Temperature:  16.548466
 	Condition:    0
-	Production:   50142.203125
-	Consommation: 36854.664062
-	Gain:         21.059725
-	Cout:         4.422560
+	Production:   18016.710938
+	Consommation: 33035.578125
+	Gain:         7.567019
+	Cout:         3.964269
 
 Date : 16 / 9 / 2010
-	Temperature:  14.275200
+	Temperature:  17.257387
 	Condition:    0
-	Production:   48759.605469
-	Consommation: 36854.664062
-	Gain:         20.479034
-	Cout:         4.422560
+	Production:   16983.943359
+	Consommation: 31844.589844
+	Gain:         7.133256
+	Cout:         3.821351
 
 Date : 17 / 9 / 2010
-	Temperature:  15.463200
-	Condition:    2
-	Production:   39589.464844
-	Consommation: 34858.824219
-	Gain:         16.627575
-	Cout:         4.183059
+	Temperature:  14.702955
+	Condition:    0
+	Production:   17706.585938
+	Consommation: 36136.035156
+	Gain:         7.436766
+	Cout:         4.336324
 
 Date : 18 / 9 / 2010
-	Temperature:  13.021200
-	Condition:    2
-	Production:   39963.937500
-	Consommation: 38961.382812
-	Gain:         16.784855
-	Cout:         4.675366
+	Temperature:  19.687181
+	Condition:    0
+	Production:   16523.222656
+	Consommation: 27762.535156
+	Gain:         6.939753
+	Cout:         3.331504
 
 Date : 19 / 9 / 2010
-	Temperature:  5.390124
+	Temperature:  16.334873
 	Condition:    0
-	Production:   47938.617188
-	Consommation: 51781.593750
-	Gain:         20.134220
-	Cout:         6.213791
+	Production:   16811.548828
+	Consommation: 33394.414062
+	Gain:         7.060851
+	Cout:         4.007329
 
 Date : 20 / 9 / 2010
-	Temperature:  5.444592
+	Temperature:  15.125949
 	Condition:    0
-	Production:   50389.230469
-	Consommation: 51690.085938
-	Gain:         21.163477
-	Cout:         6.202810
+	Production:   16870.976562
+	Consommation: 35425.406250
+	Gain:         7.085810
+	Cout:         4.251049
 
 Date : 21 / 9 / 2010
-	Temperature:  15.265200
-	Condition:    1
-	Production:   40439.496094
-	Consommation: 35191.464844
-	Gain:         16.984589
-	Cout:         4.222976
+	Temperature:  19.592381
+	Condition:    0
+	Production:   17238.390625
+	Consommation: 27921.800781
+	Gain:         7.240124
+	Cout:         3.350616
 
 Date : 22 / 9 / 2010
-	Temperature:  14.737200
-	Condition:    3
-	Production:   44183.714844
-	Consommation: 36078.503906
-	Gain:         18.557159
-	Cout:         4.329421
+	Temperature:  17.748953
+	Condition:    0
+	Production:   17860.246094
+	Consommation: 31018.759766
+	Gain:         7.501303
+	Cout:         3.722251
 
 Date : 23 / 9 / 2010
-	Temperature:  5.353812
-	Condition:    2
-	Production:   45390.343750
-	Consommation: 51842.593750
-	Gain:         19.063946
-	Cout:         6.221111
+	Temperature:  18.793581
+	Condition:    0
+	Production:   18424.785156
+	Consommation: 29263.783203
+	Gain:         7.738410
+	Cout:         3.511654
 
 Date : 24 / 9 / 2010
-	Temperature:  5.299344
+	Temperature:  16.571432
 	Condition:    0
-	Production:   56084.636719
-	Consommation: 51934.101562
-	Gain:         23.555548
-	Cout:         6.232092
+	Production:   18638.873047
+	Consommation: 32996.992188
+	Gain:         7.828327
+	Cout:         3.959639
 
 Date : 25 / 9 / 2010
-	Temperature:  5.208564
-	Condition:    2
-	Production:   42476.355469
-	Consommation: 52086.613281
-	Gain:         17.840069
-	Cout:         6.250393
+	Temperature:  16.078573
+	Condition:    0
+	Production:   16824.148438
+	Consommation: 33824.996094
+	Gain:         7.066142
+	Cout:         4.059000
 
 Date : 26 / 9 / 2010
-	Temperature:  15.529200
-	Condition:    3
-	Production:   37469.585938
-	Consommation: 34747.945312
-	Gain:         15.737226
-	Cout:         4.169754
+	Temperature:  17.663429
+	Condition:    0
+	Production:   17212.279297
+	Consommation: 31162.439453
+	Gain:         7.229157
+	Cout:         3.739493
 
 Date : 27 / 9 / 2010
-	Temperature:  17.113199
-	Condition:    0
-	Production:   53202.292969
-	Consommation: 32086.826172
-	Gain:         22.344963
-	Cout:         3.850419
+	Temperature:  18.693371
+	Condition:    3
+	Production:   14031.750000
+	Consommation: 29432.136719
+	Gain:         5.893335
+	Cout:         3.531856
 
 Date : 28 / 9 / 2010
-	Temperature:  5.499060
+	Temperature:  18.841349
 	Condition:    0
-	Production:   50192.402344
-	Consommation: 51598.578125
-	Gain:         21.080809
-	Cout:         6.191829
+	Production:   16131.030273
+	Consommation: 29183.535156
+	Gain:         6.775033
+	Cout:         3.502024
 
 Date : 29 / 9 / 2010
-	Temperature:  5.154096
-	Condition:    0
-	Production:   50052.246094
-	Consommation: 52178.117188
-	Gain:         21.021944
-	Cout:         6.261374
+	Temperature:  20.352539
+	Condition:    1
+	Production:   18186.070312
+	Consommation: 27237.000000
+	Gain:         7.638149
+	Cout:         3.268440
 
 Date : 30 / 9 / 2010
-	Temperature:  4.918068
-	Condition:    2
-	Production:   43742.136719
-	Consommation: 52574.644531
-	Gain:         18.371696
-	Cout:         6.308958
+	Temperature:  21.683016
+	Condition:    0
+	Production:   17377.621094
+	Consommation: 27237.000000
+	Gain:         7.298601
+	Cout:         3.268440
 
 Date : 1 / 10 / 2010
-	Temperature:  5.055876
-	Condition:    1
-	Production:   38235.781250
-	Consommation: 52343.128906
-	Gain:         16.059029
-	Cout:         6.281176
+	Temperature:  16.257206
+	Condition:    2
+	Production:   14007.607422
+	Consommation: 33524.894531
+	Gain:         5.883195
+	Cout:         4.022987
 
 Date : 2 / 10 / 2010
-	Temperature:  12.427200
+	Temperature:  14.710882
 	Condition:    0
-	Production:   52172.226562
-	Consommation: 39959.304688
-	Gain:         21.912336
-	Cout:         4.795116
+	Production:   17424.130859
+	Consommation: 36122.718750
+	Gain:         7.318135
+	Cout:         4.334726
 
 Date : 3 / 10 / 2010
-	Temperature:  13.435200
-	Condition:    2
-	Production:   39176.843750
-	Consommation: 38265.863281
-	Gain:         16.454273
-	Cout:         4.591904
+	Temperature:  13.084352
+	Condition:    0
+	Production:   18671.617188
+	Consommation: 38855.289062
+	Gain:         7.842079
+	Cout:         4.662635
 
 Date : 4 / 10 / 2010
-	Temperature:  5.010096
-	Condition:    0
-	Production:   49883.339844
-	Consommation: 52420.039062
-	Gain:         20.951002
-	Cout:         6.290405
+	Temperature:  14.449741
+	Condition:    2
+	Production:   12952.582031
+	Consommation: 36561.433594
+	Gain:         5.440084
+	Cout:         4.387372
 
 Date : 5 / 10 / 2010
-	Temperature:  12.187200
-	Condition:    0
-	Production:   54155.812500
-	Consommation: 40362.503906
-	Gain:         22.745440
-	Cout:         4.843501
+	Temperature:  11.827896
+	Condition:    2
+	Production:   12830.125977
+	Consommation: 40966.132812
+	Gain:         5.388653
+	Cout:         4.915936
 
 Date : 6 / 10 / 2010
-	Temperature:  13.195200
+	Temperature:  11.499159
 	Condition:    2
-	Production:   41423.203125
-	Consommation: 38669.062500
-	Gain:         17.397745
-	Cout:         4.640287
+	Production:   15404.431641
+	Consommation: 41518.414062
+	Gain:         6.469862
+	Cout:         4.982210
 
 Date : 7 / 10 / 2010
-	Temperature:  12.571200
-	Condition:    0
-	Production:   55485.175781
-	Consommation: 39717.382812
-	Gain:         23.303774
-	Cout:         4.766086
+	Temperature:  13.623664
+	Condition:    2
+	Production:   15278.635742
+	Consommation: 37949.246094
+	Gain:         6.417027
+	Cout:         4.553909
 
 Date : 8 / 10 / 2010
-	Temperature:  11.611199
+	Temperature:  15.481465
 	Condition:    0
-	Production:   51923.753906
-	Consommation: 41330.183594
-	Gain:         21.807976
-	Cout:         4.959622
+	Production:   17291.253906
+	Consommation: 34828.136719
+	Gain:         7.262327
+	Cout:         4.179377
 
 Date : 9 / 10 / 2010
-	Temperature:  12.043200
+	Temperature:  14.880587
 	Condition:    0
-	Production:   54363.882812
-	Consommation: 40604.425781
-	Gain:         22.832830
-	Cout:         4.872531
+	Production:   17916.691406
+	Consommation: 35837.613281
+	Gain:         7.525011
+	Cout:         4.300514
 
 Date : 10 / 10 / 2010
-	Temperature:  12.523200
-	Condition:    0
-	Production:   46413.910156
-	Consommation: 39798.023438
-	Gain:         19.493843
-	Cout:         4.775763
+	Temperature:  12.864235
+	Condition:    2
+	Production:   15721.884766
+	Consommation: 39225.085938
+	Gain:         6.603191
+	Cout:         4.707010
 
 Date : 11 / 10 / 2010
-	Temperature:  12.667200
-	Condition:    0
-	Production:   54358.523438
-	Consommation: 39556.105469
-	Gain:         22.830580
-	Cout:         4.746733
+	Temperature:  15.081694
+	Condition:    2
+	Production:   13774.000977
+	Consommation: 35499.753906
+	Gain:         5.785080
+	Cout:         4.259971
 
 Date : 12 / 10 / 2010
-	Temperature:  10.027200
+	Temperature:  12.032678
 	Condition:    0
-	Production:   46748.917969
-	Consommation: 43991.304688
-	Gain:         19.634546
-	Cout:         5.278956
+	Production:   18349.500000
+	Consommation: 40622.101562
+	Gain:         7.706790
+	Cout:         4.874652
 
 Date : 13 / 10 / 2010
-	Temperature:  12.811200
-	Condition:    0
-	Production:   50725.828125
-	Consommation: 39314.183594
-	Gain:         21.304848
-	Cout:         4.717702
+	Temperature:  12.205071
+	Condition:    2
+	Production:   14489.206055
+	Consommation: 40332.480469
+	Gain:         6.085466
+	Cout:         4.839898
 
 Date : 14 / 10 / 2010
-	Temperature:  10.075200
-	Condition:    2
-	Production:   42917.242188
-	Consommation: 43910.664062
-	Gain:         18.025242
-	Cout:         5.269279
+	Temperature:  12.226028
+	Condition:    0
+	Production:   18433.953125
+	Consommation: 40297.273438
+	Gain:         7.742260
+	Cout:         4.835673
 
 Date : 15 / 10 / 2010
-	Temperature:  11.803200
+	Temperature:  11.322412
 	Condition:    0
-	Production:   47995.910156
-	Consommation: 41007.625000
-	Gain:         20.158283
-	Cout:         4.920915
+	Production:   18798.552734
+	Consommation: 41815.347656
+	Gain:         7.895392
+	Cout:         5.017842
 
 Date : 16 / 10 / 2010
-	Temperature:  11.467200
+	Temperature:  11.872965
 	Condition:    0
-	Production:   50830.214844
-	Consommation: 41572.105469
-	Gain:         21.348690
-	Cout:         4.988653
+	Production:   16304.148438
+	Consommation: 40890.417969
+	Gain:         6.847742
+	Cout:         4.906850
 
 Date : 17 / 10 / 2010
-	Temperature:  10.171200
+	Temperature:  12.285186
 	Condition:    0
-	Production:   48688.316406
-	Consommation: 43749.382812
-	Gain:         20.449093
-	Cout:         5.249926
+	Production:   17420.894531
+	Consommation: 40197.886719
+	Gain:         7.316776
+	Cout:         4.823746
 
 Date : 18 / 10 / 2010
-	Temperature:  11.803200
-	Condition:    3
-	Production:   44096.824219
-	Consommation: 41007.625000
-	Gain:         18.520666
-	Cout:         4.920915
+	Temperature:  11.490074
+	Condition:    0
+	Production:   16765.013672
+	Consommation: 41533.675781
+	Gain:         7.041306
+	Cout:         4.984041
 
 Date : 19 / 10 / 2010
-	Temperature:  12.043200
+	Temperature:  11.844029
 	Condition:    0
-	Production:   52601.230469
-	Consommation: 40604.425781
-	Gain:         22.092518
-	Cout:         4.872531
+	Production:   15926.311523
+	Consommation: 40939.031250
+	Gain:         6.689051
+	Cout:         4.912684
 
 Date : 20 / 10 / 2010
-	Temperature:  5.037564
+	Temperature:  12.657612
 	Condition:    0
-	Production:   55179.746094
-	Consommation: 52373.894531
-	Gain:         23.175493
-	Cout:         6.284867
+	Production:   18158.759766
+	Consommation: 39572.210938
+	Gain:         7.626679
+	Cout:         4.748665
 
 Date : 21 / 10 / 2010
-	Temperature:  4.881912
-	Condition:    2
-	Production:   39201.507812
-	Consommation: 52635.386719
-	Gain:         16.464634
-	Cout:         6.316247
+	Temperature:  13.847045
+	Condition:    0
+	Production:   16431.167969
+	Consommation: 37573.964844
+	Gain:         6.901091
+	Cout:         4.508876
 
 Date : 22 / 10 / 2010
-	Temperature:  13.291200
+	Temperature:  14.850818
 	Condition:    0
-	Production:   52226.789062
-	Consommation: 38507.785156
-	Gain:         21.935251
-	Cout:         4.620934
+	Production:   16007.384766
+	Consommation: 35887.625000
+	Gain:         6.723102
+	Cout:         4.306515
 
 Date : 23 / 10 / 2010
-	Temperature:  13.387199
-	Condition:    2
-	Production:   39089.882812
-	Consommation: 38346.503906
-	Gain:         16.417751
-	Cout:         4.601581
+	Temperature:  12.132327
+	Condition:    0
+	Production:   16102.501953
+	Consommation: 40454.691406
+	Gain:         6.763051
+	Cout:         4.854563
 
 Date : 24 / 10 / 2010
-	Temperature:  4.909380
+	Temperature:  13.828931
 	Condition:    0
-	Production:   51317.792969
-	Consommation: 52589.242188
-	Gain:         21.553474
-	Cout:         6.310709
+	Production:   18819.861328
+	Consommation: 37604.394531
+	Gain:         7.904342
+	Cout:         4.512527
 
 Date : 25 / 10 / 2010
-	Temperature:  12.859200
-	Condition:    0
-	Production:   46461.363281
-	Consommation: 39233.542969
-	Gain:         19.513773
-	Cout:         4.708025
+	Temperature:  14.123572
+	Condition:    1
+	Production:   15570.396484
+	Consommation: 37109.398438
+	Gain:         6.539567
+	Cout:         4.453128
 
 Date : 26 / 10 / 2010
-	Temperature:  4.927692
-	Condition:    1
-	Production:   53776.746094
-	Consommation: 52558.476562
-	Gain:         22.586233
-	Cout:         6.307017
+	Temperature:  13.137429
+	Condition:    2
+	Production:   15174.258789
+	Consommation: 38766.117188
+	Gain:         6.373188
+	Cout:         4.651934
 
 Date : 27 / 10 / 2010
-	Temperature:  5.010096
+	Temperature:  12.790972
 	Condition:    2
-	Production:   40133.843750
-	Consommation: 52420.039062
-	Gain:         16.856215
-	Cout:         6.290405
+	Production:   13046.573242
+	Consommation: 39348.167969
+	Gain:         5.479561
+	Cout:         4.721780
 
 Date : 28 / 10 / 2010
-	Temperature:  13.099200
-	Condition:    2
-	Production:   37642.707031
-	Consommation: 38830.343750
-	Gain:         15.809937
-	Cout:         4.659641
+	Temperature:  13.804389
+	Condition:    0
+	Production:   17815.730469
+	Consommation: 37645.625000
+	Gain:         7.482606
+	Cout:         4.517475
 
 Date : 29 / 10 / 2010
-	Temperature:  12.619200
-	Condition:    2
-	Production:   42233.269531
-	Consommation: 39636.746094
-	Gain:         17.737972
-	Cout:         4.756410
+	Temperature:  14.401755
+	Condition:    0
+	Production:   16153.779297
+	Consommation: 36642.050781
+	Gain:         6.784587
+	Cout:         4.397046
 
 Date : 30 / 10 / 2010
-	Temperature:  4.946004
+	Temperature:  11.856702
 	Condition:    0
-	Production:   51501.820312
-	Consommation: 52527.714844
-	Gain:         21.630764
-	Cout:         6.303326
+	Production:   15862.531250
+	Consommation: 40917.742188
+	Gain:         6.662263
+	Cout:         4.910129
 
 Date : 31 / 10 / 2010
-	Temperature:  10.699200
+	Temperature:  15.158681
 	Condition:    0
-	Production:   51967.199219
-	Consommation: 42862.343750
-	Gain:         21.826223
-	Cout:         5.143481
+	Production:   18371.648438
+	Consommation: 35370.417969
+	Gain:         7.716093
+	Cout:         4.244450
 
 Date : 1 / 11 / 2010
-	Temperature:  7.555200
+	Temperature:  11.259472
 	Condition:    2
-	Production:   39092.960938
-	Consommation: 48144.265625
-	Gain:         16.419044
-	Cout:         5.777312
+	Production:   14813.667969
+	Consommation: 41921.085938
+	Gain:         6.221741
+	Cout:         5.030530
 
 Date : 2 / 11 / 2010
-	Temperature:  9.571200
-	Condition:    2
-	Production:   39148.582031
-	Consommation: 44757.382812
-	Gain:         16.442404
-	Cout:         5.370886
+	Temperature:  12.219789
+	Condition:    0
+	Production:   17645.146484
+	Consommation: 40307.753906
+	Gain:         7.410961
+	Cout:         4.836930
 
 Date : 3 / 11 / 2010
-	Temperature:  10.033200
-	Condition:    0
-	Production:   55425.906250
-	Consommation: 43981.222656
-	Gain:         23.278881
-	Cout:         5.277747
+	Temperature:  10.125916
+	Condition:    2
+	Production:   13560.033203
+	Consommation: 43825.460938
+	Gain:         5.695214
+	Cout:         5.259055
 
 Date : 4 / 11 / 2010
-	Temperature:  7.009200
+	Temperature:  9.876366
 	Condition:    0
-	Production:   47342.226562
-	Consommation: 49061.542969
-	Gain:         19.883734
-	Cout:         5.887385
+	Production:   18400.201172
+	Consommation: 44244.707031
+	Gain:         7.728084
+	Cout:         5.309365
 
 Date : 5 / 11 / 2010
-	Temperature:  9.991200
-	Condition:    0
-	Production:   52632.964844
-	Consommation: 44051.785156
-	Gain:         22.105844
-	Cout:         5.286214
+	Temperature:  8.012547
+	Condition:    1
+	Production:   13802.078125
+	Consommation: 47375.921875
+	Gain:         5.796873
+	Cout:         5.685111
 
 Date : 6 / 11 / 2010
-	Temperature:  9.151200
-	Condition:    2
-	Production:   42656.925781
-	Consommation: 45462.984375
-	Gain:         17.915909
-	Cout:         5.455558
+	Temperature:  10.795018
+	Condition:    0
+	Production:   18827.123047
+	Consommation: 42701.371094
+	Gain:         7.907392
+	Cout:         5.124165
 
 Date : 7 / 11 / 2010
-	Temperature:  7.261200
-	Condition:    0
-	Production:   54174.085938
-	Consommation: 48638.183594
-	Gain:         22.753115
-	Cout:         5.836582
+	Temperature:  8.548007
+	Condition:    2
+	Production:   12823.969727
+	Consommation: 46476.347656
+	Gain:         5.386067
+	Cout:         5.577162
 
 Date : 8 / 11 / 2010
-	Temperature:  9.907200
+	Temperature:  10.589203
 	Condition:    0
-	Production:   51245.507812
-	Consommation: 44192.902344
-	Gain:         21.523113
-	Cout:         5.303148
+	Production:   17220.845703
+	Consommation: 43047.140625
+	Gain:         7.232755
+	Cout:         5.165657
 
 Date : 9 / 11 / 2010
-	Temperature:  6.505200
+	Temperature:  10.271681
 	Condition:    0
-	Production:   56364.343750
-	Consommation: 49908.265625
-	Gain:         23.673025
-	Cout:         5.988992
+	Production:   17744.460938
+	Consommation: 43580.578125
+	Gain:         7.452673
+	Cout:         5.229670
 
 Date : 10 / 11 / 2010
-	Temperature:  10.453200
-	Condition:    0
-	Production:   50046.835938
-	Consommation: 43275.625000
-	Gain:         21.019670
-	Cout:         5.193075
+	Temperature:  11.782673
+	Condition:    2
+	Production:   14412.071289
+	Consommation: 41042.109375
+	Gain:         6.053070
+	Cout:         4.925053
 
 Date : 11 / 11 / 2010
-	Temperature:  10.075200
+	Temperature:  9.363070
 	Condition:    0
-	Production:   49261.531250
-	Consommation: 43910.664062
-	Gain:         20.689842
-	Cout:         5.269279
+	Production:   16963.304688
+	Consommation: 45107.042969
+	Gain:         7.124588
+	Cout:         5.412845
 
 Date : 12 / 11 / 2010
-	Temperature:  6.505200
+	Temperature:  10.243228
 	Condition:    0
-	Production:   51086.078125
-	Consommation: 49908.265625
-	Gain:         21.456154
-	Cout:         5.988992
+	Production:   17333.214844
+	Consommation: 43628.378906
+	Gain:         7.279951
+	Cout:         5.235405
 
 Date : 13 / 11 / 2010
-	Temperature:  8.353200
+	Temperature:  11.603292
 	Condition:    0
-	Production:   54380.609375
-	Consommation: 46803.625000
-	Gain:         22.839857
-	Cout:         5.616435
+	Production:   16569.812500
+	Consommation: 41343.468750
+	Gain:         6.959321
+	Cout:         4.961216
 
 Date : 14 / 11 / 2010
-	Temperature:  8.143200
-	Condition:    3
-	Production:   40247.035156
-	Consommation: 47156.425781
-	Gain:         16.903755
-	Cout:         5.658771
+	Temperature:  8.703317
+	Condition:    0
+	Production:   16548.966797
+	Consommation: 46215.429688
+	Gain:         6.950566
+	Cout:         5.545852
 
 Date : 15 / 11 / 2010
-	Temperature:  9.445200
+	Temperature:  10.021327
 	Condition:    0
-	Production:   47387.832031
-	Consommation: 44969.062500
-	Gain:         19.902889
-	Cout:         5.396287
+	Production:   17090.138672
+	Consommation: 44001.171875
+	Gain:         7.177858
+	Cout:         5.280140
 
 Date : 16 / 11 / 2010
-	Temperature:  10.411200
+	Temperature:  10.926531
 	Condition:    0
-	Production:   54620.085938
-	Consommation: 43346.183594
-	Gain:         22.940435
-	Cout:         5.201542
+	Production:   16000.166992
+	Consommation: 42480.429688
+	Gain:         6.720070
+	Cout:         5.097651
 
 Date : 17 / 11 / 2010
-	Temperature:  9.697200
+	Temperature:  8.516612
 	Condition:    0
-	Production:   55012.378906
-	Consommation: 44545.703125
-	Gain:         23.105200
-	Cout:         5.345484
+	Production:   16079.254883
+	Consommation: 46529.089844
+	Gain:         6.753287
+	Cout:         5.583491
 
 Date : 18 / 11 / 2010
-	Temperature:  8.647200
+	Temperature:  9.904645
 	Condition:    0
-	Production:   51992.910156
-	Consommation: 46309.703125
-	Gain:         21.837023
-	Cout:         5.557164
+	Production:   16555.658203
+	Consommation: 44197.195312
+	Gain:         6.953376
+	Cout:         5.303663
 
 Date : 19 / 11 / 2010
-	Temperature:  10.285200
-	Condition:    2
-	Production:   45035.929688
-	Consommation: 43557.863281
-	Gain:         18.915091
-	Cout:         5.226943
+	Temperature:  7.981858
+	Condition:    0
+	Production:   16615.068359
+	Consommation: 47427.480469
+	Gain:         6.978329
+	Cout:         5.691298
 
 Date : 20 / 11 / 2010
-	Temperature:  9.907200
-	Condition:    0
-	Production:   51338.851562
-	Consommation: 44192.902344
-	Gain:         21.562317
-	Cout:         5.303148
+	Temperature:  7.674743
+	Condition:    2
+	Production:   15382.409180
+	Consommation: 47943.429688
+	Gain:         6.460612
+	Cout:         5.753211
 
 Date : 21 / 11 / 2010
-	Temperature:  6.547200
-	Condition:    2
-	Production:   46273.562500
-	Consommation: 49837.703125
-	Gain:         19.434896
-	Cout:         5.980525
+	Temperature:  8.853897
+	Condition:    3
+	Production:   13928.292969
+	Consommation: 45962.453125
+	Gain:         5.849883
+	Cout:         5.515494
 
 Date : 22 / 11 / 2010
-	Temperature:  8.395200
+	Temperature:  8.359559
 	Condition:    0
-	Production:   55217.820312
-	Consommation: 46733.062500
-	Gain:         23.191484
-	Cout:         5.607967
+	Production:   16948.248047
+	Consommation: 46792.941406
+	Gain:         7.118265
+	Cout:         5.615153
 
 Date : 23 / 11 / 2010
-	Temperature:  6.841200
+	Temperature:  7.993824
 	Condition:    0
-	Production:   48871.500000
-	Consommation: 49343.785156
-	Gain:         20.526030
-	Cout:         5.921254
+	Production:   17061.812500
+	Consommation: 47407.375000
+	Gain:         7.165962
+	Cout:         5.688885
 
 Date : 24 / 11 / 2010
-	Temperature:  6.463200
-	Condition:    2
-	Production:   39685.992188
-	Consommation: 49978.824219
-	Gain:         16.668116
-	Cout:         5.997459
+	Temperature:  8.981529
+	Condition:    0
+	Production:   18065.121094
+	Consommation: 45748.031250
+	Gain:         7.587351
+	Cout:         5.489764
 
 Date : 25 / 11 / 2010
-	Temperature:  6.631200
-	Condition:    2
-	Production:   39290.156250
-	Consommation: 49696.585938
-	Gain:         16.501865
-	Cout:         5.963590
+	Temperature:  8.830611
+	Condition:    0
+	Production:   17148.560547
+	Consommation: 46001.574219
+	Gain:         7.202395
+	Cout:         5.520189
 
 
 __________________________________

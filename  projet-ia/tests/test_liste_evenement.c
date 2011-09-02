@@ -197,8 +197,8 @@ void test_creer_liste_evenement()
   Panneaux.type = 1;
   Panneaux.Largeur = 10;
   Panneaux.Longueur = 5;
-  Panneaux.MPPT = 0;
-  Panneaux.auto_rotation = 0;
+  Panneaux.MPPT = 1;
+  Panneaux.auto_rotation = 1;
   
   ST_HABITATIONS Habitations;
   Habitations.nombre_pieces=4;
@@ -340,8 +340,8 @@ void test_supprimer_jour()
   Panneaux.type = 1;
   Panneaux.Largeur = 10;
   Panneaux.Longueur = 5;
-  Panneaux.MPPT = 0;
-  Panneaux.auto_rotation = 0;
+  Panneaux.MPPT = 1;
+  Panneaux.auto_rotation = 1;
   
   ST_HABITATIONS Habitations;
   Habitations.nombre_pieces=4;
@@ -413,7 +413,7 @@ void test_supprimer_liste_jour()
   
   ST_Date Date_Fin;
   Date_Fin.Jour = 10;
-  Date_Fin.Mois = 11;
+  Date_Fin.Mois = 12;
   Date_Fin.Annee = 2010;
   
   ST_EQUIPEMENTS Equip1;
@@ -467,8 +467,8 @@ void test_supprimer_liste_jour()
   Panneaux.type = 1;
   Panneaux.Largeur = 10;
   Panneaux.Longueur = 5;
-  Panneaux.MPPT = 0;
-  Panneaux.auto_rotation = 0;
+  Panneaux.MPPT = 1;
+  Panneaux.auto_rotation = 1;
   
   ST_HABITATIONS Habitations;
   Habitations.nombre_pieces=4;
@@ -479,7 +479,7 @@ void test_supprimer_liste_jour()
   Habitations.inclinaison_toit = 30;
   Habitations.Exposition = 30;
   Habitations.LC_Panneaux = &Panneaux;
-  strcpy(Habitations.Departement,"Aude");
+  strcpy(Habitations.Departement,"Aveyron");
   
   
   STR_DEPARTEMENT *tableau_dept = NULL;
@@ -504,18 +504,17 @@ void test_supprimer_liste_jour()
   liste = creer_liste_jours(Date_Debut,Date_Fin,Habitations,*Nos_Donnees_geo,*Notre_departements,Jour_precedent);
  
   ST_Date Date_Debut_sup;
-  Date_Debut_sup.Jour = 5;
+  Date_Debut_sup.Jour = 1;
   Date_Debut_sup.Mois = 11;
   Date_Debut_sup.Annee = 2010;
   
   ST_Date Date_Fin_sup;
-  Date_Fin_sup.Jour = 10;
+  Date_Fin_sup.Jour = 15;
   Date_Fin_sup.Mois = 11;
   Date_Fin_sup.Annee = 2010;
   
-  printf("Debut suppr\n");
+
   supprimer_liste_jour(Date_Debut_sup,Date_Fin_sup,&liste);
-  printf("Fin suppr\n");
   
   while(liste != NULL)
   {
@@ -709,9 +708,9 @@ void test_enregistrer_rapport()
   ST_PANNEAUX Panneaux;
   Panneaux.type = 1;
   Panneaux.Largeur = 10;
-  Panneaux.Longueur = 5;
-  Panneaux.MPPT = 0;
-  Panneaux.auto_rotation = 0;
+  Panneaux.Longueur = 3;
+  Panneaux.MPPT = 1;
+  Panneaux.auto_rotation = 1;
   
   ST_HABITATIONS Habitations;
   Habitations.nombre_pieces=4;

@@ -104,11 +104,11 @@ ST_EQUIPEMENTS* InsererTrierEquipements(ST_EQUIPEMENTS *Nouveau, ST_EQUIPEMENTS 
  * \param  float Largeur, Longueur représente la taille du panneau solaire, inclinaison_panneau qui est l'inclinaison du panneau
  * \return ST_EQUIPEMENTS* Retour de l'équipement une fois completé
  */
-ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition);
+ST_PANNEAUX* CreationPanneaux(int indice, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition,char string_type_ihm[CMAX],
+					      char string_autorotation_ihm[CMAX],char string_mppt_ihm[CMAX]);
 
-
-ST_PANNEAUX* ModifierPanneaux(ST_PANNEAUX *Panneau, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition);
-
+ST_PANNEAUX* ModifierPanneaux(ST_PANNEAUX *Panneau, int type, float Largeur, float Longueur, float inclinaison_panneau, int Exposition,char string_type_ihm[CMAX],
+					      char string_autorotation_ihm[CMAX],char string_mppt_ihm[CMAX]);
 /**
  * \name   Insertion Triée des Panneaux
  * \brief  Insère le panneau au bon endroit dans une liste triée  par l'indice de celui ci. Fonction récursive

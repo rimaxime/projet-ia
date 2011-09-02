@@ -33,4 +33,6 @@ ST_DonneGeo* RecupererInfosGeographique(ST_DonneGeo *tableau_geo);
 
 void Exporter_Evenement_Fichier(ST_JOUR *Tete,char Nom_fichier[CMAX]);
 
+void save_param(ST_HABITATIONS *Habitation,ST_PARAMETRES_SIMULATION *Simu, ST_JOUR *tete);
+
 #endif

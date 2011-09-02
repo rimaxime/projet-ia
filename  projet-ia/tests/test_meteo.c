@@ -19,7 +19,7 @@ int main(void)
 	simulation_temperature();
 	//simulation_condition();
 	//simulation_hsoleil();
-	simulation_myrand();
+	//simulation_myrand();
 	return 0;
 }
 
@@ -44,11 +44,11 @@ void simulation_temperature()
 	
 	for(n=0;n<t;n++)
 	{
-	  prec=SimulationTemp(&Prec,Normales);
+	  prec=SimulationTemp(NULL,Normales);
 	  fprintf(Simu,"%d;%2.2f\n",n,prec);
 	  Prec.temperature=prec;
 	}
-	t=40;
+	/*t=40;
 	Prec.temperature=17;
 	Normales.temp_min=10;
 	Normales.temp_max=28;
@@ -73,6 +73,7 @@ void simulation_temperature()
 	ST_JOUR *Prec2 = NULL;
 	prec = SimulationTemp(Prec2,Normales);
 	printf("%f : prec\n",prec);
+	*/
 	fclose(Simu);
 	printf("** SUCCES **\n");  
 }
