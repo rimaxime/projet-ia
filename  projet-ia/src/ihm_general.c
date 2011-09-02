@@ -1,4 +1,15 @@
-
+/*Signaux crees : 
+ * on_stop_clicked
+ * on_accelerer_clicked
+ * on_ralentir_clicked
+ * on_exporter_donnees_clicked
+ * on_exporter_graphique_clicked
+ * on_exporter_maison_clicked
+ * on_courbe1_configure_event
+ * on_courbe1_expose_event
+ * on_courbe2_configure_event
+ * on_courbe2_expose_event
+ * */
 
 #include "../inc/ihm_general.h"
 
