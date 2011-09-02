@@ -15,7 +15,7 @@
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, La nouvelle habitation 
  */
-ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX])
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX], char Departement_ihm[CMAX], char Isolation_ihm[CMAX])
 {
   ST_HABITATIONS *Nouveau = NULL;
   
@@ -37,6 +37,8 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, in
   Nouveau->chauffage_electricite = 0;
   Nouveau->chauffage_bois = 0;
   Nouveau->climatisation = 2;
+  strcpy(Nouveau->Departement_ihm,Departement_ihm);
+  strcpy(Nouveau->Isolation_ihm,Isolation_ihm);
   return Nouveau;
 }
 
@@ -48,13 +50,15 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, in
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, L'habitation 
  */
-ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX])
+ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX], char Departement_ihm[CMAX], char Isolation_ihm[CMAX])
 {
   Habitation->nombre_pieces = nombre_pieces;
   Habitation->inclinaison_toit = inclinaison_toit;
   Habitation->Isolation = Isolation;
   Habitation->Exposition = Exposition;
   strcpy(Habitation->Departement,Departement);
+  strcpy(Habitation->Departement_ihm,Departement_ihm);
+  strcpy(Habitation->Isolation_ihm,Isolation_ihm);
   return Habitation;
 }
 
@@ -68,7 +72,7 @@ ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces,
  * \param  char* nom_piece
  * \return ST_PIECES*, La nouvelle pièce complétée
  */
-ST_PIECES* CreationPiece(char* nom_piece, int type_piece, float Largeur, float Longueur, float coordX1, float coordY1,float coordX2, float coordY2)
+ST_PIECES* CreationPiece(char* nom_piece, int type_piece, float Largeur, float Longueur, float coordX1, float coordY1,float coordX2, float coordY2,char type_piece_ihm[CMAX])
 {
   ST_PIECES *Nouvelle = NULL;
   Nouvelle = (ST_PIECES *) malloc (sizeof(ST_PIECES));
@@ -87,6 +91,7 @@ ST_PIECES* CreationPiece(char* nom_piece, int type_piece, float Largeur, float L
   Nouvelle->coordY2= coordY2;
   Nouvelle->LC_Equipements = NULL;
   Nouvelle->suiv = NULL;
+  strcpy(Nouvelle->type_piece_ihm,type_piece_ihm);
   return Nouvelle;
 }
 
@@ -107,11 +112,12 @@ ST_PIECES* Trouver_Piece(ST_PIECES * Tete, char nom_piece[CMAX])
  * et bas de la pièce dans l'IHM
  * \return ST_PIECES*, La pièce completée 
  */
-ST_PIECES* ModifierPiece(ST_PIECES* Piece, int type_piece, float Largeur, float Longueur)
+ST_PIECES* ModifierPiece(ST_PIECES* Piece, int type_piece, float Largeur, float Longueur,char type_piece_ihm[CMAX])
 {
   Piece->type_piece = type_piece;
   Piece->Largeur = Largeur;
   Piece->Longueur = Longueur;
+  strcpy(Piece->type_piece_ihm,type_piece_ihm);
   return Piece;
 }
 

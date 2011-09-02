@@ -28,7 +28,7 @@
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, La nouvelle habitation 
  */
-ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX]);
+ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX], char Departement_ihm[CMAX], char Isolation_ihm[CMAX]);
 
 /**
  * \name   Modifier Habitation
@@ -37,7 +37,7 @@ ST_HABITATIONS* CreationHabitation(int nombre_pieces, float inclinaison_toit, in
  * \param  float inclinaison_toit
  * \return ST_HABITATIONS*, L'habitation 
  */
-ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX]);
+ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces, float inclinaison_toit, int Isolation,int Exposition, char Departement[CMAX], char Departement_ihm[CMAX], char Isolation_ihm[CMAX]);
 
 /**
  * \name   Creation des Pieces
@@ -48,7 +48,7 @@ ST_HABITATIONS* ModifierHabitation(ST_HABITATIONS* Habitation,int nombre_pieces,
  * \param  char* nom_piece
  * \return ST_PIECES*, La nouvelle pièce completée 
  */
-ST_PIECES* CreationPiece(char* nom_piece, int type_piece, float Largeur, float Longueur, float coordX1, float coordY1,float coordX2, float coordY2);
+ST_PIECES* CreationPiece(char* nom_piece, int type_piece, float Largeur, float Longueur, float coordX1, float coordY1,float coordX2, float coordY2,char type_piece_ihm[CMAX]);
 
 ST_PIECES* Trouver_Piece(ST_PIECES * Tete, char nom_piece[CMAX]);
 
@@ -60,7 +60,7 @@ ST_PIECES* Trouver_Piece(ST_PIECES * Tete, char nom_piece[CMAX]);
  * et bas de la pièce dans l'IHM
  * \return ST_PIECES*, La pièce completée 
  */
-ST_PIECES* ModifierPiece(ST_PIECES* Piece, int type_piece, float Largeur, float Longueur);
+ST_PIECES* ModifierPiece(ST_PIECES* Piece, int type_piece, float Largeur, float Longueur,char type_piece_ihm[CMAX]);
 
 /**
  * \name   Insertion Triée des Pièces

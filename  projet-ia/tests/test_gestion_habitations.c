@@ -39,7 +39,7 @@ void test_creation_habitation()
 {
   TEST_TITLE("test_creation_habitation");
   ST_HABITATIONS *Nouveau;
-  Nouveau = CreationHabitation(4,20,"6",5,"3");
+  Nouveau = CreationHabitation(4,20,6,5,"3","","");
   TEST(Nouveau->Exposition == 5);
   TEST(Nouveau->inclinaison_toit == 20);
 }
@@ -48,7 +48,7 @@ void test_creation_habitation()
 void test_creation_piece()
 {
   ST_PIECES *Nouvelle = NULL;
-  Nouvelle =CreationPiece("Chambre",1, 3,4, 12,15,18,25);
+  Nouvelle =CreationPiece("Chambre",1, 3,4, 12,15,18,25,"");
   TEST_TITLE("test_creation_piece");
   TEST(Nouvelle->coordX1 == 12);
   TEST(Nouvelle->type_piece == 1);
@@ -61,22 +61,22 @@ void test_inserertrier_piece()
   TEST_TITLE("test_inserertrier_piece");
   ST_PIECES *Tete = NULL;
   ST_PIECES *Nouvelle = NULL;
-  Nouvelle = CreationPiece("Chambre",1, 3,4, 12,15,18,25);
+  Nouvelle = CreationPiece("Chambre",1, 3,4, 12,15,18,25,"");
   Tete = InsererTrierPiece(Nouvelle,NULL);
   TEST(strcasecmp(Tete->nom_piece,"Chambre") == 0);
   ST_PIECES *Nouvelle2 = NULL;
-  Nouvelle2 = CreationPiece("Buanderie",2, 3,4, 12,15,18,25);
+  Nouvelle2 = CreationPiece("Buanderie",2, 3,4, 12,15,18,25,"");
   Tete = InsererTrierPiece(Nouvelle2,Tete);
   TEST(strcasecmp(Tete->nom_piece,"Buanderie") == 0);
   TEST(strcasecmp(Tete->suiv->nom_piece,"Chambre") == 0);
   ST_PIECES *Nouvelle3 = NULL;
-  Nouvelle3 = CreationPiece("Salon",3, 3,4, 12,15,18,25);
+  Nouvelle3 = CreationPiece("Salon",3, 3,4, 12,15,18,25,"");
   Tete = InsererTrierPiece(Nouvelle3,Tete);
   TEST(strcasecmp(Tete->nom_piece,"Buanderie") == 0);
   TEST(strcasecmp(Tete->suiv->nom_piece,"Chambre") == 0);
   TEST(strcasecmp(Tete->suiv->suiv->nom_piece,"Salon") == 0);
   ST_PIECES *Nouvelle4 = NULL;
-  Nouvelle4 = CreationPiece("Chambre",3, 3,4, 12,15,18,25);
+  Nouvelle4 = CreationPiece("Chambre",3, 3,4, 12,15,18,25,"");
   Tete = InsererTrierPiece(Nouvelle4,Tete);
    TEST(strcasecmp(Tete->nom_piece,"Buanderie") == 0);
   TEST(strcasecmp(Tete->suiv->nom_piece,"Chambre") == 0);

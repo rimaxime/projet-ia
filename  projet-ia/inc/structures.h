@@ -103,6 +103,7 @@ typedef struct Pieces
  //5 Toilettes
  //6 Buanderie
  //TBC
+ char type_piece_ihm[CMAX];
  float Largeur;
  float Longueur;
  float coordX1;
@@ -126,6 +127,7 @@ typedef struct Habitations
 	//1 : Isolation normale
 	//2 : Isolation faible
 	//3 : Pas d'isolation
+	char Isolation_ihm[CMAX];
 	int Exposition; //l'exposition correspond à un entier :
 	//1 Sud
 	//2 Sud Ouest
@@ -136,7 +138,9 @@ typedef struct Habitations
 	//7 Est
 	//8 Sud Est
 	int climatisation;//0 : Oui 1 : Non
+	char climatisation_ihm[CMAX];
 	char Departement[CMAX];
+	char Departement_ihm[CMAX];
 	int chauffage_bois;
 	int chauffage_gaz;
 	int chauffage_electricite;
