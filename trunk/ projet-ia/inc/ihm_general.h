@@ -5,8 +5,8 @@
 #include <gtk/gtk.h>
 #include "../inc/structures.h"
 #include "../inc/gestion_habitations.h"
-
-
+#include "../inc/liste_evenement.h"
+#include "../inc/gestion_fichiers.h"
 #define PATH_IHM "../ressources/ihm.glade"
 
 typedef struct _Data Data;
@@ -29,6 +29,7 @@ struct _Data
     GtkWidget *Inclinaison_habitation;
     GtkWidget *Exposition_habitation;
     GtkWidget *Isolation;
+    STR_DEPARTEMENT* tableau_departements;
     
     //champs piece
     GtkWidget *NomPiece;
@@ -84,6 +85,18 @@ struct _Data
   
   //Da habitation
   GtkWidget *DA_Habitation;
+  
+  //Gestion de la file : 
+  
+  ST_JOUR* Jour;
+  ST_DonneGeo *Tableau_Geo;
+  
+  GtkWidget *label_jour;
+  GtkWidget *da_conso;
+  GtkWidget *da_prod;
+  
+  GtkWidget *entry_sauvegarde;
+  GtkWidget *generer_rapport;
 };
 
 
@@ -93,12 +106,13 @@ GtkBuilder * creationbuilder();
 
 Data chargement_fenetres(GtkBuilder *builder);
 
+void Initialisation_parametres_simulation();
 
 void on_ouvrir_activate (GtkWidget * user_data);
 
 void on_annuler_fichier_clicked(GtkWidget *widget);
 
-void on_selection_fichier_activate(GtkWidget *entry);
+void on_selection_fichier_activate(GtkWidget *widget,Data *data);
 
 void on_annuler_fichier_clicked(GtkWidget *widget);
 
@@ -162,5 +176,11 @@ void on_supprimer_equipement_clicked(GtkWidget *widget, Data *data);
 Data champ_calendrier(GtkBuilder *builder, Data data);
 
 void on_calendar1_day_selected_double_click(GtkWidget *widget, Data *data);
+
+Data champ_simulation(GtkBuilder *builder, Data data);
+
+int comparaison_date(ST_Date date1,ST_Date date2);
+
+void affichage_jour(Data *data);
 
 #endif
