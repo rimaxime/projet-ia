@@ -11,7 +11,7 @@ PATH_INC=../inc
 PATH_SRC=../src
 PATH_TESTS=../tests
 
-Production: clean init 
+Production: clean init solaris
 
 Tests: clean init test_meteo test_fichiers test_gestion_habitations test_ihm test_production test_consomation test_liste_evenement
 
@@ -57,6 +57,9 @@ liste_evenement.o: $(PATH_SRC)/liste_evenement.c $(PATH_INC)/liste_evenement.h
 test_liste_evenement.o: $(PATH_TESTS)/test_liste_evenement.c 
 	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
 
+main.o: $(PATH_SRC)/main.c 
+	$(CC) $(CFLAG) -c $(PATH_OBJ)/$<
+
 test_meteo: test_meteo.o meteo.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
@@ -66,7 +69,7 @@ test_fichiers: test_fichiers.o gestion_fichiers.o
 test_gestion_habitations: test_gestion_habitations.o gestion_habitations.o gestion_fichiers.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
-test_ihm: test_ihm.o ihm_general.o gestion_habitations.o gestion_fichiers.o
+test_ihm: test_ihm.o gestion_habitations.o gestion_fichiers.o  production.o meteo.o consomation.o liste_evenement.o ihm_general.o 
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_production: test_production.o production.o meteo.o
@@ -76,6 +79,9 @@ test_consomation: test_consomation.o consomation.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 test_liste_evenement:test_liste_evenement.o meteo.o production.o consomation.o gestion_fichiers.o liste_evenement.o 
+	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
+
+solaris:main.o gestion_habitations.o gestion_fichiers.o  production.o meteo.o consomation.o liste_evenement.o ihm_general.o
 	$(CC) $(LDFLAG) -o $(PATH_OUT)/$@ $^
 
 clean:

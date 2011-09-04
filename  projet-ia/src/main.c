@@ -1,6 +1,4 @@
 
-
-
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include "../inc/structures.h"
@@ -44,11 +42,6 @@ int main()
   Initialisation_parametres_simulation();
   
   
-  if(! GTK_COMBO_BOX(data.Isolation))
-    printf("champ non fonctionnel\n");
-  else
-    printf("combo box ok\n");
-  
   connexion_signaux(builder,data);
   /* Destroy builder */
   g_object_unref( G_OBJECT( builder ) );
@@ -59,4 +52,3 @@ int main()
  return 0;
   
 }
-

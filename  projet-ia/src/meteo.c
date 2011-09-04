@@ -37,7 +37,7 @@ float SimulationTemp(ST_JOUR *Jour_prec,ST_DonneeMeteo Normales_Mensuelles)
     temp= 0.7*Jour_prec->temperature - 0.3*((Jour_prec->temperature-Normales_Mensuelles.temp_max)*nombre_aleatoire);
   else if(temp < Normales_Mensuelles.temp_min)
     temp= 0.7*Jour_prec->temperature + 0.3*((Normales_Mensuelles.temp_min - Jour_prec->temperature)*nombre_aleatoire);
-  printf("\nMois : %d | Normale_Min/Max : %2.2f/%2.2f  |Temperature : %2.2f\n",Normales_Mensuelles.num_mois, Normales_Mensuelles.temp_min, Normales_Mensuelles.temp_max,temp);
+  //printf("\nMois : %d | Normale_Min/Max : %2.2f/%2.2f  |Temperature : %2.2f\n",Normales_Mensuelles.num_mois, Normales_Mensuelles.temp_min, Normales_Mensuelles.temp_max,temp);
   return temp;   
 }
 

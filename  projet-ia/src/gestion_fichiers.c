@@ -355,7 +355,7 @@ void Exporter_Evenement_Fichier(ST_JOUR *Tete,char Nom_fichier[CMAX])
   Date_max.Annee=0;
  
   FILE *report_evenement;
-	report_evenement=fopen("Nom_fichier.csv","w+"); //Voir comment passer le nom en parametres
+	report_evenement=fopen(Nom_fichier,"w"); //Voir comment passer le nom en parametres
   if(report_evenement == NULL)
   {
     printf("\nErreur d'ouverture fichier \n");
@@ -418,12 +418,14 @@ void Exporter_Evenement_Fichier(ST_JOUR *Tete,char Nom_fichier[CMAX])
   fclose(report_evenement);  
 }
   
-/*void save_simu(ST_HABITATIONS *Habitation,ST_PARAMETRES_SIMULATION *Param_Simu, ST_JOUR *tete)
+void save_simu(ST_HABITATIONS *Habitation,ST_PARAMETRES_SIMULATION *Param_Simu, ST_JOUR *tete,char *nom_fichier)
 {
-  ST_PARAMETRES_SIMULATION *param = Param_Simu;
-  ST_JOUR *liste = tete;
-  FILE *simu;
-	simu=fopen("Sauvegarde_simu.csv","w+"); //Voir comment passer le nom en parametres
+  ST_PIECES *piece = NULL;
+  ST_EQUIPEMENTS *equipement = NULL;
+  ST_PANNEAUX *panneau = NULL;
+  ST_JOUR *liste = NULL;
+  FILE *simu = NULL;
+simu=fopen(nom_fichier,"w");
   if(simu == NULL)
   {
     printf("\nErreur d'ouverture fichier \n");
@@ -432,21 +434,51 @@ void Exporter_Evenement_Fichier(ST_JOUR *Tete,char Nom_fichier[CMAX])
   
   if(Habitation == NULL)
   {
-    printf("\nSauvegarde impossible : Pas de d'habitation definie\n");
+    printf("\nSauvegarde impossible : Pas d'habitation definie\n");
     exit(-1);    
   }
   
   fprintf(simu,"h|%d|%f|%d|%s|%d|%d|%s|%s|%s|%d|%d|%d|\n",Habitation->nombre_pieces,Habitation->inclinaison_toit,
-	  Habitation->Isolation,Habitation->Isolation_ihm,Habitation->Exposition,Habitation->climatisation,Habitation
-	  ->climatisation_ihm,Habitation->Departement,Habitation->Departement_ihm,Habitation->chauffage_bois,Habitation
-	  ->chauffage_gaz,Habitation->chauffage_electricite);
-  while(param != NULL)
+ Habitation->Isolation,Habitation->Isolation_ihm,Habitation->Exposition,Habitation->climatisation,
+ Habitation->climatisation_ihm,Habitation->Departement,Habitation->Departement_ihm,Habitation->chauffage_bois,
+ Habitation->chauffage_gaz,Habitation->chauffage_electricite);
+  piece = Habitation->LC_Pieces;
+  while(piece != NULL)
   {
-    fprintf(simu,"s|||||||||||||||||||",)
-    
+    fprintf(simu,"p|%s|%d|%s|%f|%f|%f|%f|%f|%f|\n",piece->nom_piece,piece->type_piece,piece->type_piece_ihm,piece->Largeur,
+      piece->Longueur,piece->coordX1,piece->coordY1,piece->coordX2,piece->coordY2);
+    equipement = piece->LC_Equipements;
+    while(equipement != NULL)
+    {
+      fprintf(simu,"e|%d|%s|%f|%f|%f|%f|%f|%f|%f|%f|\n",equipement->indice,equipement->nom_equipement,equipement->consommation_equipement,
+     equipement->nombre_heures_utilisation_journalier,equipement->Largeur,equipement->Longueur,equipement->coordX1,
+     equipement->coordY1,equipement->coordX2,equipement->coordY2);
+      equipement = equipement->suiv;    
+    }
+    piece = piece->suiv;
   }
   
-
-
+  panneau = Habitation->LC_Panneaux;
+  if(panneau != NULL);
+    fprintf(simu,"n|%d|%d|%s|%f|%f|%f|%d|%d|%f|%d|%s|%d|%s|\n",panneau->indice,panneau->type,panneau->type_ihm,panneau->Largeur,
+      panneau->Longueur,panneau->inclinaison_panneau,panneau->Exposition,panneau->surface,panneau->rendement,panneau->MPPT,
+      panneau->MPPT_ihm,panneau->auto_rotation,panneau->auto_rotation_ihm);
   
-}*/
+  if(Param_Simu != NULL)
+    fprintf(simu,"s|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|\n",Param_Simu->date_initiale.Jour,Param_Simu->date_initiale.Mois,
+   Param_Simu->date_initiale.Annee,Param_Simu->date_finale.Jour,Param_Simu->date_finale.Mois,Param_Simu->date_finale.Annee,
+   Param_Simu->date_courante.Jour,Param_Simu->date_courante.Mois,Param_Simu->date_courante.Annee,Param_Simu->vitesse,
+   Param_Simu->modification_habitation,Param_Simu->modification_date);
+  
+  if(tete != NULL)
+    liste = tete;
+  while(liste != NULL)
+  {
+    fprintf(simu,"j|%d|%d|%d|%f|%d|%f|%f|%f|%f|\n",liste->date.Jour,liste->date.Mois,liste->date.Annee,liste->temperature,
+      liste->condition,liste->production,liste->consommation,liste->gain,liste->cout);
+    liste = liste->suiv;
+  }
+   fclose(simu);
+}
+
+

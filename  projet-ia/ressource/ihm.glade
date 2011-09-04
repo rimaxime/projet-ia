@@ -5,6 +5,7 @@
   <object class="GtkWindow" id="fenetre">
     <property name="width_request">800</property>
     <property name="height_request">600</property>
+    <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON2_MOTION_MASK | GDK_BUTTON3_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK | GDK_VISIBILITY_NOTIFY_MASK | GDK_PROXIMITY_IN_MASK | GDK_PROXIMITY_OUT_MASK | GDK_SUBSTRUCTURE_MASK | GDK_SCROLL_MASK</property>
     <property name="title" translatable="yes">Solaris</property>
     <property name="default_width">800</property>
     <property name="default_height">600</property>
@@ -50,6 +51,7 @@
                         <property name="image">image3</property>
                         <property name="use_stock">False</property>
                         <property name="always_show_image">True</property>
+                        <signal name="activate" handler="gtk_widget_show" object="ouvrir_sauvegarde"/>
                       </object>
                     </child>
                     <child>
@@ -76,28 +78,7 @@
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">_Rapports</property>
                 <property name="use_underline">True</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkMenuItem" id="menuitem4">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">_Help</property>
-                <property name="use_underline">True</property>
-                <signal name="activate_item" handler="gtk_main_quit"/>
-                <child type="submenu">
-                  <object class="GtkMenu" id="menu3">
-                    <property name="visible">True</property>
-                    <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem10">
-                        <property name="label">gtk-about</property>
-                        <property name="visible">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="use_stock">True</property>
-                        <property name="always_show_image">True</property>
-                      </object>
-                    </child>
-                  </object>
-                </child>
+                <signal name="activate" handler="on_menu_rapport_activate"/>
               </object>
             </child>
           </object>
@@ -434,8 +415,8 @@
                       <object class="GtkLabel" id="jour">
                         <property name="height_request">1</property>
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Définit le jour 
-où nous sommes</property>
+                        <property name="label" translatable="yes">Simulation actuellement
+non lancée</property>
                         <property name="justify">center</property>
                       </object>
                       <packing>
@@ -526,7 +507,7 @@ où nous sommes</property>
                 <property name="visible">True</property>
                 <child>
                   <object class="GtkButton" id="exporter_donnees">
-                    <property name="label" translatable="yes">Exporter les données au format csv</property>
+                    <property name="label" translatable="yes">Exporter les données au format texte</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
@@ -653,7 +634,7 @@ où nous sommes</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_annuler_fichier_clicked"/>
+                <signal name="clicked" handler="gtk_widget_hide"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -667,7 +648,7 @@ où nous sommes</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="activate" handler="on_selection_fichier_activate" object="entry1"/>
+                <signal name="clicked" handler="on_selection_fichier_clicked"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -1710,35 +1691,7 @@ d'intéragir sur les pièces</property>
           </packing>
         </child>
         <child>
-          <object class="GtkHBox" id="hbox23">
-            <property name="visible">True</property>
-            <property name="homogeneous">True</property>
-            <child>
-              <object class="GtkLabel" id="label27">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">Inclinaison Panneau :</property>
-              </object>
-              <packing>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkSpinButton" id="inclinaison_panneau">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="editable">False</property>
-                <property name="invisible_char">•</property>
-                <property name="adjustment">adjustment7</property>
-                <property name="digits">1</property>
-              </object>
-              <packing>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="position">6</property>
-          </packing>
+          <placeholder/>
         </child>
         <child>
           <object class="GtkHButtonBox" id="hbuttonbox4">
@@ -2080,6 +2033,8 @@ d'intéragir sur les pièces</property>
     </data>
   </object>
   <object class="GtkWindow" id="parametres_equipements">
+    <property name="width_request">600</property>
+    <property name="height_request">500</property>
     <property name="title" translatable="yes">Gestion des équipements</property>
     <child>
       <object class="GtkVBox" id="vbox13">
@@ -2168,77 +2123,79 @@ d'intéragir sur les pièces</property>
           </packing>
         </child>
         <child>
-          <object class="GtkHBox" id="hbox29">
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
             <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
             <child>
-              <object class="GtkTreeView" id="arbre_equipement_piece">
+              <object class="GtkHBox" id="hbox29">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="headers_visible">False</property>
-                <property name="headers_clickable">False</property>
+                <property name="homogeneous">True</property>
                 <child>
-                  <object class="GtkTreeViewColumn" id="treeviewcolumn2"/>
-                </child>
-              </object>
-              <packing>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkVButtonBox" id="vbuttonbox1">
-                <property name="visible">True</property>
-                <property name="spacing">52</property>
-                <property name="layout_style">center</property>
-                <child>
-                  <object class="GtkButton" id="ajouter_equipement">
-                    <property name="label" translatable="yes">Ajouter</property>
+                  <object class="GtkTreeView" id="arbre_equipement_piece">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <signal name="clicked" handler="on_ajouter_equipement_clicked"/>
+                    <property name="headers_visible">False</property>
+                    <property name="headers_clickable">False</property>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="treeviewcolumn2"/>
+                    </child>
                   </object>
                   <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">False</property>
                     <property name="position">0</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="supprimer_equipement">
-                    <property name="label" translatable="yes">Supprimer</property>
+                  <object class="GtkVButtonBox" id="vbuttonbox1">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <signal name="clicked" handler="on_supprimer_equipement_clicked"/>
+                    <property name="spacing">52</property>
+                    <property name="layout_style">center</property>
+                    <child>
+                      <object class="GtkButton" id="ajouter_equipement">
+                        <property name="label" translatable="yes">Ajouter</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_ajouter_equipement_clicked"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="supprimer_equipement">
+                        <property name="label" translatable="yes">Supprimer</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="on_supprimer_equipement_clicked"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
                   </object>
                   <packing>
                     <property name="expand">False</property>
-                    <property name="fill">False</property>
                     <property name="position">1</property>
                   </packing>
                 </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkTreeView" id="arbre_equipement_possible">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="headers_visible">False</property>
-                <property name="headers_clickable">False</property>
-                <property name="search_column">0</property>
                 <child>
-                  <object class="GtkTreeViewColumn" id="treeviewcolumn1">
-                    <property name="sort_column_id">0</property>
+                  <object class="GtkTreeView" id="arbre_equipement_possible">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="headers_visible">False</property>
                   </object>
+                  <packing>
+                    <property name="position">2</property>
+                  </packing>
                 </child>
               </object>
-              <packing>
-                <property name="position">2</property>
-              </packing>
             </child>
           </object>
           <packing>
@@ -2278,6 +2235,9 @@ d'intéragir sur les pièces</property>
                 <property name="fill">False</property>
                 <property name="position">1</property>
               </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
           </object>
           <packing>
